@@ -127,16 +127,35 @@ refuses an out-of-contract pack naming exactly what is missing and what was held
 raising from inside the forecast. Refusing is the correct behaviour and the reason it is recorded
 here rather than closed.
 
-**The decision this needs.** Either the engagement pack gains a `pax_total` series, being the sum of
-the Schengen, non-Schengen and transfer legs on the stated convention, or the contract admits a
-second pax family and the forecast learns to read it. The first keeps one grain and is my
-recommendation; the second admits that a Schengen split is a different thing from a total and should
-not be flattened. It is a design call about what a pack is, so it is yours.
+**Decided, 8 August 2026 (JC): a pack always carries a pax total.** Its absence from the Zagreb pack
+was an oversight, corrected before the deliverable went to the client. `series.pax_total` is now on
+the pack, taken from `zagreb_total` in `E:/Avia/Zagreb/work/zagreb_pack.json` of 10 July 2026, which
+is the series the client holds. Not derived, not recomputed.
+
+**Two things stay open, both flagged in the pack rather than filled.**
+
+*The base year.* The sent series runs 2026-2048. The pack's base year is 2025, which the sent series
+does not hold, so `pax_total["2025"]` is null and the pack carries a flag saying so. The contract now
+catches a flagged base year specifically, because a flag is a legitimate pack state and a legitimate
+base year is not: everything downstream is indexed on the base. `forecast_from_pack` on this pack
+returns, verbatim: "series.pax_total is FLAGGED at the base year 2025: the pack states it is not
+held. Supply a base-year value with its source, or rebase the pack to a year the series holds. Do not
+fill it."
+
+*The 0.19%.* Twice the Schengen plus non-Schengen departing legs runs 0.19% below the sent total in
+every spot year held, the same to two decimal places, so it is definitional rather than drift.
+Something in the sent total is not in the two departing legs. Recorded on the pack in a
+`reconciliation` field so the difference travels with the data instead of being rediscovered.
+
+**What this means for the tool today.** The Zagreb pack cannot go through the pack path yet: rebasing
+it to a year the series holds moves the base into a year with no schedule base in the store, and the
+forecast then reports "FLAG: no schedule base held". That is the honest position, and it is why the
+tool serves the Zagreb forecast years from a pinned file. The path opens at store day.
 
 **Test that would close it.** `forecast_from_pack` on `ZAG_secondary_2025.json` returns a forecast
 whose base-year movements match the oracle's own base-year figure.
 
-**Owner.** JC.
+**Owner.** JC, at store day.
 
 ## 4. Fixture questions open
 

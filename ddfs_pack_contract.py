@@ -76,6 +76,22 @@ def validate_pack(pack):
             elif not isinstance(series[s], dict) or "values" not in series[s]:
                 problems.append(f"series.{s} has no values block")
 
+    # A flagged value is a legitimate pack state: flag rather than fill. It is
+    # not a legitimate base year, because everything downstream is indexed on
+    # the base. So a null base-year value is caught here rather than allowed to
+    # become a division by a missing number inside the forecast.
+    by = pack.get("base_year")
+    if isinstance(series, dict) and by is not None:
+        for s_name in PACK_SERIES:
+            block = series.get(s_name)
+            if isinstance(block, dict) and isinstance(block.get("values"), dict):
+                if block["values"].get(str(by), "absent") is None:
+                    problems.append(
+                        f"series.{s_name} is FLAGGED at the base year {by}: the "
+                        f"pack states it is not held. Supply a base-year value "
+                        f"with its source, or rebase the pack to a year the "
+                        f"series holds. Do not fill it.")
+
     sy = pack.get("spot_years")
     if sy is not None and not isinstance(sy, (list, tuple)):
         problems.append(f"spot_years is {type(sy).__name__}, expected a list")
@@ -202,6 +218,19 @@ def selftest():
     except ContractError as ex:
         raised = "pax_total" in str(ex) and "engagement pack" in str(ex)
     checks.append(("require_pack raises with the detail", raised, True))
+
+    flagged = {"pack_id": "ZAG_x", "airport": "ZAG", "base_year": 2025,
+               "spot_years": [2025, 2030], "dd_block": {},
+               "series": {"pax_total": {"values": {"2025": None, "2030": 5005232}},
+                          "scheduled_movements": {"values": {"2025": 45463.9}}}}
+    probs = validate_pack(flagged)
+    checks.append(("a flagged base year is caught", len(probs), 1))
+    checks.append(("and says do not fill it", "Do not fill it" in probs[0], True))
+    unflagged = {**flagged, "base_year": 2030,
+                 "series": {"pax_total": {"values": {"2030": 5005232}},
+                            "scheduled_movements": {"values": {"2030": 54587.5}}}}
+    checks.append(("a flagged year that is not the base year passes",
+                   validate_pack(unflagged), []))
 
     bundle = {"years": [2025], "base": 2025, "horizon": 2060,
               "airports": [{"c": "ZAG", "n": "Zagreb", "cty": "Croatia",

@@ -5,59 +5,190 @@
  "vintage": "v2026.0",
  "extracted": "20 July 2026",
  "note": "The Zagreb DDFS pack, extracted from the pinned constants of ddfs_zagreb_oracle.py first pass (notes 35 v2, 23 v3 section 3). Values originate in Jess's ZAG Secondary Forecast model inputs (18 June 2026) and E:/Avia/Zagreb/work/zagreb_pack.json. This file is the oracle's input; the regression pin is zagreb_oracle_run_v02.tsv reproduced exactly.",
- "spot_years": [2025, 2030, 2035, 2040, 2045],
+ "spot_years": [
+  2025,
+  2030,
+  2035,
+  2040,
+  2045
+ ],
  "series": {
+  "pax_total": {
+   "provenance": "JESS-MODEL sent case: series 'zagreb_total' from E:/Avia/Zagreb/work/zagreb_pack.json (10 July 2026), the total the client holds. Added 8 August 2026 (JC): a pack must always carry a pax total; its absence here was an oversight corrected before the deliverable went out.",
+   "coverage": "The sent series runs 2026-2048. The pack's base year of 2025 is not held in it and is FLAGGED, not filled.",
+   "reconciliation": "2 x (dep_pax_schengen + dep_pax_nonschengen) runs -0.19% against this series in every spot year held, a constant definitional difference rather than drift. Open: what the sent total carries that the two departing legs do not.",
+   "values": {
+    "2025": null,
+    "2030": 5005232,
+    "2035": 5998863,
+    "2040": 7081025,
+    "2045": 8270412
+   }
+  },
   "dep_pax_schengen": {
    "provenance": "JESS-MODEL",
-   "values": {"2025": 1309175.4, "2030": 1600586.2, "2035": 1918379.2, "2040": 2264471.0, "2045": 2644849.0}
+   "values": {
+    "2025": 1309175.4,
+    "2030": 1600586.2,
+    "2035": 1918379.2,
+    "2040": 2264471.0,
+    "2045": 2644849.0
+   }
   },
   "dep_pax_nonschengen": {
    "provenance": "JESS-MODEL",
-   "values": {"2025": 733955.0, "2030": 897274.6, "2035": 1075370.2, "2040": 1269341.3, "2045": 1482531.7}
+   "values": {
+    "2025": 733955.0,
+    "2030": 897274.6,
+    "2035": 1075370.2,
+    "2040": 1269341.3,
+    "2045": 1482531.7
+   }
   },
   "dep_pax_transfer": {
    "provenance": "JESS-MODEL",
-   "values": {"2025": 377979.1, "2030": 462104.2, "2035": 553843.6, "2040": 653755.3, "2045": 763565.4}
+   "values": {
+    "2025": 377979.1,
+    "2030": 462104.2,
+    "2035": 553843.6,
+    "2040": 653755.3,
+    "2045": 763565.4
+   }
   },
   "scheduled_movements": {
    "provenance": "JESS-MODEL",
-   "values": {"2025": 45463.9, "2030": 54587.5, "2035": 64318.4, "2040": 74694.4, "2045": 85879.0}
+   "values": {
+    "2025": 45463.9,
+    "2030": 54587.5,
+    "2035": 64318.4,
+    "2040": 74694.4,
+    "2045": 85879.0
+   }
   },
   "ga_movements": {
    "provenance": "JESS-MODEL",
-   "values": {"2025": 6285.7, "2030": 7643.8, "2035": 9133.5, "2040": 10770.2, "2045": 12578.8}
+   "values": {
+    "2025": 6285.7,
+    "2030": 7643.8,
+    "2035": 9133.5,
+    "2040": 10770.2,
+    "2045": 12578.8
+   }
   },
   "lcc_pax_2way": {
    "provenance": "PACK lcc_net_path (passengers; FR + Wizz on the FR profile, note 35 v2)",
-   "values": {"2025": 1659200, "2030": 2377910, "2035": 3160199, "2040": 4009525, "2045": 4939984}
+   "values": {
+    "2025": 1659200,
+    "2030": 2377910,
+    "2035": 3160199,
+    "2040": 4009525,
+    "2045": 4939984
+   }
   }
  },
  "dd_block": {
   "month_share": {
    "provenance": "JESS-MODEL seasonality",
-   "values": {"1": 0.0557, "2": 0.0527, "3": 0.0678, "4": 0.0818, "5": 0.0906, "6": 0.0975, "7": 0.1066, "8": 0.1096, "9": 0.102, "10": 0.0963, "11": 0.0719, "12": 0.0673}
+   "values": {
+    "1": 0.0557,
+    "2": 0.0527,
+    "3": 0.0678,
+    "4": 0.0818,
+    "5": 0.0906,
+    "6": 0.0975,
+    "7": 0.1066,
+    "8": 0.1096,
+    "9": 0.102,
+    "10": 0.0963,
+    "11": 0.0719,
+    "12": 0.0673
+   }
   },
-  "summer_months": [4, 5, 6, 7, 8, 9, 10],
-  "upgauge_pa": {"value": 0.0035, "provenance": "PACK conversions.upgauge_pa"},
-  "pax_load_factor": {"value": 0.8, "provenance": "JESS-MODEL routes-file lf (P1b, note 35 v2)"},
-  "overnight_window": {"value": [22, 6], "provenance": "WORKING ASSUMPTION - her definition to confirm (non-discriminating on sample data)"},
-  "terminal_old_carriers": {"value": ["FR", "EW", "JU", "TK", "BA"], "provenance": "CANDIDATE - local search on 2025 targets, 11.6% rmse; her definition to confirm"},
-  "lcc_ramp_carriers": {"value": ["FR"], "provenance": "C6v3: lcc path applies to FR, Wizz enters on the FR profile"},
-  "transfer_rule": {"value": "fixed base-year share of OU two-way pax", "provenance": "CANDIDATE - sent series grows with OU schedule x1.75, note 35 v2"},
-  "stand_scenario": {"value": "code-C harmonisation", "provenance": "CONFIRMED 19 July 2026 (note 35 v2): B on C 1:1, E across two C (MARS), A and D own codes"},
+  "summer_months": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "upgauge_pa": {
+   "value": 0.0035,
+   "provenance": "PACK conversions.upgauge_pa"
+  },
+  "pax_load_factor": {
+   "value": 0.8,
+   "provenance": "JESS-MODEL routes-file lf (P1b, note 35 v2)"
+  },
+  "overnight_window": {
+   "value": [
+    22,
+    6
+   ],
+   "provenance": "WORKING ASSUMPTION - her definition to confirm (non-discriminating on sample data)"
+  },
+  "terminal_old_carriers": {
+   "value": [
+    "FR",
+    "EW",
+    "JU",
+    "TK",
+    "BA"
+   ],
+   "provenance": "CANDIDATE - local search on 2025 targets, 11.6% rmse; her definition to confirm"
+  },
+  "lcc_ramp_carriers": {
+   "value": [
+    "FR"
+   ],
+   "provenance": "C6v3: lcc path applies to FR, Wizz enters on the FR profile"
+  },
+  "transfer_rule": {
+   "value": "fixed base-year share of OU two-way pax",
+   "provenance": "CANDIDATE - sent series grows with OU schedule x1.75, note 35 v2"
+  },
+  "stand_scenario": {
+   "value": "code-C harmonisation",
+   "provenance": "CONFIRMED 19 July 2026 (note 35 v2): B on C 1:1, E across two C (MARS), A and D own codes"
+  },
   "ga_stands_base": {
    "provenance": "JESS-MODEL Non Commercial 2025 block, grown by the GA movements path",
    "values": {
-    "Overall peak": {"A": 2, "B": 6, "C": 2, "D": 0, "E": 0},
-    "Overnight Peak": {"A": 2, "B": 4, "C": 1, "D": 0, "E": 0},
-    "Individual Peak": {"A": 3, "B": 8, "C": 3, "D": 2, "E": 1}
+    "Overall peak": {
+     "A": 2,
+     "B": 6,
+     "C": 2,
+     "D": 0,
+     "E": 0
+    },
+    "Overnight Peak": {
+     "A": 2,
+     "B": 4,
+     "C": 1,
+     "D": 0,
+     "E": 0
+    },
+    "Individual Peak": {
+     "A": 3,
+     "B": 8,
+     "C": 3,
+     "D": 2,
+     "E": 1
+    }
    }
   },
-  "design_day_convention": {"value": "30th busiest clock hour (BHR30), series ranked independently", "provenance": "note 35 v2 conventions"}
+  "design_day_convention": {
+   "value": "30th busiest clock hour (BHR30), series ranked independently",
+   "provenance": "note 35 v2 conventions"
+  }
  },
  "schedule_base": {
   "source": "oag.duckdb 2025 wc sample weeks (wc 26May25, wc 27Oct25), event-grain dedupe",
   "season_mapping": "Apr-Oct summer / Nov-Mar winter",
   "note": "replaced wholesale by the full-year 2025 store when it lands (note 35 v2 section 4)"
- }
+ },
+ "flags": [
+  "pax_total 2025: base year not held in the sent series; forecasting from this pack requires a base-year value or a rebase to 2026"
+ ]
 }
