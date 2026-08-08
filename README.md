@@ -31,8 +31,12 @@ ddfs_ladder.py             the test ladder
 ddfs_bridge.py             canonical / CAST / AOG emit chain
 ddfs_towerlog.py           MZLZ AODB reconciliation
 ddfs_report_gen_v02.js     superset Design Day report generator
-ddfs_bridge_fixtures/      test pins
+config.py                  one resolver for every path the tool reads
+check_env.py               host check, step 5 of provisioning
+ddfs_aircraft.py           one owner for the ICAO code letter
+ddfs_bridge_fixtures/      test pins, never run output
 ddfs_packs/                emitted packs
+runs/                      run output, gitignored
 attic/                     superseded, with a reason each
 docs/                      capability audit, migration plan, standing git note
 ```
@@ -59,8 +63,12 @@ Five steps, and the fifth is not optional.
 4. `py -3.12 -m venv .venv` then `.venv\Scripts\python -m pip install -r requirements.txt`
 5. `.venv\Scripts\python check_env.py`
 
-Steps 3 and 5 depend on `config.py` and `check_env.py`, which are the next commits. Until they land,
-see `docs/CAPABILITY_AUDIT.md` section 5 for the hardcoded paths that still need to move.
+`check_env.py` exits non-zero when the interpreter, a package or a store is wrong, and reports the
+coverage of each store it found, so any number the tool produces can be traced to the data behind it.
+`python config.py` on its own prints where every store resolved from and why.
+
+DDFS is pinned to Python 3.12. Give it its own virtual environment: the workstation runs several
+tools, and installing one tool's dependencies into a shared interpreter changes every other tool.
 
 ## Working rule
 
