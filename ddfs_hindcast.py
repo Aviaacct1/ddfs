@@ -187,8 +187,29 @@ def selftest():
     checks = []
     pack = pe.emit_pack("AUH", "Baseline", base_year=2024, spot_years=ADAC_SPOTS)
     fc = forecast_from_pack(pack)
-    checks.append(("base day mode is sample (pre store day)", fc["base_day"]["mode"].startswith("sample"), True))
-    checks.append(("base day ATMs (rung 2 pin)", fc["base_day_atms"], 441))
+    # The base day upgrades from sample mode to the SBR30 full-year pick on its
+    # own as the store loads, by design. So the test asserts that the mode the
+    # tool chose matches the coverage the store actually holds, rather than
+    # asserting a mode, which would fail every time a load lands. The ATM pin
+    # is only meaningful within one mode: 441 was taken in sample mode on the
+    # two-week base. The full-mode pin is not set and must not be invented; it
+    # is taken at store day, when the load is complete, and recorded with the
+    # coverage it was taken against.
+    full_rows, sample_weeks = pe._store_coverage("AUH", 2024)
+    expect_full = full_rows > 0
+    mode = fc["base_day"]["mode"]
+    print(f"  store coverage AUH 2024: {full_rows} full-year rows, "
+          f"{len(sample_weeks)} sample weeks -> expecting "
+          f"{'full (SBR30)' if expect_full else 'sample'} mode")
+    checks.append(("base day mode matches store coverage",
+                   mode.startswith("full") if expect_full else mode.startswith("sample"),
+                   True))
+    if expect_full:
+        print(f"  base day ATMs {fc['base_day_atms']}: NO PIN in full mode. "
+              f"The sample-mode pin was 441 on the two-week base. Re-pin at "
+              f"store day; see docs/SWITCH_REGISTER.md.")
+    else:
+        checks.append(("base day ATMs (rung 2 pin, sample mode)", fc["base_day_atms"], 441))
     checks.append(("2024 growth factor is unity", fc["years"]["2024"]["growth_factor"], 1.0))
     checks.append(("spot years carried", len(fc["years"]), 7))
     r = adac_hindcast(verbose=False)
