@@ -22,3 +22,6 @@ avia_config.json
 *.pdf
 *_audit.json
 pretest_*
+
+# oracle and tool run output: results are never committed
+runs/

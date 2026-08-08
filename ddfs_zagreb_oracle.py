@@ -20,8 +20,7 @@ OAG = _store_path("oag.duckdb")
 # + BG/RO (air borders from 31 Mar 2024). HR domestic counts in the Schengen split
 # (Jess's model rows group "Schengen and domestic"). IE, GB, CY non-Schengen.
 SCHENGEN = set("AT BE BG CH CZ DE DK EE ES FI FR GR HR HU IS IT LI LT LU LV MT NL NO PL PT RO SE SI SK".split())
-# ICAO aerodrome reference code letter by OAG aircraft code (wingspan-based).
-ICAO = {"SF3":"B","AT4":"B","DH4":"C","AT7":"C","319":"C","320":"C","321":"C","32A":"C","32B":"C","32N":"C","32Q":"C","221":"C","223":"C","73H":"C","738":"C","7M8":"C","E70":"C","E75":"C","E90":"C","E95":"C","295":"C","CR9":"C","CRJ":"B","332":"E","333":"E","343":"E","787":"E","788":"E","789":"E","77W":"E","772":"E","763":"D","752":"D"}
+from ddfs_aircraft import ICAO  # one owner: ddfs_aircraft.py
 
 def week_events(week_tag):
     con = duckdb.connect(OAG, read_only=True)
@@ -116,6 +115,24 @@ def apply_pack(p):
 
 apply_pack(load_pack())
 BASE = os.environ.get("DDFS_ORACLE_OUT", ".")
+
+
+def _outdir():
+    """Where a run writes. Never the fixtures directory.
+
+    Until 8 August 2026 a run defaulted to
+    ddfs_bridge_fixtures/zagreb_oracle_run.tsv, sitting beside
+    zagreb_oracle_run_v02.tsv, which is the pin the regression compares
+    against. The two files were byte-identical, so a run wrote a result into
+    the directory holding the check on that result. On Meridian the same shape
+    released a watcher early on a stale file. Fixtures hold pins; runs go to
+    runs/, which is gitignored, or to DDFS_ORACLE_OUT.
+    """
+    d = os.environ.get("DDFS_ORACLE_OUT")
+    if not d:
+        d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "runs")
+    os.makedirs(d, exist_ok=True)
+    return d
 DAYS = [31,28,31,30,31,30,31,31,30,31,30,31]
 
 def load_weeks():
@@ -364,7 +381,7 @@ if __name__ == "__main__":
         out = sys.argv[i + 1] if len(sys.argv) > i + 1 else "zagreb_oracle_run.tsv"
         run_to(out)
     res = run()
-    out = _fixdir() + "/zagreb_oracle_run.tsv"
+    out = os.path.join(_outdir(), "zagreb_oracle_run.tsv")
     with open(out, "w") as f:
         f.write("sheet\tsection\tmeasure\trow\tsplit\tyear\tvalue\n")
         for r in res:

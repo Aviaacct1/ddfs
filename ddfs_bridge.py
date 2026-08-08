@@ -135,8 +135,6 @@ def run_oracle_diff(oag_path, oracle_path):
     print(f"ground time match: {gt_hit}/{gt_tot}")
     print("exceptions:", exceptions or "none")
 
-if __name__ == "__main__" and len(sys.argv) == 3:
-    run_oracle_diff(sys.argv[1], sys.argv[2])
 
 def emit_transfersheet(events, pairs, year, out_path):
     """Schedule-side columns of the v15 TransferSheet layout; engine-computed
@@ -460,3 +458,26 @@ def selftest_canonical(fix_dir="."):
     n = sum(1 for _ in open(t.name)) - 1
     assert n == 92, "CAST projection identity"
     print("canonical selftest: 92 rows x 46 cols, CAST projection identity, Ok")
+
+
+if __name__ == "__main__":
+    # The entry point used to sit in the middle of the file, guarded by
+    # len(sys.argv) == 3, so --selftest did nothing and the module's three
+    # selftests could only be run by importing it by hand. A capability with no
+    # runnable test is how this module drifted out of reach; see
+    # docs/SWITCH_REGISTER.md.
+    import os
+    fix = os.environ.get("DDFS_FIXTURES") or os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "ddfs_bridge_fixtures")
+    if "--selftest" in sys.argv:
+        ok = True
+        for name in ("selftest", "selftest_aog", "selftest_canonical"):
+            try:
+                globals()[name](fix)
+            except Exception as ex:
+                print(f"FAIL {name}: {type(ex).__name__}: {ex}")
+                ok = False
+        print("ddfs_bridge: three selftests, " + ("all pass" if ok else "FAILURES"))
+        sys.exit(0 if ok else 1)
+    if len(sys.argv) == 3:
+        run_oracle_diff(sys.argv[1], sys.argv[2])

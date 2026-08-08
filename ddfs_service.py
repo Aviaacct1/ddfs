@@ -54,12 +54,7 @@ import ddfs_pack_emit as pe
 import ddfs_hindcast as hc
 import ddfs_towerlog as tl
 
-ICAO = {"SF3":"B","AT4":"B","CRJ":"B","CR9":"C","DH4":"C","AT7":"C",
- "319":"C","320":"C","321":"C","32A":"C","32B":"C","32N":"C","32Q":"C","221":"C","223":"C",
- "73H":"C","738":"C","739":"C","7M8":"C","7M9":"C","E70":"C","E75":"C","E90":"C","E95":"C","295":"C","290":"C",
- "332":"E","333":"E","339":"E","343":"E","359":"E","35K":"E","351":"E",
- "787":"E","788":"E","789":"E","781":"E","77W":"E","77L":"E","772":"E","773":"E",
- "763":"D","752":"D","764":"D","388":"F","744":"E","748":"F"}
+from ddfs_aircraft import ICAO  # one owner: ddfs_aircraft.py
 
 
 def _load_password():
