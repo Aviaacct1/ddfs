@@ -1,0 +1,34 @@
+# Fixture: adac2023_oracle_pins.tsv | extracted 19 July 2026 | prior-vintage benchmark pin set (headline Max rows only)
+# Source: /Shared/Archive/2023/ADAC - 2023 Traffic Update/Report/In progress/SENT/AUH_Design day forecast_SentToADAC.xlsx
+# Egnyte group_id 318604e9-8b9d-4e6c-9cf9-528f16b7e6c3, entry_id f9d73d21-c215-4d2e-933d-1aabdf18eb8f (Project Falcon, Design Day Flight Schedules - 2023, cover date 27-Jun-23)
+# Sign convention: hourly Max departures NEGATIVE as printed; rolling-hour Max values displayed POSITIVE for both A and D in the source; recorded as printed.
+# Header (both hourly and rolling tables): Time 2019A 2019D 2023A 2023D 2024A 2024D 2028A 2028D 2032A 2032D 2042A 2042D 2040A (Motts) 2040D (Motts). Case >> Base.
+sheet	section	measure	row	split	year	value
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2023	26
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2023	-30
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2024	26
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2024	-40
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2028	33
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2028	-57
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2032	38
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2032	-63
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2042	47
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2042	-83
+Summary - ATMs	Hourly ATMs	ATMs	Max	A (Motts)	2040	45
+Summary - ATMs	Hourly ATMs	ATMs	Max	D (Motts)	2040	-39
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2019	0
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2019	0
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2023	29
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2023	32
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2024	30
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2024	43
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2028	38
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2028	60
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2032	42
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2032	66
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2042	50
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2042	86
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A (Motts)	2040	48
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D (Motts)	2040	42

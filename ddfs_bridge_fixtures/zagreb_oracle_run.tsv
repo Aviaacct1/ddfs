@@ -1,0 +1,996 @@
+sheet	section	measure	row	split	year	value
+Base	30th BHRs - Old Terminal		2-way	Schengen	2025	964.1
+Base	30th BHRs - Old Terminal		2-way	Non-Schengen	2025	618.4
+Base	30th BHRs - Old Terminal		2-way	Total	2025	1202.7
+Base	30th BHRs - Old Terminal		Arrivals	Schengen	2025	672.9
+Base	30th BHRs - Old Terminal		Arrivals	Non-Schengen	2025	481.1
+Base	30th BHRs - Old Terminal		Arrivals	Total	2025	854.2
+Base	30th BHRs - Old Terminal		Departures	Schengen	2025	696.3
+Base	30th BHRs - Old Terminal		Departures	Non-Schengen	2025	357.6
+Base	30th BHRs - Old Terminal		Departures	Total	2025	786.6
+Base	30th BHRs - New Terminal		2-way	Schengen	2025	949.5
+Base	30th BHRs - New Terminal		2-way	Non-Schengen	2025	694.6
+Base	30th BHRs - New Terminal		2-way	Total	2025	1421.0
+Base	30th BHRs - New Terminal		Arrivals	Schengen	2025	641.2
+Base	30th BHRs - New Terminal		Arrivals	Non-Schengen	2025	320.7
+Base	30th BHRs - New Terminal		Arrivals	Total	2025	741.4
+Base	30th BHRs - New Terminal		Departures	Schengen	2025	707.8
+Base	30th BHRs - New Terminal		Departures	Non-Schengen	2025	512.0
+Base	30th BHRs - New Terminal		Departures	Total	2025	839.3
+Base	30th BHRs - Overall		2-way	Schengen	2025	1370.6
+Base	30th BHRs - Overall		2-way	Non-Schengen	2025	897.5
+Base	30th BHRs - Overall		2-way	Total	2025	2153.2
+Base	30th BHRs - Overall		Arrivals	Schengen	2025	850.1
+Base	30th BHRs - Overall		Arrivals	Non-Schengen	2025	658.5
+Base	30th BHRs - Overall		Arrivals	Total	2025	1154.1
+Base	30th BHRs - Overall		Departures	Schengen	2025	911.9
+Base	30th BHRs - Overall		Departures	Non-Schengen	2025	574.8
+Base	30th BHRs - Overall		Departures	Total	2025	1169.0
+Base	30th BHRs - Overall		Transfers		2025	195.7
+Base	Peak Runway Movements		Overall peak		2025	19.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2025	8.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2025	8.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2025	6.6
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2025	6.6
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2025	8.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2025	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2025	14.3
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2025	14.3
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2025	14.3
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2025	14.3
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2025	1.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2025	14.3
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2025	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2025	1.2
+Base	Stands - by Stand Code - Commercial	Overall peak	A		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	B		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	C		2025	19.0
+Base	Stands - by Stand Code - Commercial	Overall peak	D		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	E		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	Total		2025	19.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	A		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	B		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	C		2025	19.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	D		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	E		2025	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	Total		2025	19.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	A		2025	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	B		2025	1.2
+Base	Stands - by Stand Code - Commercial	Individual Peak	C		2025	19.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	D		2025	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	E		2025	1.2
+Base	Stands - by Stand Code - Non Commercial	Overall peak	A		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	B		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	C		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	D		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	E		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	Total		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	A		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	B		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	C		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	D		2025	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	E		2025	FLAG: GA input
+Base	Stands - by Stand Code - Overall	Overall peak	A		2025	2.0
+Base	Stands - by Stand Code - Overall	Overall peak	B		2025	6.0
+Base	Stands - by Stand Code - Overall	Overall peak	C		2025	21.0
+Base	Stands - by Stand Code - Overall	Overall peak	D		2025	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	E		2025	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	Total		2025	29.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	A		2025	2.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	B		2025	4.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	C		2025	20.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	D		2025	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	E		2025	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	Total		2025	26.0
+Base	Stands - by Stand Code - Overall	Individual Peak	A		2025	3.0
+Base	Stands - by Stand Code - Overall	Individual Peak	B		2025	9.2
+Base	Stands - by Stand Code - Overall	Individual Peak	C		2025	22.0
+Base	Stands - by Stand Code - Overall	Individual Peak	D		2025	2.0
+Base	Stands - by Stand Code - Overall	Individual Peak	E		2025	2.2
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2025	8.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2025	8.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2025	6.6
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2025	6.6
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2025	8.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2025	14.3
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2025	14.3
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2025	14.3
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2025	14.3
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2025	1.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2025	14.3
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2025	1.2
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	C		2025	19.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	Total		2025	19.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	B		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	C		2025	19.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	Total		2025	19.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	A		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	B		2025	1.2
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	C		2025	19.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	E		2025	1.2
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	A		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	B		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	C		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	D		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	E		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	Total		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	A		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	B		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	C		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	D		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	E		2025	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	A		2025	2.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	B		2025	6.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	C		2025	21.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	Total		2025	29.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	A		2025	2.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	B		2025	4.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	C		2025	20.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	D		2025	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	E		2025	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	Total		2025	26.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	A		2025	3.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	B		2025	9.2
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	C		2025	22.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	D		2025	2.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	E		2025	2.2
+Base	30th BHRs - Old Terminal		2-way	Schengen	2030	1329.5
+Base	30th BHRs - Old Terminal		2-way	Non-Schengen	2030	806.1
+Base	30th BHRs - Old Terminal		2-way	Total	2030	1617.3
+Base	30th BHRs - Old Terminal		Arrivals	Schengen	2030	959.7
+Base	30th BHRs - Old Terminal		Arrivals	Non-Schengen	2030	601.5
+Base	30th BHRs - Old Terminal		Arrivals	Total	2030	1152.8
+Base	30th BHRs - Old Terminal		Departures	Schengen	2030	985.6
+Base	30th BHRs - Old Terminal		Departures	Non-Schengen	2030	461.3
+Base	30th BHRs - Old Terminal		Departures	Total	2030	1076.8
+Base	30th BHRs - New Terminal		2-way	Schengen	2030	1089.1
+Base	30th BHRs - New Terminal		2-way	Non-Schengen	2030	796.6
+Base	30th BHRs - New Terminal		2-way	Total	2030	1638.7
+Base	30th BHRs - New Terminal		Arrivals	Schengen	2030	735.4
+Base	30th BHRs - New Terminal		Arrivals	Non-Schengen	2030	367.8
+Base	30th BHRs - New Terminal		Arrivals	Total	2030	850.3
+Base	30th BHRs - New Terminal		Departures	Schengen	2030	811.8
+Base	30th BHRs - New Terminal		Departures	Non-Schengen	2030	587.2
+Base	30th BHRs - New Terminal		Departures	Total	2030	962.6
+Base	30th BHRs - Overall		2-way	Schengen	2030	1780.0
+Base	30th BHRs - Overall		2-way	Non-Schengen	2030	1076.4
+Base	30th BHRs - Overall		2-way	Total	2030	2642.6
+Base	30th BHRs - Overall		Arrivals	Schengen	2030	1090.3
+Base	30th BHRs - Overall		Arrivals	Non-Schengen	2030	806.4
+Base	30th BHRs - Overall		Arrivals	Total	2030	1444.0
+Base	30th BHRs - Overall		Departures	Schengen	2030	1153.8
+Base	30th BHRs - Overall		Departures	Non-Schengen	2030	659.2
+Base	30th BHRs - Overall		Departures	Total	2030	1504.5
+Base	30th BHRs - Overall		Transfers		2030	224.4
+Base	Peak Runway Movements		Overall peak		2030	22.8
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2030	11.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2030	11.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2030	9.4
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2030	9.4
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2030	11.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2030	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2030	16.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2030	16.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2030	16.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2030	16.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2030	1.4
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2030	16.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2030	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2030	1.4
+Base	Stands - by Stand Code - Commercial	Overall peak	A		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	B		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	C		2030	23.1
+Base	Stands - by Stand Code - Commercial	Overall peak	D		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	E		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	Total		2030	23.1
+Base	Stands - by Stand Code - Commercial	Overnight Peak	A		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	B		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	C		2030	23.1
+Base	Stands - by Stand Code - Commercial	Overnight Peak	D		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	E		2030	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	Total		2030	23.1
+Base	Stands - by Stand Code - Commercial	Individual Peak	A		2030	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	B		2030	1.4
+Base	Stands - by Stand Code - Commercial	Individual Peak	C		2030	23.1
+Base	Stands - by Stand Code - Commercial	Individual Peak	D		2030	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	E		2030	1.4
+Base	Stands - by Stand Code - Non Commercial	Overall peak	A		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	B		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	C		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	D		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	E		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	Total		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	A		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	B		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	C		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	D		2030	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	E		2030	FLAG: GA input
+Base	Stands - by Stand Code - Overall	Overall peak	A		2030	2.4
+Base	Stands - by Stand Code - Overall	Overall peak	B		2030	7.3
+Base	Stands - by Stand Code - Overall	Overall peak	C		2030	25.5
+Base	Stands - by Stand Code - Overall	Overall peak	D		2030	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	E		2030	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	Total		2030	35.2
+Base	Stands - by Stand Code - Overall	Overnight Peak	A		2030	2.4
+Base	Stands - by Stand Code - Overall	Overnight Peak	B		2030	4.9
+Base	Stands - by Stand Code - Overall	Overnight Peak	C		2030	24.3
+Base	Stands - by Stand Code - Overall	Overnight Peak	D		2030	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	E		2030	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	Total		2030	31.6
+Base	Stands - by Stand Code - Overall	Individual Peak	A		2030	3.6
+Base	Stands - by Stand Code - Overall	Individual Peak	B		2030	11.1
+Base	Stands - by Stand Code - Overall	Individual Peak	C		2030	26.7
+Base	Stands - by Stand Code - Overall	Individual Peak	D		2030	2.4
+Base	Stands - by Stand Code - Overall	Individual Peak	E		2030	2.6
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2030	11.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2030	11.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2030	9.4
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2030	9.4
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2030	11.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2030	16.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2030	16.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2030	16.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2030	16.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2030	1.4
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2030	16.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2030	1.4
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	C		2030	23.1
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	Total		2030	23.1
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	B		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	C		2030	23.1
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	Total		2030	23.1
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	A		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	B		2030	1.4
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	C		2030	23.1
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	E		2030	1.4
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	A		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	B		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	C		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	D		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	E		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	Total		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	A		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	B		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	C		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	D		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	E		2030	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	A		2030	2.4
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	B		2030	7.3
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	C		2030	25.5
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	Total		2030	35.2
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	A		2030	2.4
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	B		2030	4.9
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	C		2030	24.3
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	D		2030	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	E		2030	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	Total		2030	31.6
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	A		2030	3.6
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	B		2030	11.1
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	C		2030	26.7
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	D		2030	2.4
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	E		2030	2.6
+Base	30th BHRs - Old Terminal		2-way	Schengen	2035	1736.6
+Base	30th BHRs - Old Terminal		2-way	Non-Schengen	2035	1008.5
+Base	30th BHRs - Old Terminal		2-way	Total	2035	2065.7
+Base	30th BHRs - Old Terminal		Arrivals	Schengen	2035	1238.4
+Base	30th BHRs - Old Terminal		Arrivals	Non-Schengen	2035	733.4
+Base	30th BHRs - Old Terminal		Arrivals	Total	2035	1463.5
+Base	30th BHRs - Old Terminal		Departures	Schengen	2035	1304.8
+Base	30th BHRs - Old Terminal		Departures	Non-Schengen	2035	574.6
+Base	30th BHRs - Old Terminal		Departures	Total	2035	1414.6
+Base	30th BHRs - New Terminal		2-way	Schengen	2035	1243.1
+Base	30th BHRs - New Terminal		2-way	Non-Schengen	2035	909.3
+Base	30th BHRs - New Terminal		2-way	Total	2035	1870.6
+Base	30th BHRs - New Terminal		Arrivals	Schengen	2035	839.5
+Base	30th BHRs - New Terminal		Arrivals	Non-Schengen	2035	419.9
+Base	30th BHRs - New Terminal		Arrivals	Total	2035	970.6
+Base	30th BHRs - New Terminal		Departures	Schengen	2035	926.6
+Base	30th BHRs - New Terminal		Departures	Non-Schengen	2035	670.3
+Base	30th BHRs - New Terminal		Departures	Total	2035	1098.8
+Base	30th BHRs - Overall		2-way	Schengen	2035	2210.8
+Base	30th BHRs - Overall		2-way	Non-Schengen	2035	1272.9
+Base	30th BHRs - Overall		2-way	Total	2035	3217.8
+Base	30th BHRs - Overall		Arrivals	Schengen	2035	1362.5
+Base	30th BHRs - Overall		Arrivals	Non-Schengen	2035	968.6
+Base	30th BHRs - Overall		Arrivals	Total	2035	1795.2
+Base	30th BHRs - Overall		Departures	Schengen	2035	1415.1
+Base	30th BHRs - Overall		Departures	Non-Schengen	2035	768.8
+Base	30th BHRs - Overall		Departures	Total	2035	1886.4
+Base	30th BHRs - Overall		Transfers		2035	256.2
+Base	Peak Runway Movements		Overall peak		2035	26.5
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2035	14.8
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2035	14.8
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2035	12.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2035	12.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2035	14.8
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2035	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2035	18.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2035	18.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2035	18.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2035	18.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2035	1.6
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2035	18.1
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2035	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2035	1.6
+Base	Stands - by Stand Code - Commercial	Overall peak	A		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	B		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	C		2035	27.4
+Base	Stands - by Stand Code - Commercial	Overall peak	D		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	E		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	Total		2035	27.4
+Base	Stands - by Stand Code - Commercial	Overnight Peak	A		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	B		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	C		2035	27.4
+Base	Stands - by Stand Code - Commercial	Overnight Peak	D		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	E		2035	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	Total		2035	27.4
+Base	Stands - by Stand Code - Commercial	Individual Peak	A		2035	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	B		2035	1.6
+Base	Stands - by Stand Code - Commercial	Individual Peak	C		2035	27.4
+Base	Stands - by Stand Code - Commercial	Individual Peak	D		2035	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	E		2035	1.6
+Base	Stands - by Stand Code - Non Commercial	Overall peak	A		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	B		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	C		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	D		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	E		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	Total		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	A		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	B		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	C		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	D		2035	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	E		2035	FLAG: GA input
+Base	Stands - by Stand Code - Overall	Overall peak	A		2035	2.9
+Base	Stands - by Stand Code - Overall	Overall peak	B		2035	8.7
+Base	Stands - by Stand Code - Overall	Overall peak	C		2035	30.3
+Base	Stands - by Stand Code - Overall	Overall peak	D		2035	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	E		2035	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	Total		2035	41.9
+Base	Stands - by Stand Code - Overall	Overnight Peak	A		2035	2.9
+Base	Stands - by Stand Code - Overall	Overnight Peak	B		2035	5.8
+Base	Stands - by Stand Code - Overall	Overnight Peak	C		2035	28.9
+Base	Stands - by Stand Code - Overall	Overnight Peak	D		2035	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	E		2035	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	Total		2035	37.6
+Base	Stands - by Stand Code - Overall	Individual Peak	A		2035	4.4
+Base	Stands - by Stand Code - Overall	Individual Peak	B		2035	13.2
+Base	Stands - by Stand Code - Overall	Individual Peak	C		2035	31.8
+Base	Stands - by Stand Code - Overall	Individual Peak	D		2035	2.9
+Base	Stands - by Stand Code - Overall	Individual Peak	E		2035	3.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2035	14.8
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2035	14.8
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2035	12.3
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2035	12.3
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2035	14.8
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2035	18.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2035	18.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2035	18.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2035	18.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2035	1.6
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2035	18.1
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2035	1.6
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	C		2035	27.4
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	Total		2035	27.4
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	B		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	C		2035	27.4
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	Total		2035	27.4
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	A		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	B		2035	1.6
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	C		2035	27.4
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	E		2035	1.6
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	A		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	B		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	C		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	D		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	E		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	Total		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	A		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	B		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	C		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	D		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	E		2035	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	A		2035	2.9
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	B		2035	8.7
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	C		2035	30.3
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	Total		2035	41.9
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	A		2035	2.9
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	B		2035	5.8
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	C		2035	28.9
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	D		2035	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	E		2035	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	Total		2035	37.6
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	A		2035	4.4
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	B		2035	13.2
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	C		2035	31.8
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	D		2035	2.9
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	E		2035	3.0
+Base	30th BHRs - Old Terminal		2-way	Schengen	2040	2171.5
+Base	30th BHRs - Old Terminal		2-way	Non-Schengen	2040	1260.6
+Base	30th BHRs - Old Terminal		2-way	Total	2040	2566.9
+Base	30th BHRs - Old Terminal		Arrivals	Schengen	2040	1554.2
+Base	30th BHRs - Old Terminal		Arrivals	Non-Schengen	2040	877.9
+Base	30th BHRs - Old Terminal		Arrivals	Total	2040	1797.5
+Base	30th BHRs - Old Terminal		Departures	Schengen	2040	1624.6
+Base	30th BHRs - Old Terminal		Departures	Non-Schengen	2040	698.1
+Base	30th BHRs - Old Terminal		Departures	Total	2040	1738.0
+Base	30th BHRs - New Terminal		2-way	Schengen	2040	1413.4
+Base	30th BHRs - New Terminal		2-way	Non-Schengen	2040	1033.9
+Base	30th BHRs - New Terminal		2-way	Total	2040	2126.7
+Base	30th BHRs - New Terminal		Arrivals	Schengen	2040	954.5
+Base	30th BHRs - New Terminal		Arrivals	Non-Schengen	2040	477.4
+Base	30th BHRs - New Terminal		Arrivals	Total	2040	1103.5
+Base	30th BHRs - New Terminal		Departures	Schengen	2040	1053.5
+Base	30th BHRs - New Terminal		Departures	Non-Schengen	2040	762.1
+Base	30th BHRs - New Terminal		Departures	Total	2040	1249.3
+Base	30th BHRs - Overall		2-way	Schengen	2040	2680.7
+Base	30th BHRs - Overall		2-way	Non-Schengen	2040	1488.4
+Base	30th BHRs - Overall		2-way	Total	2040	3824.6
+Base	30th BHRs - Overall		Arrivals	Schengen	2040	1641.1
+Base	30th BHRs - Overall		Arrivals	Non-Schengen	2040	1146.1
+Base	30th BHRs - Overall		Arrivals	Total	2040	2182.0
+Base	30th BHRs - Overall		Departures	Schengen	2040	1744.6
+Base	30th BHRs - Overall		Departures	Non-Schengen	2040	883.4
+Base	30th BHRs - Overall		Departures	Total	2040	2246.7
+Base	30th BHRs - Overall		Transfers		2040	291.3
+Base	Peak Runway Movements		Overall peak		2040	30.6
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2040	18.2
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2040	18.2
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2040	15.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2040	15.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2040	18.2
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2040	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2040	20.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2040	20.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2040	20.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2040	20.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2040	1.8
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2040	20.2
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2040	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2040	1.8
+Base	Stands - by Stand Code - Commercial	Overall peak	A		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	B		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	C		2040	32.0
+Base	Stands - by Stand Code - Commercial	Overall peak	D		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	E		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	Total		2040	32.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	A		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	B		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	C		2040	32.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	D		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	E		2040	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	Total		2040	32.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	A		2040	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	B		2040	1.8
+Base	Stands - by Stand Code - Commercial	Individual Peak	C		2040	32.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	D		2040	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	E		2040	1.8
+Base	Stands - by Stand Code - Non Commercial	Overall peak	A		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	B		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	C		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	D		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	E		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	Total		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	A		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	B		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	C		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	D		2040	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	E		2040	FLAG: GA input
+Base	Stands - by Stand Code - Overall	Overall peak	A		2040	3.4
+Base	Stands - by Stand Code - Overall	Overall peak	B		2040	10.3
+Base	Stands - by Stand Code - Overall	Overall peak	C		2040	35.4
+Base	Stands - by Stand Code - Overall	Overall peak	D		2040	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	E		2040	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	Total		2040	49.1
+Base	Stands - by Stand Code - Overall	Overnight Peak	A		2040	3.4
+Base	Stands - by Stand Code - Overall	Overnight Peak	B		2040	6.9
+Base	Stands - by Stand Code - Overall	Overnight Peak	C		2040	33.7
+Base	Stands - by Stand Code - Overall	Overnight Peak	D		2040	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	E		2040	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	Total		2040	44.0
+Base	Stands - by Stand Code - Overall	Individual Peak	A		2040	5.1
+Base	Stands - by Stand Code - Overall	Individual Peak	B		2040	15.5
+Base	Stands - by Stand Code - Overall	Individual Peak	C		2040	37.2
+Base	Stands - by Stand Code - Overall	Individual Peak	D		2040	3.4
+Base	Stands - by Stand Code - Overall	Individual Peak	E		2040	3.5
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2040	18.2
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2040	18.2
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2040	15.3
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2040	15.3
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2040	18.2
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2040	20.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2040	20.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2040	20.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2040	20.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2040	1.8
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2040	20.2
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2040	1.8
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	C		2040	32.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	Total		2040	32.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	B		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	C		2040	32.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	Total		2040	32.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	A		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	B		2040	1.8
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	C		2040	32.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	E		2040	1.8
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	A		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	B		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	C		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	D		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	E		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	Total		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	A		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	B		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	C		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	D		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	E		2040	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	A		2040	3.4
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	B		2040	10.3
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	C		2040	35.4
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	Total		2040	49.1
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	A		2040	3.4
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	B		2040	6.9
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	C		2040	33.7
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	D		2040	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	E		2040	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	Total		2040	44.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	A		2040	5.1
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	B		2040	15.5
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	C		2040	37.2
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	D		2040	3.4
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	E		2040	3.5
+Base	30th BHRs - Old Terminal		2-way	Schengen	2045	2656.1
+Base	30th BHRs - Old Terminal		2-way	Non-Schengen	2045	1548.7
+Base	30th BHRs - Old Terminal		2-way	Total	2045	3110.5
+Base	30th BHRs - Old Terminal		Arrivals	Schengen	2045	1895.6
+Base	30th BHRs - Old Terminal		Arrivals	Non-Schengen	2045	1040.8
+Base	30th BHRs - Old Terminal		Arrivals	Total	2045	2180.1
+Base	30th BHRs - Old Terminal		Departures	Schengen	2045	1981.6
+Base	30th BHRs - Old Terminal		Departures	Non-Schengen	2045	814.6
+Base	30th BHRs - Old Terminal		Departures	Total	2045	2129.1
+Base	30th BHRs - New Terminal		2-way	Schengen	2045	1603.2
+Base	30th BHRs - New Terminal		2-way	Non-Schengen	2045	1172.7
+Base	30th BHRs - New Terminal		2-way	Total	2045	2412.4
+Base	30th BHRs - New Terminal		Arrivals	Schengen	2045	1082.7
+Base	30th BHRs - New Terminal		Arrivals	Non-Schengen	2045	541.5
+Base	30th BHRs - New Terminal		Arrivals	Total	2045	1251.7
+Base	30th BHRs - New Terminal		Departures	Schengen	2045	1195.0
+Base	30th BHRs - New Terminal		Departures	Non-Schengen	2045	864.5
+Base	30th BHRs - New Terminal		Departures	Total	2045	1417.0
+Base	30th BHRs - Overall		2-way	Schengen	2045	3251.2
+Base	30th BHRs - Overall		2-way	Non-Schengen	2045	1727.2
+Base	30th BHRs - Overall		2-way	Total	2045	4555.7
+Base	30th BHRs - Overall		Arrivals	Schengen	2045	1956.7
+Base	30th BHRs - Overall		Arrivals	Non-Schengen	2045	1341.1
+Base	30th BHRs - Overall		Arrivals	Total	2045	2613.5
+Base	30th BHRs - Overall		Departures	Schengen	2045	2120.3
+Base	30th BHRs - Overall		Departures	Non-Schengen	2045	1022.7
+Base	30th BHRs - Overall		Departures	Total	2045	2675.1
+Base	30th BHRs - Overall		Transfers		2045	330.4
+Base	Peak Runway Movements		Overall peak		2045	35.3
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2045	21.9
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2045	21.9
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2045	18.6
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2045	18.6
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2045	21.9
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2045	0.0
+Base	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2045	22.5
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2045	22.5
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2045	22.5
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2045	22.5
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2045	2.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2045	22.5
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2045	0.0
+Base	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2045	2.0
+Base	Stands - by Stand Code - Commercial	Overall peak	A		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	B		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	C		2045	37.0
+Base	Stands - by Stand Code - Commercial	Overall peak	D		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	E		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overall peak	Total		2045	37.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	A		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	B		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	C		2045	37.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	D		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	E		2045	0.0
+Base	Stands - by Stand Code - Commercial	Overnight Peak	Total		2045	37.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	A		2045	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	B		2045	2.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	C		2045	37.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	D		2045	0.0
+Base	Stands - by Stand Code - Commercial	Individual Peak	E		2045	2.0
+Base	Stands - by Stand Code - Non Commercial	Overall peak	A		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	B		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	C		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	D		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	E		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overall peak	Total		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	A		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	B		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	C		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	D		2045	FLAG: GA input
+Base	Stands - by Stand Code - Non Commercial	Individual Peak	E		2045	FLAG: GA input
+Base	Stands - by Stand Code - Overall	Overall peak	A		2045	4.0
+Base	Stands - by Stand Code - Overall	Overall peak	B		2045	12.0
+Base	Stands - by Stand Code - Overall	Overall peak	C		2045	41.0
+Base	Stands - by Stand Code - Overall	Overall peak	D		2045	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	E		2045	0.0
+Base	Stands - by Stand Code - Overall	Overall peak	Total		2045	57.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	A		2045	4.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	B		2045	8.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	C		2045	39.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	D		2045	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	E		2045	0.0
+Base	Stands - by Stand Code - Overall	Overnight Peak	Total		2045	51.0
+Base	Stands - by Stand Code - Overall	Individual Peak	A		2045	6.0
+Base	Stands - by Stand Code - Overall	Individual Peak	B		2045	18.0
+Base	Stands - by Stand Code - Overall	Individual Peak	C		2045	43.0
+Base	Stands - by Stand Code - Overall	Individual Peak	D		2045	4.0
+Base	Stands - by Stand Code - Overall	Individual Peak	E		2045	4.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	C		2045	21.9
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overall peak	Total		2045	21.9
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	C		2045	18.6
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Overnight Peak	Total		2045	18.6
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	C		2045	21.9
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Old Terminal - Commercial	Individual Peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	C		2045	22.5
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overall peak	Total		2045	22.5
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	C		2045	22.5
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Overnight Peak	Total		2045	22.5
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	B		2045	2.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	C		2045	22.5
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - New Terminal - Commercial	Individual Peak	E		2045	2.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	C		2045	37.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overall peak	Total		2045	37.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	B		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	C		2045	37.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Overnight Peak	Total		2045	37.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	A		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	B		2045	2.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	C		2045	37.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Commercial	Individual Peak	E		2045	2.0
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	A		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	B		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	C		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	D		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	E		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overall peak	Total		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	A		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	B		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	C		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	D		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	E		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Overnight Peak	Total		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	A		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	B		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	C		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	D		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Non Commercial	Individual Peak	E		2045	FLAG: GA input
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	A		2045	4.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	B		2045	12.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	C		2045	41.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overall peak	Total		2045	57.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	A		2045	4.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	B		2045	8.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	C		2045	39.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	D		2045	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	E		2045	0.0
+Stand Scenario	Stands - by Stand Code - Overall	Overnight Peak	Total		2045	51.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	A		2045	6.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	B		2045	18.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	C		2045	43.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	D		2045	4.0
+Stand Scenario	Stands - by Stand Code - Overall	Individual Peak	E		2045	4.0

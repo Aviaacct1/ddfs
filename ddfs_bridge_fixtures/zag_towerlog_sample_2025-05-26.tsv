@@ -1,0 +1,20 @@
+# Towerlog SAMPLE, 26 May 2025 (Monday), 14 of circa 230 movements, hand-pinned 23 July 2026
+# Source: 2025 Towerlog.xlsx (MZLZ AODB export, Jess's file, Egnyte MZLZ Full Forecast 01 Data and Analysis),
+# rows transcribed from the Egnyte text extraction and visually verified; the full-day fixture is
+# extracted programmatically via ddfs_towerlog.py --extract once the workbook is placed at C:\Avia.
+# Classes deliberately span the completeness cases: scheduled pax, cargo, GA, military, positioning.
+dir	time	registration	carrier	flight	od_iata	actype	categ	kind	pax
+A	00:08	9HLOZ	RYR	2186	MLA	A320	S	PA	168
+D	05:51	9HLOA	RYR	6000	BGY	A320	S	PA	165
+A	05:57	LZCGB	BCS	9116	MXP	B738	S	C
+D	06:04	DAILI	DLH	1405	FRA	A319	S	PA	125
+A	06:10	SPSPF	SAR	1976	CGN	AT72	S	C
+D	06:15	PHNXO	KLM	1964	AMS	E295	S	PA	120
+D	07:05	SPSPF	SAR	1976	BEG	AT72	S	C
+D	08:00	CSPHB		177D	BEG	E55P	G	PA	1
+A	02:28	9AJET		001	NCE	C25A	G	PA	4
+A	08:25	TCLSV	THY	1053	IST	A21N	S	PA	157
+D	08:44	9ACAL	CTN	480	CPH	BCS3	S	PA	68
+D	10:10	130601	EUR	2912	RZE	C130	G	MC	0
+A	10:34	SEMKI	AUA	683	VIE	AT72	S	PA	66
+A	21:16	SPRSN	RYR	737	WRO	B738	C	ELP	0

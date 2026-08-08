@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+_dt_cache/
+duckdb_tmp/
+
+# stores and licensed data: never in a tool repo
+*.duckdb
+*.parquet
+*.xlsm
+*.joblib
+
+# secrets
+access_password.txt
+avia_config.json
+*.key
+.env
+
+# generated output
+*.pptx
+*.pdf
+*_audit.json
+pretest_*

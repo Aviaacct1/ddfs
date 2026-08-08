@@ -1,0 +1,995 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">
+<title>The Observatory - Design Day Flight Schedules</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F1B28; --brass:#D4A249; --paper:#F6F3EC; --paper-screen:#FAF8F3; --grey:#C4CDD6;
+  --hair:#E2DCCC; --hair-ink:#24313F; --signal:#CE3B2A;
+  --s2:#3D6A88; --s3:#5F8D7A; --s4:#A9553F; --s5:#8793A0; --s6:#7B617F; --s7:#9C8A4E;
+  --txt:#0F1B28; --mut:#6f6a5f; --meta:#8a8577; --rowhover:#efe9db;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --ui:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--serif);background:var(--paper-screen);color:var(--txt);font-size:15px;-webkit-font-smoothing:antialiased}
+header{background:var(--ink);color:var(--grey);padding:12px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--hair-ink)}
+.seal{width:30px;height:30px;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .inst{font-family:var(--ui);font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);display:block;line-height:1}
+.brand .prod{font-family:var(--serif);font-weight:400;font-size:19px;color:#F6F3EC;display:block;line-height:1.15;margin-top:3px}
+.brand .tag-beta{font-family:var(--ui);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(212,162,73,.5);padding:1px 5px;margin-left:2px;vertical-align:middle}
+.brand .provsub{font-family:var(--ui);font-size:9.5px;color:var(--meta);display:block;margin-top:3px}
+.spacer{flex:1}
+.ctl{display:flex;gap:10px;align-items:flex-end;font-size:11px;flex-wrap:wrap;font-family:var(--ui)}
+.ctl label{display:flex;flex-direction:column;gap:2px;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--meta)}
+.ctl select,.ctl input{padding:5px 8px;border-radius:0;border:1px solid rgba(196,205,214,.35);background:rgba(255,255,255,.04);color:#F6F3EC;font-size:12px;font-family:var(--ui)}
+.ctl select{min-width:170px}
+.ctl input{width:70px;cursor:text}
+.ctl select option{color:#222}
+.dl{padding:6px 12px;border-radius:0;border:1px solid rgba(196,205,214,.45);background:transparent;color:#F6F3EC;cursor:pointer;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase}
+.dl:hover{background:#F6F3EC;color:var(--ink)}
+nav{background:var(--paper-screen);border-bottom:1px solid var(--hair);padding:0 24px;display:flex;gap:2px;flex-wrap:wrap;font-family:var(--ui)}
+nav button{background:none;border:none;border-bottom:2px solid transparent;padding:12px 16px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);cursor:pointer}
+nav button.on{color:var(--ink);border-bottom-color:var(--brass);font-weight:600}
+nav button b{font-family:var(--ui);color:var(--brass);margin-right:5px;font-weight:600}
+main{max-width:1180px;margin:24px auto;padding:0 24px}
+.crumb{font-family:var(--ui);font-size:11px;letter-spacing:.06em;margin-bottom:16px;color:var(--mut);text-transform:uppercase}
+.card{background:var(--paper);border:1px solid var(--hair);border-radius:0;padding:20px 22px;margin-bottom:20px}
+.card h3{font-family:var(--ui);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 12px;font-weight:600}
+h4{font-family:var(--ui);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:14px 0 4px;font-weight:600}
+label.f{font-family:var(--ui);font-size:11px;margin-right:14px}
+select,input.f{background:#fff;border:1px solid var(--hair);color:var(--ink);border-radius:0;padding:4px 8px;font-size:13px;font-family:var(--ui)}
+button.act{font-family:var(--ui);background:var(--ink);color:var(--paper);border:0;border-radius:0;padding:8px 16px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-right:8px}
+button.act:hover{background:var(--brass);color:var(--ink)}
+button.act:disabled{opacity:.4;cursor:default}
+button.gold{background:var(--brass);color:var(--ink)}
+button.mini{font-family:var(--ui);background:none;border:1px solid var(--hair-ink);color:var(--ink);border-radius:0;padding:3px 10px;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;margin:4px 6px 0 0}
+button.mini:hover{background:var(--ink);color:var(--paper)}
+.subtabs{font-family:var(--ui);border-bottom:1px solid var(--hair);margin-bottom:12px}
+.subtabs button{background:none;border:none;border-bottom:2px solid transparent;padding:8px 14px;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);cursor:pointer}
+.subtabs button.on{color:var(--ink);border-bottom-color:var(--brass);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums lining-nums;margin-top:8px}
+th{background:none;color:var(--meta);text-align:left;padding:7px 9px;font-weight:600;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;border-bottom:1.5px solid var(--ink);font-family:var(--ui)}
+td{padding:6px 9px;border-bottom:1px solid var(--hair);font-family:var(--serif)}
+tr:hover td{background:var(--rowhover)}
+.src{font-family:var(--ui);font-size:10.5px;color:var(--meta);margin-top:6px;line-height:1.5}
+.kpi{display:inline-block;border:none;border-top:1px solid var(--hair-ink);padding:10px 14px 4px 2px;margin:6px 18px 6px 0;font-family:var(--ui);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--meta)}
+.kpi b{display:block;font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);letter-spacing:0;text-transform:none;margin-top:2px}
+.chartbox{background:var(--paper);border:1px solid var(--hair);margin:10px 0;padding:8px}
+.footer{margin:32px 0 16px;font-size:10.5px;letter-spacing:.03em;color:var(--meta);text-align:center;line-height:1.7;font-family:var(--ui)}
+.footer a{color:var(--s2)}
+#err{color:var(--signal);font-family:var(--ui);font-size:12px;margin-top:6px}
+.page{display:none}.page.on{display:block}
+.tab{display:none}.tab.on{display:block}
+.srcrad{font-family:var(--ui);font-size:12.5px;display:block;margin:6px 0;color:var(--ink)}
+.srcrad.dis{color:var(--meta)}
+.prov{font-family:var(--ui);font-size:11px;color:var(--meta)}
+.flagx{color:#9C8A4E}
+.pill{display:inline-block;border:1px solid var(--hair);border-radius:10px;padding:1px 8px;font-size:11px;color:var(--mut);margin:1px 2px;font-family:var(--ui)}
+pre{background:#fff;border:1px solid var(--hair);padding:10px;font-size:11.5px;overflow:auto;color:var(--ink);font-family:var(--mono,monospace)}
+</style></head><body>
+<header>
+  <div class="brand">
+    <svg class="seal" viewBox="0 0 32 32" fill="none" stroke="#C4CDD6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="16" cy="16" r="12.5"/><ellipse cx="16" cy="16" rx="5" ry="12.5"/><ellipse cx="16" cy="16" rx="12.5" ry="5"/><line x1="16" y1="3.5" x2="16" y2="28.5"/>
+      <path d="M5.9 9.2 A12.5 12.5 0 0 1 26.1 9.2" stroke="#D4A249" stroke-width="1.6"/></svg>
+    <div><span class="inst">The Observatory</span><span class="prod">Design Day Flight Schedules (DDFS) <span class="tag-beta">Beta</span></span><span class="provsub">one tool, five stages: base, method, design day, forecast, outputs; sample-mode proxies stated and upgrading at store day; internal, access controlled</span></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="ctl">
+    <label>Airport<input id="ap" list="apl" value="ZAG" maxlength="3"></label>
+    <datalist id="apl"></datalist>
+    <label>Year<select id="yr"><option value="">look up an airport...</option></select></label>
+    <button class="dl" onclick="loadYears()">Look up</button>
+  </div>
+</header>
+<nav>
+  <button id="nav-base" class="on" onclick="setPage('base')"><b>1</b>Base</button>
+  <button id="nav-method" onclick="setPage('method')"><b>2</b>Method comparison</button>
+  <button id="nav-day" onclick="setPage('day')"><b>3</b>Design day</button>
+  <button id="nav-forecast" onclick="setPage('forecast')"><b>4</b>Forecast</button>
+  <button id="nav-out" onclick="setPage('out')"><b>5</b>Outputs</button>
+</nav>
+<main>
+<div class="crumb" id="crumb">No airport loaded</div><div id="err"></div>
+
+<div class="page on" id="page-base">
+ <div class="card"><h3>1a &middot; Airport and schedule coverage</h3>
+  <div id="apinfo" class="src">Look up an airport in the header; the engine bundle covers 2,430 airports.</div>
+  <div id="covtable"></div>
+  <div class="src">Full years build any date; sample-week years are greyed and upgrade automatically at store day (coverage read live).</div></div>
+ <div class="card"><h3>1b &middot; Schedule base and completeness</h3>
+  <div class="src" id="basestmt">BASE: OAG published schedules (service type J), Sabre-weighted where pax basis. EXCLUDES: cargo, general aviation, military, positioning, ad-hoc charter. Where a towerlog or AODB day is held, the reconciliation quantifies the gap (shown with the built day, stage 3); where only OAG is available this exclusion is stated on the face of every output.</div>
+  <div class="src">Towerlog and AODB days are ingested via ddfs_towerlog (MZLZ AODB format; Bologna precedent). Held days reconcile automatically after a build.</div></div>
+</div>
+
+<div class="page" id="page-method">
+ <div class="card"><h3>2a &middot; Run conventions</h3>
+  <label class="f">Counting basis <select id="basis"><option value="atm">Movements (ATM)</option><option value="pax">Passengers (Sabre-weighted, indicative)</option></select></label>
+  <label class="f">Interval <select id="interval">
+    <option value="spot" selected>Five-yearly spot years</option>
+    <option value="seasonal" disabled>Seasonal (summer + winter days) - ACI item 3, next build</option>
+    <option value="annual" disabled>Annual - ACI item 5, next build</option>
+    <option value="biannual" disabled>Bi-annual - ACI item 5, next build</option>
+  </select></label>
+  <div class="src">The day-pick method itself is chosen with the build (stage 3); the comparison below is what informs that choice, and the engagement's choice is recorded with the run. Seasonal needs DD-block seasonality and a per-season reference day (Bologna precedent); listed and disabled until built.</div></div>
+ <div class="card"><h3>2b &middot; Method comparison, computed live on the full year</h3>
+  <button class="act" id="mbtn" onclick="runMethods()" disabled>Run the methods</button>
+  <span class="src" id="mspin"></span>
+  <div id="mtable" style="overflow-x:auto"></div>
+  <div class="src">Definitions verified against the IATA ADRM 10th edition (note 31 v2); plain-English wording per note 32 v2 is in the review Studio's method card. Survey first, choose second (ADRM guidance): pick a method straight from its row, or at the build (stage 3, Auto = SBR30 house default). PMAD and PMAWD are month-average constructs with no calendar date, so they compare but cannot build a day.</div></div>
+</div>
+
+<div class="page" id="page-day">
+ <div class="card"><h3>3 &middot; Build the design day</h3>
+  <label class="f">Design day <select id="pickm" onchange="togglePick()">
+    <option value="sbr30" selected>Auto - house default (SBR30 day; BAA, ZAG convention)</option>
+    <option value="sbr20">20th busiest hour day (Amsterdam convention)</option>
+    <option value="sbr40">40th busiest hour day (Paris convention)</option>
+    <option value="bhr5">BHR 5% busy hour day (ADRM; Heathrow practice)</option>
+    <option value="iata_busy_day">IATA Busy Day (2nd busiest day, average week, peak month)</option>
+    <option value="p90_day">90th-percentile day</option>
+    <option value="peak_day">Peak day (reference only; ADRM: do not plan to it)</option>
+    <option value="peak_hour_absolute">Absolute peak hour day (reference only)</option>
+    <option value="date">Specific date...</option>
+  </select></label>
+  <label class="f" id="ddaywrap" style="display:none">Date <input id="dday" class="f" value="" size="12" placeholder="YYYY-MM-DD"></label>
+  <button class="act" id="dbtn" onclick="runDdfs()" disabled>Build design day</button>
+  <span class="src" id="dspin"></span>
+  <div id="kpis"></div>
+  <div class="subtabs"><button id="dt-day" class="on" onclick="setDayTab('day')">Day profile</button><button id="dt-stands" onclick="setDayTab('stands')">Stands &amp; occupancy (airside, ATM)</button><button id="dt-term" onclick="setDayTab('term')">Terminal (landside, pax)</button></div>
+  <div class="tab on" id="tab-day"><div id="dcharts"></div><div id="dout" style="overflow-x:auto"></div><div class="src" id="dnote"></div></div>
+  <div class="tab" id="tab-stands"><div id="scharts"><div class="src">Build a design day first; the stand ledger, occupancy and towerlog reconciliation arrive here.</div></div></div>
+  <div class="tab" id="tab-term"><div id="tcharts"><div class="src">Build a design day first; the terminal view builds on the PAX-pick day (which can differ from the airside day) and arrives here.</div></div></div>
+ </div>
+</div>
+
+<div class="page" id="page-forecast">
+ <div class="card"><h3>4a &middot; Forecast source</h3>
+  <label class="srcrad"><input type="radio" name="fsrc" id="fsrc-engine" checked onchange="setFsrc()"> Avia Global Forecast engine (2,430 airports; Baseline / High / Low; levers with provenance)</label>
+  <label class="srcrad"><input type="radio" name="fsrc" id="fsrc-pack" onchange="setFsrc()"> Engagement pack (where one exists; ZAG Secondary Forecast pack held, conventions note 35 v2)</label>
+  <label class="srcrad dis"><input type="radio" name="fsrc" id="fsrc-client" disabled> Client-supplied forecast (ingest an external annual or segmented forecast, labelled client-supplied throughout) - ACI item 4, next build</label>
+  <div class="src">All sources emit the same pack grain, so everything downstream is identical. Overrides are request-scoped, recorded in the pack, never written back to the engine bundle.</div></div>
+ <div id="fsrc-engine-cards">
+ <div class="card"><h3>4b &middot; Engine forecast and levers</h3>
+  <label class="f">Scenario <select id="escen"><option>Baseline</option><option>High</option><option>Low</option></select></label>
+  <label class="f">Base year <input id="basey" class="f" size="6"></label>
+  <label class="f">Spot years <input id="spots" class="f" size="34" placeholder="e.g. 2025,2030,2035,2040,2045"></label>
+  <button class="act" onclick="loadEngine()">Load engine forecast</button>
+  <div id="einfo" class="src"></div>
+  <div id="echart"></div>
+  <h4>Levers (engine default | override | provenance)</h4>
+  <label class="f">Upgauge %/yr <input id="upg" class="f" size="7" placeholder="0.0"> <span class="prov">engine 0.0 | none</span></label>
+  <label class="f">Pax load factor <input id="plf" class="f" size="7" placeholder="0.80"> <span class="prov">working assumption 0.80</span></label>
+ </div>
+ <div class="card"><h3>4c &middot; Emit pack and run</h3>
+  <button class="act gold" onclick="emitPack()">Emit pack</button>
+  <button class="act" onclick="emitPack(true)">Emit + save to ddfs_packs</button>
+  <button class="act" onclick="dlPack()" id="dlp" disabled>Download pack JSON</button>
+  <button class="act gold" onclick="runForecast()" id="rfb" disabled>Run forecast &rarr; outputs</button>
+  <div id="packpanel" class="src">No pack emitted yet.</div>
+ </div>
+ </div>
+ <div id="fsrc-pack-cards" style="display:none">
+ <div class="card"><h3>4b &middot; Engagement pack (ZAG)</h3>
+  <div class="src">The ZAG Secondary Forecast pack (ddfs_packs/ZAG_secondary_2025.json) drives the oracle regeneration: 30th busy hours by terminal, direction and Schengen split; stand peaks by ICAO code; runway peaks; transfers. The diff against the sent deliverable of 18 June 2026, the fidelity reconciliation of 23 July, and the open conventions are in the <a href="/demo">review Studio's oracle card</a>.</div>
+  <button class="act gold" onclick="runZagChart();setPage('out');setOutTab('res')">Run pack forecast &rarr; outputs</button>
+ </div>
+ </div>
+</div>
+
+<div class="page" id="page-out">
+ <div class="subtabs"><button id="ot-res" class="on" onclick="setOutTab('res')">Results</button><button id="ot-ev" onclick="setOutTab('ev')">Evidence &amp; QA</button></div>
+ <div class="tab on" id="tab-res">
+  <div class="card"><h3>5 &middot; Forecast-year DDFS</h3>
+   <div id="eout"><div class="src">Run a forecast from stage 4; results arrive here.</div></div>
+   <div id="zcharts"></div>
+   <div style="margin-top:8px"><label class="f">Pack table, spot year <select id="zyr"><option>2025</option><option selected>2030</option><option>2035</option><option>2040</option><option>2045</option></select></label>
+   <button class="act" onclick="runZag()">Show measures table</button></div>
+   <div id="zout" style="overflow-x:auto;max-height:420px;overflow-y:auto"></div>
+   <div class="src" id="znote"></div></div>
+ </div>
+ <div class="tab" id="tab-ev">
+  <div class="card"><h3>Evidence &amp; QA (not part of the client walk)</h3>
+   <div class="src">The acceptance material behind the tool: the ZAG oracle regenerates the sent deliverable in sample mode (fidelity reconciliation of 23 July: growth matches x2.12 vs x2.12; base-year concentration proven and stated; Non-Schengen composition open with Jess); the ADAC 2024 hindcast diffs the engine chain against the sent deliverable's 692 pinned rows; the towerlog reconciliation quantifies the OAG base gap. Full detail in the <a href="/demo">review Studio</a> and ddfs_ladder.py.</div>
+   <button class="act" onclick="runHindcast()">Run the ADAC 2024 hindcast (692 pinned rows)</button>
+   <div id="hcout" class="src" style="margin-top:8px"></div></div>
+ </div>
+</div>
+
+<div class="footer">The Observatory - Design Day Flight Schedules (DDFS). An Avia Solutions product; internal, access controlled.<br>
+Avia engine on licensed OAG and Sabre data; sample-mode proxies are stated and upgrade automatically at store day. Conventions per notes 23 v3, 31 v2, 35 v2.<br>
+<a href="/demo">Internal review Studio</a> (method story, oracle diff card, embedded fixtures; Jess's review environment, not part of the product walk).</div>
+</main>
+<script>
+"use strict";
+/* ---- navigation: five stages + subtabs ---- */
+var PAGES=["base","method","day","forecast","out"];
+function setPage(pg){PAGES.forEach(function(x){
+ document.getElementById("nav-"+x).classList.toggle("on",x===pg);
+ document.getElementById("page-"+x).classList.toggle("on",x===pg);});}
+function setDayTab(t){["day","stands","term"].forEach(function(x){
+ document.getElementById("dt-"+x).classList.toggle("on",x===t);
+ document.getElementById("tab-"+x).classList.toggle("on",x===t);});}
+function setOutTab(t){["res","ev"].forEach(function(x){
+ document.getElementById("ot-"+x).classList.toggle("on",x===t);
+ document.getElementById("tab-"+x).classList.toggle("on",x===t);});}
+function setFsrc(){var eng=document.getElementById("fsrc-engine").checked;
+ document.getElementById("fsrc-engine-cards").style.display=eng?"":"none";
+ document.getElementById("fsrc-pack-cards").style.display=eng?"none":"";}
+function q(u){return fetch(u).then(function(r){return r.json();});}
+function tsvTable(t){var h='<table>';t.split("\n").forEach(function(l,i){
+ h+='<tr>'+l.split("\t").map(function(c){return (i===0?'<th>':'<td>')+c+(i===0?'</th>':'</td>');}).join("")+'</tr>';});
+ return h+'</table>';}
+function dl(name,text){var a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob([text],{type:'text/tab-separated-values'}));
+ a.download=name;a.click();}
+function dlSVG(boxId,name){var el=document.getElementById(boxId);if(!el)return;
+ var s=el.querySelector('svg');if(!s)return;
+ var a=document.createElement('a');
+ a.href=URL.createObjectURL(new Blob(['<?xml version="1.0"?>'+s.outerHTML],{type:'image/svg+xml'}));
+ a.download=name+'.svg';a.click();}
+/* ---- pure helpers (selftested) ---- */
+function parseSched(tsv){var out=[];tsv.split("\n").forEach(function(l){
+ var c=l.split("\t");if(c.length<9||c[0].charAt(0)==="#")return;var hm=c[2].split(":");
+ if(hm.length<2)return;
+ out.push({ad:c[1],minute:parseInt(hm[0],10)*60+parseInt(hm[1],10),seats:parseInt(c[6],10)||0,icao:c[8]});});
+ return out;}
+function bins5(ev){var a=[],d=[];for(var i=0;i<288;i++){a.push(0);d.push(0);}
+ ev.forEach(function(e){var b=Math.floor(e.minute/5);if(e.ad==="A")a[b]++;else d[b]++;});
+ return {a:a,d:d};}
+function rolling60(ev){var ma=[],md=[];for(var i=0;i<1440;i++){ma.push(0);md.push(0);}
+ ev.forEach(function(e){(e.ad==="A"?ma:md)[e.minute]++;});
+ var m=ma.map(function(v,i2){return v+md[i2];});
+ var best=0,at=0,cur=0;for(var t=0;t<60;t++)cur+=m[t];best=cur;
+ for(var s=1;s<=1380;s++){cur+=m[s+59]-m[s-1];if(cur>best){best=cur;at=s;}}
+ var series=[],win=[];for(var s2=0;s2<=1380;s2+=5){var a2=0,d2=0;
+  for(var k=s2;k<s2+60;k++){a2+=ma[k];d2+=md[k];}
+  series.push(a2+d2);win.push({start:s2,a:a2,d:d2,tot:a2+d2});}
+ return {max:best,at:at,series:series,win:win};}
+function fmtT(m){return String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0");}
+function classCounts(ev){var m={};ev.forEach(function(e){m[e.icao]=(m[e.icao]||0)+1;});return m;}
+function spotsList(){return document.getElementById("spots").value.split(",").map(function(s){return parseInt(s.trim(),10);}).filter(function(x){return !isNaN(x);});}
+function overrides(){var o={};var u=document.getElementById("upg").value,p=document.getElementById("plf").value;
+ if(u!=="")o.upgauge_pa=parseFloat(u);if(p!=="")o.pax_load_factor=parseFloat(p);return o;}
+/* ---- charts (Observatory palette; v15 conventions; y axes + labelled peaks) ---- */
+var NAVY="#3D6A88",GOLD="#D4A249",TEAL="#5F8D7A",MUT="#8a8577",AXIS="#C4CDD6",DEPL="#9C8A4E";
+function svgFrame(w,h,title){return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'" style="width:100%;max-width:'+w+'px;font-family:Inter,Arial,sans-serif">'+
+ '<text x="8" y="14" font-size="11" font-weight="bold" fill="#0F1B28">'+title+'</text>';}
+function chMirrorHourly(hourly,title){var w=760,h=240,mid=130,x0=34;var mx=1,pa=0,pd=0,pah=0,pdh=0;
+ Object.keys(hourly).forEach(function(k){var v=hourly[k];mx=Math.max(mx,v[0],v[1]);
+  if(v[0]>pa){pa=v[0];pah=parseInt(k,10);}if(v[1]>pd){pd=v[1];pdh=parseInt(k,10);}});
+ var g=svgFrame(w,h,title),bw=(w-x0-10)/24;
+ [0.5,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(mid-f*95)+'" x2="'+(w-8)+'" y2="'+(mid-f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid-f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';
+  g+='<line x1="'+x0+'" y1="'+(mid+f*95)+'" x2="'+(w-8)+'" y2="'+(mid+f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid+f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(mid+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ g+='<line x1="'+x0+'" y1="'+mid+'" x2="'+(w-8)+'" y2="'+mid+'" stroke="'+AXIS+'"/>';
+ for(var i=0;i<24;i++){var k=(i<10?"0":"")+i,v=hourly[k]||[0,0],x=x0+i*bw;
+  g+='<rect x="'+(x+1)+'" y="'+(mid-v[0]/mx*95)+'" width="'+(bw-2)+'" height="'+(v[0]/mx*95)+'" fill="'+NAVY+'"/>';
+  g+='<rect x="'+(x+1)+'" y="'+mid+'" width="'+(bw-2)+'" height="'+(v[1]/mx*95)+'" fill="'+GOLD+'"/>';
+  if(i%2===0)g+='<text x="'+(x+bw/2)+'" y="'+(h-18)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+k+':00</text>';}
+ g+='<text x="'+(x0+pah*bw+bw/2)+'" y="'+(mid-pa/mx*95-4)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+NAVY+'">peak '+pa+'</text>';
+ g+='<text x="'+(x0+pdh*bw+bw/2)+'" y="'+(mid+pd/mx*95+11)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+DEPL+'">peak '+pd+'</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid-100)+'" font-size="9" fill="'+NAVY+'">Arrivals</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid+106)+'" font-size="9" fill="'+DEPL+'">Departures</text>';
+ g+='<text x="12" y="'+mid+'" font-size="9" fill="'+MUT+'" transform="rotate(-90 12 '+mid+')" text-anchor="middle">ATMs / hour</text>';
+ return g+'</svg>';}
+function chMirror5(b,title){var w=760,h=240,mid=130,x0=34;var mx=1;
+ for(var i=0;i<288;i++)mx=Math.max(mx,b.a[i],b.d[i]);
+ var g=svgFrame(w,h,title),bw=(w-x0-10)/288;
+ [0.5,1].forEach(function(f){var val=(mx*f%1===0)?mx*f:(mx*f).toFixed(1);
+  g+='<line x1="'+x0+'" y1="'+(mid-f*95)+'" x2="'+(w-8)+'" y2="'+(mid-f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid-f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';
+  g+='<line x1="'+x0+'" y1="'+(mid+f*95)+'" x2="'+(w-8)+'" y2="'+(mid+f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid+f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(mid+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ g+='<line x1="'+x0+'" y1="'+mid+'" x2="'+(w-8)+'" y2="'+mid+'" stroke="'+AXIS+'"/>';
+ for(var i2=0;i2<288;i2++){var x=x0+i2*bw;
+  if(b.a[i2])g+='<rect x="'+x+'" y="'+(mid-b.a[i2]/mx*95)+'" width="'+Math.max(bw-.4,1)+'" height="'+(b.a[i2]/mx*95)+'" fill="'+NAVY+'"/>';
+  if(b.d[i2])g+='<rect x="'+x+'" y="'+mid+'" width="'+Math.max(bw-.4,1)+'" height="'+(b.d[i2]/mx*95)+'" fill="'+GOLD+'"/>';}
+ for(var hh=0;hh<24;hh+=2){var xh=x0+hh*12*bw;
+  g+='<text x="'+xh+'" y="'+(h-18)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+(hh<10?"0":"")+hh+':00</text>';}
+ g+='<text x="14" y="'+mid+'" font-size="9" fill="'+MUT+'" transform="rotate(-90 14 '+mid+')" text-anchor="middle">movements / 5 min</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid-100)+'" font-size="9" fill="'+NAVY+'">Arrivals</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid+106)+'" font-size="9" fill="'+DEPL+'">Departures</text>';
+ return g+'</svg>';}
+function chRoll(r,title){var w=760,h=190,x0=34,y0=150;var mx=Math.max(1,r.max);
+ var g=svgFrame(w,h,title),n=r.series.length,d="";
+ [0.25,0.5,0.75,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(y0-f*115)+'" x2="'+(w-8)+'" y2="'+(y0-f*115)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(y0-f*115+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(y0+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ for(var i=0;i<n;i++){var x=x0+i/(n-1)*(w-x0-10),y=y0-r.series[i]/mx*115;
+  d+=(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)+" ";}
+ g+='<path d="'+d+'" fill="none" stroke="'+TEAL+'" stroke-width="1.6"/>';
+ var xm=x0+(r.at/5)/(n-1)*(w-x0-10);
+ g+='<line x1="'+xm+'" y1="30" x2="'+xm+'" y2="'+y0+'" stroke="'+GOLD+'" stroke-dasharray="3 3"/>';
+ g+='<text x="'+Math.min(xm+3,w-150)+'" y="34" font-size="9" fill="'+DEPL+'">max '+r.max+' at '+fmtT(r.at)+'-'+fmtT(r.at+59)+'</text>';
+ for(var hh=0;hh<24;hh+=2){var xh=x0+(hh*12)/(n-1)*(w-x0-10);if(xh<w-10)
+  g+='<text x="'+xh+'" y="'+(h-16)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+(hh<10?"0":"")+hh+':00</text>';}
+ g+='<text x="14" y="100" font-size="9" fill="'+MUT+'" transform="rotate(-90 14 100)" text-anchor="middle">movements / rolling 60 min</text>';
+ return g+'</svg>';}
+function chLedger(sh,title){var w=760,h=210,x0=34,y0=165;var codes=Object.keys(sh);
+ var cols={A:"#7B617F",B:"#A9553F",C:"#3D6A88",D:"#5F8D7A",E:"#D4A249",F:"#8793A0"};var mx=1,pk=0,pkc="",pkh=0;
+ codes.forEach(function(c){sh[c].forEach(function(v,i){mx=Math.max(mx,v);
+  if(v>pk){pk=v;pkc=c;pkh=i;}});});
+ var g=svgFrame(w,h,title);
+ [0.5,1].forEach(function(f){var val=Math.round(mx*f*10)/10;
+  g+='<line x1="'+x0+'" y1="'+(y0-f*125)+'" x2="'+(w-8)+'" y2="'+(y0-f*125)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(y0-f*125+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(y0+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ if(pk){var px=x0+(pkh+.5)/24*(w-x0-10),py=y0-pk/mx*125;
+  g+='<circle cx="'+px+'" cy="'+py+'" r="3" fill="none" stroke="'+(cols[pkc]||MUT)+'" stroke-width="1.4"/>';
+  g+='<text x="'+px+'" y="'+(py-6)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+(cols[pkc]||MUT)+'">Max AOG '+pk+' (code '+pkc+', '+(pkh<10?"0":"")+pkh+':00)</text>';}
+ codes.forEach(function(c){var d="";
+  for(var i=0;i<24;i++){var x=x0+(i+.5)/24*(w-x0-10),y=y0-sh[c][i]/mx*125;
+   d+=(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)+" ";}
+  g+='<path d="'+d+'" fill="none" stroke="'+(cols[c]||MUT)+'" stroke-width="1.6"/>';
+  var last=sh[c][23];g+='<text x="'+(w-8)+'" y="'+(y0-last/mx*125+3)+'" font-size="9" text-anchor="end" fill="'+(cols[c]||MUT)+'">'+c+'</text>';});
+ for(var hh=0;hh<24;hh+=2){var xh=x0+(hh+.5)/24*(w-x0-10);
+  g+='<text x="'+xh+'" y="'+(h-16)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+(hh<10?"0":"")+hh+':00</text>';}
+ g+='<text x="14" y="105" font-size="9" fill="'+MUT+'" transform="rotate(-90 14 105)" text-anchor="middle">aircraft on ground</text>';
+ return g+'</svg>';}
+function chHorizon(years,series,title,unit){var w=760,h=200,x0=44,y0=155;var mx=1;
+ Object.keys(series).forEach(function(s){series[s].forEach(function(v){if(v!=null)mx=Math.max(mx,v);});});
+ var cols=[NAVY,GOLD,TEAL,"#A9553F"];var g=svgFrame(w,h,title),si=0;
+ [0.25,0.5,0.75,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(y0-f*115)+'" x2="'+(w-118)+'" y2="'+(y0-f*115)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(y0-f*115+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val.toLocaleString("en-GB")+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(y0+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ Object.keys(series).forEach(function(s){var d="",f=true;
+  years.forEach(function(y,i){var v=series[s][i];if(v==null)return;
+   var x=x0+i/(years.length-1)*(w-x0-120),yy=y0-v/mx*115;
+   d+=(f?"M":"L")+x.toFixed(1)+" "+yy.toFixed(1)+" ";f=false;});
+  g+='<path d="'+d+'" fill="none" stroke="'+cols[si%4]+'" stroke-width="1.8"/>';
+  g+='<text x="'+(w-112)+'" y="'+(34+si*13)+'" font-size="9" fill="'+cols[si%4]+'">'+s+'</text>';si++;});
+ years.forEach(function(y,i){var x=x0+i/(years.length-1)*(w-x0-120);
+  g+='<text x="'+x+'" y="'+(h-16)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+y+'</text>';});
+ g+='<text x="14" y="100" font-size="9" fill="'+MUT+'" transform="rotate(-90 14 100)" text-anchor="middle">'+unit+'</text>';
+ return g+'</svg>';}
+function chMirrorSeats(sa,sd,title){var w=760,h=250,mid=132,x0=48;var mx=1,pa=0,pd=0,pah=0,pdh=0;
+ for(var i=0;i<24;i++){mx=Math.max(mx,sa[i],sd[i]);
+  if(sa[i]>pa){pa=sa[i];pah=i;}if(sd[i]>pd){pd=sd[i];pdh=i;}}
+ var g=svgFrame(w,h,title),bw=(w-x0-10)/24;
+ [0.5,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(mid-f*95)+'" x2="'+(w-8)+'" y2="'+(mid-f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid-f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val.toLocaleString("en-GB")+'</text>';
+  g+='<line x1="'+x0+'" y1="'+(mid+f*95)+'" x2="'+(w-8)+'" y2="'+(mid+f*95)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(mid+f*95+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val.toLocaleString("en-GB")+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(mid+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ g+='<line x1="'+x0+'" y1="'+mid+'" x2="'+(w-8)+'" y2="'+mid+'" stroke="'+AXIS+'"/>';
+ for(var i2=0;i2<24;i2++){var x=x0+i2*bw;
+  if(sa[i2])g+='<rect x="'+(x+1)+'" y="'+(mid-sa[i2]/mx*95)+'" width="'+(bw-2)+'" height="'+(sa[i2]/mx*95)+'" fill="'+TEAL+'"/>';
+  if(sd[i2])g+='<rect x="'+(x+1)+'" y="'+mid+'" width="'+(bw-2)+'" height="'+(sd[i2]/mx*95)+'" fill="'+GOLD+'"/>';
+  if(i2%2===0)g+='<text x="'+(x+bw/2)+'" y="'+(h-18)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+(i2<10?"0":"")+i2+':00</text>';}
+ g+='<text x="'+(x0+pah*bw+bw/2)+'" y="'+(mid-pa/mx*95-4)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+TEAL+'">peak '+pa.toLocaleString("en-GB")+'</text>';
+ g+='<text x="'+(x0+pdh*bw+bw/2)+'" y="'+(mid+pd/mx*95+11)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+DEPL+'">peak '+pd.toLocaleString("en-GB")+'</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid-100)+'" font-size="9" fill="'+TEAL+'">Arriving seats</text>';
+ g+='<text x="'+(x0+4)+'" y="'+(mid+106)+'" font-size="9" fill="'+DEPL+'">Departing seats</text>';
+ g+='<text x="12" y="'+mid+'" font-size="9" fill="'+MUT+'" transform="rotate(-90 12 '+mid+')" text-anchor="middle">seats / hour (at flight time)</text>';
+ return g+'</svg>';}
+function termCard(ls,airsideDay){
+ if(!ls)return "";
+ var lf=0.80;
+ var h='<span class="kpi">Landside design day<b>'+ls.design_day+'</b></span>'
+  +'<span class="kpi">Vs airside day<b>'+(ls.same_day_as_airside_build?'same day':'DIFFERENT ('+airsideDay+')')+'</b></span>'
+  +'<span class="kpi">Day seats<b>'+ls.day_seats.toLocaleString("en-GB")+'</b></span>'
+  +'<span class="kpi">Peak hour seats<b>'+ls.peak_hour_seats.toLocaleString("en-GB")+' at '+ls.peak_hour+'</b></span>'
+  +'<span class="kpi">Indicative peak hour pax<b>'+Math.round(ls.peak_hour_seats*lf).toLocaleString("en-GB")+'</b></span>';
+ h+='<div class="src">Terminal sizes on the PAX-pick day per the basis-duality rule; stands and runway stay on the ATM day. Indicative pax = seats x 0.80 WORKING ASSUMPTION (ZAG precedent, note 35 v2); the engagement load factor replaces it, stated not defaulted. '
+  +'FLAG, next depth layer: in-terminal occupancy needs presentation profiles (check-in, security and immigration curves converting flight-time pax to terminal dwell, ADRM terminal practice) plus the transfer share; engagement inputs, never defaulted here.</div>';
+ return h;}
+function chSeats(hs,title){var w=760,h=210,x0=44,y0=165;var mx=1,pk=0,pkh=0;
+ hs.forEach(function(v,i){mx=Math.max(mx,v);if(v>pk){pk=v;pkh=i;}});
+ var g=svgFrame(w,h,title),bw=(w-x0-10)/24;
+ [0.5,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(y0-f*125)+'" x2="'+(w-8)+'" y2="'+(y0-f*125)+'" stroke="'+AXIS+'" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(y0-f*125+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val.toLocaleString("en-GB")+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(y0+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ for(var i=0;i<24;i++){var x=x0+i*bw;
+  if(hs[i])g+='<rect x="'+(x+1)+'" y="'+(y0-hs[i]/mx*125)+'" width="'+(bw-2)+'" height="'+(hs[i]/mx*125)+'" fill="'+TEAL+'"/>';
+  if(i%2===0)g+='<text x="'+(x+bw/2)+'" y="'+(h-16)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+(i<10?"0":"")+i+':00</text>';}
+ g+='<text x="'+(x0+pkh*bw+bw/2)+'" y="'+(y0-pk/mx*125-5)+'" text-anchor="middle" font-size="9" font-weight="bold" fill="'+TEAL+'">peak '+pk.toLocaleString("en-GB")+'</text>';
+ g+='<text x="12" y="100" font-size="9" fill="'+MUT+'" transform="rotate(-90 12 100)" text-anchor="middle">seats / hour</text>';
+ return g+'</svg>';}
+function chEngine(r,base){var ys=r.years,w=760,h=230,x0=44,y0=200;var all=[];
+ ["Baseline","High","Low"].forEach(function(s){(r.series[s]||[]).forEach(function(v){if(v!=null)all.push(v);});});
+ var mx=Math.max.apply(null,all)*1.08;
+ function X(y){return x0+(y-ys[0])/(ys[ys.length-1]-ys[0])*(w-x0-10);}
+ function Y(v){return y0-v/mx*(y0-18);}
+ function path(s,col,dash){var d="",f=true;ys.forEach(function(y,i){var v=(r.series[s]||[])[i];if(v!=null){d+=(f?"M":"L")+X(y).toFixed(1)+" "+Y(v).toFixed(1)+" ";f=false;}});return '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="2" '+(dash?'stroke-dasharray="5 4"':'')+'/>';}
+ var g='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'" style="width:100%;background:#fff;border:1px solid var(--hair)">';
+ for(var t=0;t<=4;t++){var v=mx*t/4;g+='<line x1="'+x0+'" y1="'+Y(v)+'" x2="'+(w-10)+'" y2="'+Y(v)+'" stroke="#E2DCCC"/><text x="'+(x0-4)+'" y="'+(Y(v)+4)+'" text-anchor="end" fill="'+MUT+'" font-size="10">'+v.toFixed(0)+'m</text>';}
+ g+='<line x1="'+X(base)+'" y1="18" x2="'+X(base)+'" y2="'+y0+'" stroke="'+GOLD+'" stroke-dasharray="3 3"/><text x="'+(X(base)+3)+'" y="30" fill="#A9553F" font-size="10">base '+base+' | forecast &rarr;</text>';
+ g+=path("High",TEAL,true)+path("Low","#CE3B2A",true)+path("Baseline",NAVY,false);
+ [ys[0],2030,2040,2050,ys[ys.length-1]].forEach(function(y){if(y>=ys[0]&&y<=ys[ys.length-1])g+='<text x="'+X(y)+'" y="'+(y0+14)+'" fill="'+MUT+'" font-size="10" text-anchor="middle">'+y+'</text>';});
+ g+='<text x="'+(w-12)+'" y="14" fill="'+MUT+'" font-size="10" text-anchor="end">annual passengers (m), '+ys[0]+'-'+ys[ys.length-1]+' &middot; Baseline solid, High/Low dashed</text></svg>';
+ return g;}
+function box(id,svg,name,src){return '<div class="chartbox" id="'+id+'">'+svg+
+ '<button class="mini" onclick="dlSVG(\''+id+'\',\''+name+'\')">Download SVG</button>'+
+ '<span class="src" style="margin-left:8px">'+src+'</span></div>';}
+/* ---- Excel chart workbook builder (v1 Studio excel layer; native editable
+   charts; author and last-modified-by Avia Solutions) ---- */
+var CRC_T=(function(){var t=[],c;for(var n=0;n<256;n++){c=n;
+ for(var k=0;k<8;k++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);t[n]=c>>>0;}return t;})();
+function crc32(u8){var c=0xFFFFFFFF;
+ for(var i=0;i<u8.length;i++)c=CRC_T[(c^u8[i])&0xFF]^(c>>>8);
+ return (c^0xFFFFFFFF)>>>0;}
+function strU8(s){return new TextEncoder().encode(s);}
+function zipStore(entries){
+ var parts=[],central=[],offset=0;
+ entries.forEach(function(e){
+  var data=(typeof e.data==="string")?strU8(e.data):e.data;
+  var name=strU8(e.name),crc=crc32(data);
+  var lh=new DataView(new ArrayBuffer(30));
+  lh.setUint32(0,0x04034b50,true);lh.setUint16(4,20,true);lh.setUint16(6,0,true);
+  lh.setUint16(8,0,true);lh.setUint16(10,0,true);lh.setUint16(12,0x548C,true);
+  lh.setUint32(14,crc,true);lh.setUint32(18,data.length,true);lh.setUint32(22,data.length,true);
+  lh.setUint16(26,name.length,true);lh.setUint16(28,0,true);
+  parts.push(new Uint8Array(lh.buffer),name,data);
+  var ch=new DataView(new ArrayBuffer(46));
+  ch.setUint32(0,0x02014b50,true);ch.setUint16(4,20,true);ch.setUint16(6,20,true);
+  ch.setUint16(8,0,true);ch.setUint16(10,0,true);ch.setUint16(12,0,true);ch.setUint16(14,0x548C,true);
+  ch.setUint32(16,crc,true);ch.setUint32(20,data.length,true);ch.setUint32(24,data.length,true);
+  ch.setUint16(28,name.length,true);
+  ch.setUint32(42,offset,true);
+  central.push(new Uint8Array(ch.buffer),name);
+  offset+=30+name.length+data.length;
+ });
+ var cdLen=0;central.forEach(function(p){cdLen+=p.length;});
+ var end=new DataView(new ArrayBuffer(22));
+ end.setUint32(0,0x06054b50,true);end.setUint16(8,entries.length,true);
+ end.setUint16(10,entries.length,true);end.setUint32(12,cdLen,true);
+ end.setUint32(16,offset,true);
+ var total=offset+cdLen+22,out=new Uint8Array(total),pos=0;
+ parts.concat(central,[new Uint8Array(end.buffer)]).forEach(function(p){out.set(p,pos);pos+=p.length;});
+ return out;}
+function xEsc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function colL(n){var s="";n++;while(n>0){var m=(n-1)%26;s=String.fromCharCode(65+m)+s;n=Math.floor((n-1)/26);}return s;}
+function sheetXML(rows,withDrawing){
+ var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheetData>';
+ rows.forEach(function(r,ri){
+  x+='<row r="'+(ri+1)+'">';
+  r.forEach(function(v,ci){
+   if(v===""||v===null||v===undefined)return;
+   var ref=colL(ci)+(ri+1);
+   if(typeof v==="number")x+='<c r="'+ref+'"><v>'+v+'</v></c>';
+   else x+='<c r="'+ref+'" t="inlineStr"><is><t>'+xEsc(v)+'</t></is></c>';
+  });
+  x+='</row>';
+ });
+ x+='</sheetData>';
+ if(withDrawing)x+='<drawing r:id="rId1"/>';
+ return x+'</worksheet>';}
+function serXML(i,sheet,nameCell,name,catRange,cats,valRange,vals,colour,isLine){
+ var s='<c:ser><c:idx val="'+i+'"/><c:order val="'+i+'"/>';
+ s+='<c:tx><c:strRef><c:f>'+sheet+'!'+nameCell+'</c:f><c:strCache><c:ptCount val="1"/><c:pt idx="0"><c:v>'+xEsc(name)+'</c:v></c:pt></c:strCache></c:strRef></c:tx>';
+ if(isLine)s+='<c:spPr><a:ln w="22225"><a:solidFill><a:srgbClr val="'+colour+'"/></a:solidFill></a:ln></c:spPr>';
+ else s+='<c:spPr><a:solidFill><a:srgbClr val="'+colour+'"/></a:solidFill></c:spPr>';
+ if(isLine)s+='<c:marker><c:symbol val="none"/></c:marker>';
+ s+='<c:cat><c:strRef><c:f>'+sheet+'!'+catRange+'</c:f><c:strCache><c:ptCount val="'+cats.length+'"/>';
+ cats.forEach(function(c,j){s+='<c:pt idx="'+j+'"><c:v>'+xEsc(c)+'</c:v></c:pt>';});
+ s+='</c:strCache></c:strRef></c:cat>';
+ s+='<c:val><c:numRef><c:f>'+sheet+'!'+valRange+'</c:f><c:numCache><c:formatCode>General</c:formatCode><c:ptCount val="'+vals.length+'"/>';
+ vals.forEach(function(v,j){s+='<c:pt idx="'+j+'"><c:v>'+v+'</c:v></c:pt>';});
+ s+='</c:numCache></c:numRef></c:val>';
+ return s+'</c:ser>';}
+function chartXML(def){
+ var ax1=111111111,ax2=222222222;
+ var n=def.cats.length;
+ var catRange="$"+colL(def.catCol)+"$2:$"+colL(def.catCol)+"$"+(n+1);
+ var x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><c:chart>';
+ x+='<c:title><c:tx><c:rich><a:bodyPr/><a:lstStyle/><a:p><a:pPr><a:defRPr sz="1400" b="1"><a:latin typeface="Arial"/></a:defRPr></a:pPr><a:r><a:rPr lang="en-GB" sz="1400" b="1"><a:latin typeface="Arial"/></a:rPr><a:t>'+xEsc(def.title)+'</a:t></a:r></a:p></c:rich></c:tx><c:overlay val="0"/></c:title><c:autoTitleDeleted val="0"/>';
+ x+='<c:plotArea><c:layout/>';
+ var isLine=def.type==="line";
+ x+=isLine?'<c:lineChart><c:grouping val="standard"/><c:varyColors val="0"/>':
+  '<c:barChart><c:barDir val="col"/><c:grouping val="'+(def.stacked?"stacked":"clustered")+'"/><c:varyColors val="0"/>';
+ def.series.forEach(function(s,i){
+  var vr="$"+colL(s.col)+"$2:$"+colL(s.col)+"$"+(n+1);
+  var nc="$"+colL(s.col)+"$1";
+  x+=serXML(i,def.sheet,nc,s.name,catRange,def.cats,vr,s.vals,s.colour,isLine);
+ });
+ if(!isLine&&def.stacked)x+='<c:overlap val="100"/>';
+ if(isLine)x+='<c:marker val="0"/>';
+ x+='<c:axId val="'+ax1+'"/><c:axId val="'+ax2+'"/>';
+ x+=isLine?'</c:lineChart>':'</c:barChart>';
+ x+='<c:catAx><c:axId val="'+ax1+'"/><c:scaling><c:orientation val="minMax"/></c:scaling><c:delete val="0"/><c:axPos val="b"/><c:txPr><a:bodyPr/><a:lstStyle/><a:p><a:pPr><a:defRPr sz="900"><a:latin typeface="Arial"/></a:defRPr></a:pPr><a:endParaRPr lang="en-GB"/></a:p></c:txPr><c:crossAx val="'+ax2+'"/></c:catAx>';
+ x+='<c:valAx><c:axId val="'+ax2+'"/><c:scaling><c:orientation val="minMax"/></c:scaling><c:delete val="0"/><c:axPos val="l"/><c:txPr><a:bodyPr/><a:lstStyle/><a:p><a:pPr><a:defRPr sz="900"><a:latin typeface="Arial"/></a:defRPr></a:pPr><a:endParaRPr lang="en-GB"/></a:p></c:txPr><c:crossAx val="'+ax1+'"/></c:valAx>';
+ x+='</c:plotArea><c:legend><c:legendPos val="b"/><c:overlay val="0"/></c:legend><c:plotVisOnly val="1"/><c:dispBlanksAs val="gap"/></c:chart></c:chartSpace>';
+ return x;}
+function drawingXML(){
+ return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><xdr:twoCellAnchor><xdr:from><xdr:col>5</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>1</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from><xdr:to><xdr:col>16</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>24</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to><xdr:graphicFrame macro=""><xdr:nvGraphicFramePr><xdr:cNvPr id="2" name="Chart 1"/><xdr:cNvGraphicFramePr/></xdr:nvGraphicFramePr><xdr:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/></xdr:xfrm><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart"><c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" r:id="rId1"/></a:graphicData></a:graphic></xdr:graphicFrame><xdr:clientData/></xdr:twoCellAnchor></xdr:wsDr>';}
+var STYLES='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="1"><font><sz val="10"/><name val="Arial"/></font></fonts><fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills><borders count="1"><border/></borders><cellStyleXfs count="1"><xf/></cellStyleXfs><cellXfs count="1"><xf/></cellXfs></styleSheet>';
+function coreXML(title){
+ var d=new Date().toISOString().slice(0,19)+"Z";
+ return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>'+xEsc(title)+'</dc:title><dc:creator>Avia Solutions</dc:creator><cp:lastModifiedBy>Avia Solutions</cp:lastModifiedBy><dcterms:created xsi:type="dcterms:W3CDTF">'+d+'</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">'+d+'</dcterms:modified></cp:coreProperties>';}
+var APPXML='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Avia Solutions DDFS Bridge</Application></Properties>';
+function buildChartXlsx(items,title){
+ var entries=[];
+ var ct='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/><Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/><Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>';
+ items.forEach(function(it,i){
+  ct+='<Override PartName="/xl/worksheets/sheet'+(i+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>';
+  ct+='<Override PartName="/xl/charts/chart'+(i+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.drawingml.chart+xml"/>';
+  ct+='<Override PartName="/xl/drawings/drawing'+(i+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.drawing+xml"/>';
+ });
+ ct+='</Types>';
+ entries.push({name:"[Content_Types].xml",data:ct});
+ entries.push({name:"_rels/.rels",data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/></Relationships>'});
+ var wb='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>';
+ var wbr='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">';
+ items.forEach(function(it,i){
+  wb+='<sheet name="'+xEsc(it.sheet)+'" sheetId="'+(i+1)+'" r:id="rId'+(i+1)+'"/>';
+  wbr+='<Relationship Id="rId'+(i+1)+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet'+(i+1)+'.xml"/>';
+ });
+ wb+='</sheets></workbook>';
+ wbr+='<Relationship Id="rId'+(items.length+1)+'" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>';
+ entries.push({name:"xl/workbook.xml",data:wb});
+ entries.push({name:"xl/_rels/workbook.xml.rels",data:wbr});
+ entries.push({name:"xl/styles.xml",data:STYLES});
+ items.forEach(function(it,i){
+  var n=i+1;
+  entries.push({name:"xl/worksheets/sheet"+n+".xml",data:sheetXML(it.rows,true)});
+  entries.push({name:"xl/worksheets/_rels/sheet"+n+".xml.rels",data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawing'+n+'.xml"/></Relationships>'});
+  entries.push({name:"xl/drawings/drawing"+n+".xml",data:drawingXML()});
+  entries.push({name:"xl/drawings/_rels/drawing"+n+".xml.rels",data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="../charts/chart'+n+'.xml"/></Relationships>'});
+  entries.push({name:"xl/charts/chart"+n+".xml",data:chartXML(it.chart)});
+ });
+ entries.push({name:"docProps/core.xml",data:coreXML(title)});
+ entries.push({name:"docProps/app.xml",data:APPXML});
+ return zipStore(entries);}
+/* ---- chart data definitions from the LIVE build ---- */
+function excelDayDefs(r,ev,lab){
+ var defs=[];
+ (function(){var b=bins5(ev),cats=[],rows=[["Time","Arrivals","Departures"]];
+  for(var i=0;i<288;i++){var t=fmtT(i*5);cats.push(t);rows.push([t,b.a[i],-b.d[i]]);}
+  defs.push({key:"c5min",sheet:"Data_5min",rows:rows,
+   chart:{title:"Design Day Output - ATMs | 5-minute intervals | "+lab+" | Local Time",
+    sheet:"Data_5min",type:"line",cats:cats,catCol:0,
+    series:[{name:"Arrivals",vals:b.a,colour:"156082",col:1},
+            {name:"Departures",vals:b.d.map(function(v){return -v;}),colour:"E97132",col:2}]}});})();
+ (function(){var ro=rolling60(ev);
+  var cats=ro.win.map(function(x){return fmtT(x.start);});
+  var rows=[["Window start","Arrivals","Departures","Total"]].concat(
+   ro.win.map(function(x){return[fmtT(x.start),x.a,x.d,x.tot];}));
+  defs.push({key:"croll",sheet:"Data_Rolling",rows:rows,
+   chart:{title:"Design Day Output - Total Movements | Rolling 60min | "+lab+" | Local Time",
+    sheet:"Data_Rolling",type:"line",cats:cats,catCol:0,
+    series:[{name:"Total",vals:ro.win.map(function(x){return x.tot;}),colour:"156082",col:3}]}});})();
+ (function(){var cats=[],rows=[["Hour","Arrivals","Departures"]],a=[],d=[];
+  for(var i=0;i<24;i++){var k=(i<10?"0":"")+i,v=r.hourly[k]||[0,0];
+   cats.push(k+":00");a.push(v[0]);d.push(v[1]);rows.push([k+":00",v[0],-v[1]]);}
+  defs.push({key:"chour",sheet:"Data_Hourly",rows:rows,
+   chart:{title:"Design Day Output - Hourly Movements | "+lab+" | Local Time",
+    sheet:"Data_Hourly",type:"bar",cats:cats,catCol:0,
+    series:[{name:"Arrivals",vals:a,colour:"156082",col:1},
+            {name:"Departures",vals:d.map(function(v){return -v;}),colour:"E97132",col:2}]}});})();
+ (function(){if(!r.stand_hourly)return;
+  var classes=Object.keys(r.stand_hourly).filter(function(c){
+   return Math.max.apply(null,r.stand_hourly[c])>0;});
+  if(!classes.length)classes=["C"];
+  var cats=[],i;for(i=0;i<24;i++)cats.push(String(i));
+  var rows=[["Hour"].concat(classes.map(function(c){return "Code "+c;}))];
+  for(i=0;i<24;i++)rows.push([String(i)].concat(classes.map(function(c){return r.stand_hourly[c][i];})));
+  var pal=["156082","E97132","196B24","0F9ED5","A02B93","4EA72E"];
+  defs.push({key:"caog",sheet:"Data_AOG",rows:rows,
+   chart:{title:"Aircraft on Ground by ICAO Code | max within each clock hour | "+lab,
+    sheet:"Data_AOG",type:"bar",stacked:true,cats:cats,catCol:0,
+    series:classes.map(function(c,j){return{name:"Code "+c,
+     vals:r.stand_hourly[c],colour:pal[j%pal.length],col:j+1};})}});})();
+ return defs;}
+function excelHorizonDefs(zc){
+ var cats=zc.years.map(function(y){return y+"F";}),defs=[];
+ function one(key,sheet,title,unitCol,series,pal){
+  var names=Object.keys(series);
+  var rows=[["Spot year"].concat(names)];
+  cats.forEach(function(c,i){rows.push([c].concat(names.map(function(nm){return series[nm][i];})));});
+  defs.push({key:key,sheet:sheet,rows:rows,
+   chart:{title:title,sheet:sheet,type:"line",cats:cats,catCol:0,
+    series:names.map(function(nm,j){return{name:nm,vals:series[nm],colour:pal[j%pal.length],col:j+1};})}});}
+ one("czbhr","Data_BHR","ZAG 30th Busy Hour Rates by Spot Year | Base | forecast | pax per 30th busy clock hour",1,zc.bhr,["156082","E97132","196B24"]);
+ one("czrwy","Data_Runway","ZAG Peak Runway Movements by Spot Year | Base | forecast | movements per 30th busy hour",1,zc.rwy,["156082"]);
+ one("czstd","Data_Stands","ZAG Commercial Stand Demand by Spot Year | Base | forecast | stands (Max AOG snapshot)",1,zc.stands,["E97132"]);
+ return defs;}
+function dlBytes(name,bytes){
+ var b=new Blob([bytes],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+ var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();}
+/* ---- basis duality card (pure renderer) ---- */
+function dualCard(dual,builtDay){
+ if(!dual)return "";
+ var col=dual.diverge?"#A9553F":"#5F8D7A",bg=dual.diverge?"#f5ece2":"#edf1ee";
+ var h='<div style="border:1px solid '+col+';background:'+bg+';padding:10px 14px;margin:10px 0;font-size:13px">';
+ h+='<b style="color:'+col+';font-family:var(--ui);font-size:11px;letter-spacing:.06em;text-transform:uppercase">'+(dual.diverge?"Airside and landside design days diverge":"One design day on both bases")+'</b> <span class="src">'+dual.note+'</span>';
+ h+='<table><tr><th>Pick basis</th><th>Design day</th><th>30th busy hour</th><th>Day ATMs</th><th>Day seats</th><th>Peak hour ATMs</th><th>Peak hour seats</th><th>Sizes</th></tr>';
+ [["atm","stands, runway, apron"],["pax","terminal, landside"]].forEach(function(bp){
+  var d=dual[bp[0]];
+  h+='<tr><td>'+d.basis+'</td><td><b>'+d.design_day+'</b>'+(d.design_day===builtDay?' (built)':'')+'</td><td>'+d.sbr30_value+' at '+d.sbr30_hour+'</td><td>'+d.day_atms+'</td><td>'+d.day_seats.toLocaleString("en-GB")+'</td><td>'+d.max_hour_atms+'</td><td>'+d.max_hour_seats.toLocaleString("en-GB")+'</td><td>'+bp[1]+'</td></tr>';});
+ h+='</table>';
+ if(dual.diverge){var other=dual.atm.design_day===builtDay?dual.pax.design_day:dual.atm.design_day;
+  h+='<button class="mini" onclick="buildDate(\''+other+'\')">Build the other day ('+other+')</button>';}
+ return h+'</div>';}
+function buildDate(d){document.getElementById('pickm').value='date';togglePick();
+ document.getElementById('dday').value=d;runDdfs();}
+/* ---- stand occupancy card (pure renderer) ---- */
+function chDwell(occ,title){var w=760,h=190,x0=40,y0=150;
+ var labels=occ.dwell_bin_labels,codes=Object.keys(occ.dwell_bins);
+ var cols={A:"#7B617F",B:"#A9553F",C:"#3D6A88",D:"#5F8D7A",E:"#D4A249",F:"#8793A0"};
+ var mx=1;labels.forEach(function(_,i){var s=0;codes.forEach(function(c){s+=occ.dwell_bins[c][i];});mx=Math.max(mx,s);});
+ var g=svgFrame(w,h,title),bw=(w-x0-120)/labels.length;
+ [0.5,1].forEach(function(f){var val=Math.round(mx*f);
+  g+='<line x1="'+x0+'" y1="'+(y0-f*110)+'" x2="'+(w-118)+'" y2="'+(y0-f*110)+'" stroke="#C4CDD6" stroke-dasharray="2 3"/><text x="'+(x0-3)+'" y="'+(y0-f*110+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">'+val+'</text>';});
+ g+='<text x="'+(x0-3)+'" y="'+(y0+3)+'" text-anchor="end" font-size="8.5" fill="'+MUT+'">0</text>';
+ labels.forEach(function(lb,i){var y=y0,x=x0+i*bw;
+  codes.forEach(function(c){var v=occ.dwell_bins[c][i];if(!v)return;
+   var hh=v/mx*110;y-=hh;
+   g+='<rect x="'+(x+8)+'" y="'+y+'" width="'+(bw-16)+'" height="'+hh+'" fill="'+(cols[c]||"#888")+'"/>';});
+  g+='<text x="'+(x+bw/2)+'" y="'+(h-16)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">'+lb+'</text>';});
+ codes.forEach(function(c,j){g+='<text x="'+(w-108)+'" y="'+(34+j*12)+'" font-size="9" fill="'+(cols[c]||"#888")+'">Code '+c+'</text>';});
+ g+='<text x="'+(w/2)+'" y="'+(h-2)+'" text-anchor="middle" font-size="9" fill="'+MUT+'">ground time (minutes)</text>';
+ g+='<text x="14" y="95" font-size="9" fill="'+MUT+'" transform="rotate(-90 14 95)" text-anchor="middle">rotations</text>';
+ return g+'</svg>';}
+function occCard(occ,carriedLedger){
+ if(!occ)return "";
+ var t=occ.totals;
+ var h='<h4>Stand occupancy behind the peak (rotations, overnight, towing)</h4>';
+ h+='<table><tr><th>ICAO code</th><th>Rotations</th><th>Median turn (min)</th><th>Turnarounds</th><th>Long park (tow candidates)</th><th>Night stops</th><th>Carried-in departures</th></tr>';
+ Object.keys(occ.per_code).forEach(function(c){var p=occ.per_code[c];
+  h+='<tr><td>'+c+'</td><td>'+p.rotations+'</td><td>'+(p.median_turn_min==null?'-':p.median_turn_min)+'</td><td>'+p.turnarounds+'</td><td>'+p.long_park+'</td><td>'+p.night_stops+'</td><td>'+p.carried_in_deps+'</td></tr>';});
+ h+='<tr><td><b>Total</b></td><td><b>'+t.rotations+'</b></td><td></td><td><b>'+t.turnarounds+'</b></td><td><b>'+t.long_park_tow_candidates+'</b></td><td><b>'+t.night_stops+'</b></td><td><b>'+t.carried_in_deps+'</b></td></tr></table>';
+ h+='<div class="src">'+occ.convention+' Every event accounted: 2 x rotations + night stops + carried-in = day events. '
+  +'The ledger carried-in stock ('+carriedLedger+') is the minimum consistent start; the pairing counts actual unmatched morning departures ('+t.carried_in_deps+'), and night stops ('+t.night_stops+') can differ from carried-in on a real day because weekly schedules are not daily-cyclic. Max AOG stays the headline; this is the occupancy behind it.</div>';
+ return h;}
+/* ---- towerlog reconciliation card (pure renderer) ---- */
+function reconCard(rc){
+ if(rc.error)return 'No towerlog or AODB day held for this date; the OAG base stands with its exclusions stated above. ('+rc.error.replace('FLAG: ','')+')';
+ var h=rc.SAMPLE?'<b style="color:#A9553F">SAMPLE - '+rc.SAMPLE+'</b><br>':'';
+ h+='<b>Towerlog reconciliation, '+rc.date+':</b> actuals '+rc.towerlog_movements+' movements vs OAG schedules '+rc.oag_movements+' (gap '+(rc.movement_gap>0?'+':'')+rc.movement_gap+'). ';
+ h+='Beyond-schedule movements: '+rc.beyond_schedule+' (';
+ h+=Object.keys(rc.towerlog_by_class).filter(function(k){return k!=="scheduled_pax";}).map(function(k){return k.replace('_',' ')+' '+rc.towerlog_by_class[k];}).join(', ')+'). ';
+ h+='Scheduled-pax actuals '+rc.oag_vs_scheduled_pax.towerlog_scheduled_pax+' vs OAG '+rc.oag_vs_scheduled_pax.oag+' ('+rc.oag_vs_scheduled_pax.note+'). ';
+ h+='Peak hour: towerlog '+rc.peak_hour.towerlog+' vs OAG '+rc.peak_hour.oag+' ATMs.';
+ if(rc.oag_base)h+=' <span class="src">OAG comparator: '+rc.oag_base+'.</span>';
+ return h;}
+/* ---- pack panel (pure renderers, cockpit convention) ---- */
+function packRow(k,v){var val=(v&&typeof v==="object")?("values" in v?v.values:v.value):v;var prov=(v&&v.provenance)||"";
+ var flag=String(prov).indexOf("FLAG")===0;var shown;
+ if(val==null)shown='<span class="flagx">flagged, not filled</span>';
+ else if(typeof val==="object")shown='<span class="pill">'+Object.keys(val).length+' values</span>';
+ else shown=String(val);
+ return "<tr><td>"+k+"</td><td>"+shown+'</td><td class="prov'+(flag?' flagx':'')+'">'+prov+"</td></tr>";}
+function renderPack(p){var h="<table><tr><th>field</th><th>value</th><th>provenance</th></tr>";
+ h+=packRow("pax_total (per spot year)",p.series.pax_total);
+ h+=packRow("scheduled_movements",p.series.scheduled_movements);
+ Object.keys(p.dd_block).forEach(function(k){h+=packRow(k,p.dd_block[k]);});
+ h+="</table><div class='src'>pack_id "+p.pack_id+" &middot; flags: "+(p.flags.length?p.flags.join("; "):"none")+" &middot; overrides: "+JSON.stringify(p.overrides_applied)+"</div>";
+ return h;}
+function fcTsv(){if(!FC)return "";var L=["year\tgrowth_factor\tday_atms\tpax_m\tatm_k\tavg_atm_day\tpax_per_atm\tdesign_day_atms"];
+ Object.keys(FC.years).forEach(function(y){var v=FC.years[y],k=v.kpis;L.push([y,v.growth_factor,v.day_atms,k.pax_m,k.atm_k,k.avg_atm_day,k.pax_per_atm,k.design_day_atms].join("\t"));});
+ L.push("");L.push("hour\t"+Object.keys(FC.years).map(function(y){return y+"_A\t"+y+"_D";}).join("\t"));
+ for(var h=0;h<24;h++){var hh=(h<10?"0":"")+h;L.push(hh+"\t"+Object.keys(FC.years).map(function(y){var v=FC.years[y].hourly[hh]||[0,0];return v[0]+"\t"+(-v[1]);}).join("\t"));}
+ L.push("");L.push("# departures negative (ADAC convention); base day: "+FC.base_day.mode+"; source: /api/forecast, pack "+(PACK?PACK.pack_id:""));
+ return L.join("\n");}
+/* ---- page wiring ---- */
+var lastM=null,lastD=null,lastEv=null,lastLab="",lastZC=null,lastZ=null,PACK=null,FC=null,APS=[],lastTermTsv="";
+function crumb(txt){document.getElementById('crumb').textContent=txt;}
+function apCode(){var v=document.getElementById("ap").value.trim();
+ var hit=APS.filter(function(a){return a.c===v.toUpperCase()||a.n.toLowerCase()===v.toLowerCase();});
+ return hit.length?hit[0].c:v.toUpperCase().slice(0,3);}
+function loadAirports(){q("/api/airports").then(function(r){APS=r.airports;var dl2=document.getElementById("apl");
+ dl2.innerHTML=APS.map(function(a){return '<option value="'+a.c+'">'+a.n+", "+a.cty+'</option>';}).join("");});}
+function loadYears(){var ap=apCode();
+ document.getElementById('err').textContent='';
+ q('/api/years?airport='+ap).then(function(r){
+  var sel=document.getElementById('yr');sel.innerHTML='';
+  var hit=APS.filter(function(a){return a.c===ap;});
+  document.getElementById('apinfo').innerHTML=hit.length?('<b>'+hit[0].n+'</b>, '+hit[0].cty+' &middot; engine base '+hit[0].base.toFixed(1)+'m pax'):('Airport '+ap+' (not in the engine bundle; schedule-only run)');
+  if(!r.years||!r.years.length){document.getElementById('err').textContent='No schedules held for '+ap+'.';crumb(ap+' - no schedules held');document.getElementById('covtable').innerHTML='';return;}
+  var ct='Year\tCoverage\tSchedule rows\n';
+  r.years.forEach(function(y){var o=document.createElement('option');
+   o.value=y.year;o.textContent=y.year+' ('+y.coverage+')';
+   if(y.coverage!=='full')o.disabled=true;sel.appendChild(o);
+   ct+=y.year+'\t'+y.coverage+'\t'+y.rows.toLocaleString("en-GB")+'\n';});
+  document.getElementById('covtable').innerHTML=tsvTable(ct.trim());
+  var full=r.years.filter(function(y){return y.coverage==='full';});
+  crumb(ap+' - '+full.length+' full year(s) held; sample-week years greyed, upgrading at store day');
+  document.getElementById('mbtn').disabled=!full.length;
+  document.getElementById('dbtn').disabled=!full.length;
+  document.getElementById('basey').value=full.length?full[full.length-1].year:'';
+ }).catch(function(e){document.getElementById('err').textContent=String(e);});}
+var METHOD_KEYS={
+ "Peak hour (reference only; ADRM: do not plan to it)":"peak_hour_absolute",
+ "20th busiest hour (Amsterdam convention)":"sbr20",
+ "Standard Busy Rate, 30th busiest hour (BAA; ZAG convention)":"sbr30",
+ "40th busiest hour (Paris convention)":"sbr40",
+ "Busy Hour Rate, 5% busy hour (ADRM/Heathrow)":"bhr5",
+ "IATA Busy Day (2nd busiest day, average week, peak month)":"iata_busy_day",
+ "Peak day (reference only)":"peak_day",
+ "90th-percentile day":"p90_day"};
+function methodsTable(tsv){var h='<table>';
+ tsv.split("\n").forEach(function(l,i){var c=l.split("\t");
+  h+='<tr>'+c.map(function(x){return (i===0?'<th>':'<td>')+x+(i===0?'</th>':'</td>');}).join("");
+  if(i===0)h+='<th></th>';
+  else{var k=METHOD_KEYS[c[0]];
+   h+='<td>'+(k?'<button class="mini" onclick="chooseMethod(\''+k+'\')">Build this day</button>':'')+'</td>';}
+  h+='</tr>';});
+ return h+'</table>';}
+function chooseMethod(k){document.getElementById('pickm').value=k;togglePick();setPage('day');}
+function runMethods(){var ap=apCode(),
+ yr=document.getElementById('yr').value,b=document.getElementById('basis').value;
+ document.getElementById('mspin').textContent='computing over the full year...';
+ q('/api/methods?airport='+ap+'&year='+yr+'&basis='+b).then(function(r){
+  document.getElementById('mspin').textContent='';
+  if(r.error){document.getElementById('err').textContent=r.error;return;}
+  lastM=r;
+  document.getElementById('mtable').innerHTML=methodsTable(r.tsv)+
+   '<button class="mini" onclick="dl(\'method_comparison_'+ap+'_'+yr+'_'+b+'.tsv\',lastM.tsv)">Download TSV</button>';
+ });}
+function togglePick(){var isDate=document.getElementById('pickm').value==='date';
+ document.getElementById('ddaywrap').style.display=isDate?'':'none';}
+function runDdfs(){var ap=apCode(),
+ yr=document.getElementById('yr').value,b=document.getElementById('basis').value,
+ pm=document.getElementById('pickm').value,d='auto';
+ if(pm==='date'){d=document.getElementById('dday').value.trim();pm='sbr30';
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(d)){document.getElementById('err').textContent='Enter a specific date as YYYY-MM-DD.';return;}}
+ document.getElementById('err').textContent='';
+ document.getElementById('dspin').textContent='building...';
+ q('/api/ddfs?airport='+ap+'&year='+yr+'&basis='+b+'&date='+d+'&method='+pm).then(function(r){
+  document.getElementById('dspin').textContent='';
+  if(r.error){document.getElementById('err').textContent=r.error;return;}
+  lastD=r;
+  crumb(ap+' '+yr+' - design day '+r.design_day+' ('+r.picked_by+') - basis '+r.basis);
+  var k='<span class="kpi">Design day<b>'+r.design_day+'</b></span>'+
+   '<span class="kpi">Picked by<b>'+r.picked_by+'</b></span>'+
+   '<span class="kpi">Day ATMs<b>'+r.day_atms+'</b></span>'+
+   '<span class="kpi">Day seats<b>'+r.day_seats.toLocaleString("en-GB")+'</b></span>'+
+   '<span class="kpi">SBR30 ('+r.basis+')<b>'+r.sbr30_value+' at '+r.sbr30_hour+'</b></span>'+
+   '<span class="kpi">Peak hour ATMs<b>'+r.max_hour_atms+'</b></span>'+
+   '<span class="kpi">Carried-in stock<b>'+r.carried_in+'</b></span>';
+  var ev=parseSched(r.schedule_tsv);
+  var roll=rolling60(ev);
+  k+='<span class="kpi">Rolling 60-min max<b>'+roll.max+' ATMs</b></span>';
+  document.getElementById('kpis').innerHTML=k+dualCard(r.dual,r.design_day);
+  var when=ap+' '+r.design_day+' (actual schedules)';
+  var ch='';
+  ch+=box('cbh',chMirrorHourly(r.hourly,'Hourly ATMs, arrivals up / departures down - '+when),'ddfs_hourly_'+ap+'_'+r.design_day,'Source: oag.duckdb live query. Units: ATMs per clock hour.');
+  ch+=box('cb5',chMirror5(bins5(ev),'ATMs per 5-minute interval (v15 chart 1) - '+when),'ddfs_5min_'+ap+'_'+r.design_day,'Source: event-grain schedule, this build. Units: movements per 5 minutes.');
+  ch+=box('cbr',chRoll(roll,'Total movements, rolling 60 minutes (v15 chart 2) - '+when),'ddfs_rolling60_'+ap+'_'+r.design_day,'Rolling windows exceed clock hours by construction (circa 15%, note 35 v2); the BHR conventions use clock hours.');
+  document.getElementById('dcharts').innerHTML=ch;
+  /* terminal (landside, pax) subtab: built on the PAX-pick day */
+  if(r.landside){var ls=r.landside;
+   var th=termCard(ls,r.design_day);
+   if(ls.hourly_seats_arr)th+=box('cbm',chMirrorSeats(ls.hourly_seats_arr,ls.hourly_seats_dep,'Terminal flows at flight time - '+ap+' '+ls.design_day+' (pax-pick day; actual schedules) - arriving up / departing down'),'ddfs_terminal_flows_'+ap+'_'+ls.design_day,'Seats at flight time; departing pax present ahead of departure and arriving pax after arrival, so in-terminal occupancy needs the presentation profiles (flagged in the card).');
+   th+=box('cbl',chSeats(ls.hourly_seats,'Total seats per clock hour - landside design day '+ls.design_day+' (pax pick)'),'ddfs_landside_'+ap+'_'+ls.design_day,ls.note);
+   var tt='Hour\tArriving seats\tDeparting seats\tTotal\n';
+   for(var th2=0;th2<24;th2++){tt+=(th2<10?'0':'')+th2+'\t'+(ls.hourly_seats_arr?ls.hourly_seats_arr[th2]:'')+'\t'+(ls.hourly_seats_dep?ls.hourly_seats_dep[th2]:'')+'\t'+ls.hourly_seats[th2]+'\n';}
+   th+='<h4>Hourly seats (landside day)</h4>'+tsvTable(tt.trim())
+    +'<button class="mini" onclick="dl(\'ddfs_terminal_'+ap+'_'+ls.design_day+'.tsv\',lastTermTsv)">Download terminal hours TSV</button>';
+   lastTermTsv=tt+'# Landside (pax-pick) day '+ls.design_day+'; seats at flight time; indicative pax = seats x 0.80 working assumption (engagement LF to confirm); source: oag.duckdb live query';
+   document.getElementById('tcharts').innerHTML=th;}
+  else{document.getElementById('tcharts').innerHTML='<div class="src">No landside block returned for this build.</div>';}
+  var hr='Hour\tArr\tDep\n';Object.keys(r.hourly).forEach(function(h){hr+=h+'\t'+r.hourly[h][0]+'\t'+r.hourly[h][1]+'\n';});
+  document.getElementById('dout').innerHTML='<h4>Hourly ATMs</h4>'+tsvTable(hr.trim())+
+   '<button class="mini" onclick="dl(\'ddfs_'+ap+'_'+r.design_day+'.tsv\',lastD.schedule_tsv)">Download the design day schedule (event grain)</button>'+
+   '<button class="mini" onclick="dlDayXlsx()">Download Excel workbook (editable charts + data)</button>';
+  document.getElementById('dnote').textContent=r.note+' Source: oag.duckdb live query, '+ap+' '+yr+', day '+r.design_day+'.';
+  lastEv=ev;lastLab=when;
+  var st='ICAO code\tMax AOG\n';Object.keys(r.stand_max_aog).forEach(function(c){st+=c+'\t'+r.stand_max_aog[c]+'\n';});
+  var cc=classCounts(ev),ct='ICAO code\tDay ATMs\n';Object.keys(cc).sort().forEach(function(c){ct+=c+'\t'+cc[c]+'\n';});
+  var sh='';
+  if(r.stand_hourly)sh+=box('cba',chLedger(r.stand_hourly,'Stand demand through the day by ICAO code - '+when),'ddfs_aog_'+ap+'_'+r.design_day,'Aircraft on ground per clock hour (max within hour); carried-in stock '+r.carried_in+' at 00:00. Day closure is cyclic.');
+  sh+='<div style="display:flex;gap:24px;flex-wrap:wrap"><div><h4>Stand demand (Max AOG by ICAO code)</h4>'+tsvTable(st.trim())+'</div>'+
+   '<div><h4>Day ATMs by ICAO code</h4>'+tsvTable(ct.trim())+'</div></div>';
+  if(r.occupancy){sh+=occCard(r.occupancy,r.carried_in);
+   sh+=box('cbd',chDwell(r.occupancy,'Rotation ground times by ICAO code - '+when),'ddfs_dwell_'+ap+'_'+r.design_day,'Paired rotations only; night stops and carried-in are in the table. Source: this build, bridge pairing rules.');
+   sh+='<button class="mini" onclick="dl(\'ddfs_rotations_'+ap+'_'+r.design_day+'.tsv\',lastD.occupancy.rotations_tsv)">Download rotations (paired, with classifications)</button>';}
+  sh+='<div id="basecomp"><h4>Base and completeness</h4><div class="src">'+(r.base_statement||'')+'</div><div id="reconout" class="src">Checking for a towerlog/AODB day...</div></div>';
+  document.getElementById('scharts').innerHTML=sh;
+  runReconcile(ap,r.design_day);
+ });}
+function runReconcile(ap,day){
+ q('/api/reconcile?airport='+ap+'&date='+day).then(function(rc){
+  var el=document.getElementById('reconout');if(el)el.innerHTML=reconCard(rc);
+ }).catch(function(){var el=document.getElementById('reconout');if(el)el.textContent='Reconciliation unavailable.';});}
+function dlDayXlsx(){if(!lastD||!lastEv)return;
+ var defs=excelDayDefs(lastD,lastEv,lastLab);
+ dlBytes("ddfs_charts_"+lastD.airport+"_"+lastD.design_day+".xlsx",
+  buildChartXlsx(defs,"DDFS design day charts, "+lastLab+". One sheet per chart; native editable Excel charts."));}
+function dlZagXlsx(){if(!lastZC)return;
+ dlBytes("zag_ddfs_horizon_2025-2045.xlsx",
+  buildChartXlsx(excelHorizonDefs(lastZC),"ZAG DDFS measures by spot year, 2025-2045 (forecast; Base case; oracle regeneration, conventions note 35 v2)"));}
+/* ---- stage 4: engine chain (cockpit folded in) ---- */
+function loadEngine(){q("/api/engine?airport="+apCode()).then(function(r){
+ if(r.error){document.getElementById("einfo").textContent=r.error;return;}
+ document.getElementById("einfo").innerHTML="<b>"+r.name+"</b>, "+r.country+" &middot; base "+r.base_mppa.toFixed(1)+"m pax ("+r.base_year+") &middot; dom "+(r.dom_share*100).toFixed(0)+"% &middot; connecting "+(r.connecting_share*100).toFixed(0)+"% &middot; GDP elasticity est "+(r.regress.bG_est==null?"n/a":r.regress.bG_est)+(r.regress.reliable?"":" (regression flagged unreliable; engine default applies)");
+ var base=parseInt(document.getElementById("basey").value,10)||r.base_year;
+ if(!document.getElementById("spots").value){var sp=[];for(var n=0;n<=20;n+=5)sp.push(base+n);document.getElementById("spots").value=sp.join(",");}
+ document.getElementById("echart").innerHTML='<div class="chartbox" id="ecbox">'+chEngine(r,base)+'<button class="mini" onclick="dlSVG(\'ecbox\',\'engine_'+r.airport+'\')">Download SVG</button><span class="src" style="margin-left:8px">Source: Avia Global Forecast engine bundle (read-only). Actuals to base year, forecast beyond (marker).</span></div>';});}
+function emitPack(save){var body={airport:apCode(),scenario:document.getElementById("escen").value,
+ base_year:parseInt(document.getElementById("basey").value,10)||undefined,
+ spot_years:spotsList().length?spotsList():undefined,overrides:overrides()};
+ fetch("/api/emit_pack"+(save===true?"?save=1":""),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(r){
+  if(r.error){document.getElementById("packpanel").textContent=r.error;return;}
+  PACK=r.pack;document.getElementById("packpanel").innerHTML=renderPack(r.pack)+(r.saved?"<div class='src' style='color:#5F8D7A'>saved: ddfs_packs/"+r.saved+"</div>":"");
+  document.getElementById("dlp").disabled=false;document.getElementById("rfb").disabled=false;});}
+function dlPack(){if(!PACK)return;var b=new Blob([JSON.stringify(PACK,null,1)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=PACK.pack_id+".json";a.click();}
+function runForecast(){if(!PACK)return;
+ document.getElementById('eout').innerHTML='<div class="src">engine pack -> DDFS, working...</div>';
+ setPage('out');setOutTab('res');
+ fetch('/api/forecast',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pack:PACK})}).then(function(r){return r.json();}).then(function(r){
+  if(r.error){document.getElementById('eout').innerHTML='<div class="src">'+r.error+'</div>';return;}
+  FC=r;
+  var ys=Object.keys(r.years);
+  var h='<div class="src">base day: '+r.base_day.mode+' &middot; '+r.base_day_atms+' ATMs &middot; '+(r.base_statement||'')+(r.flags.length?' &middot; pack flags: '+r.flags.join('; '):'')+'</div>';
+  h+='<table><tr><th>Spot year</th><th>Growth factor</th><th>Design-day ATMs</th><th>Pax (m, annual)</th><th>ATMs (k, annual)</th><th>Avg ATM/day</th><th>Pax/ATM</th></tr>';
+  var dd={"Design-day ATMs":[]},px={"Pax (m, annual)":[]};
+  ys.forEach(function(y){var v=r.years[y],k=v.kpis;
+   dd["Design-day ATMs"].push(k.design_day_atms);px["Pax (m, annual)"].push(k.pax_m);
+   h+='<tr><td>'+y+'</td><td>'+v.growth_factor.toFixed(3)+'</td><td>'+k.design_day_atms+'</td><td>'+k.pax_m+'</td><td>'+k.atm_k+'</td><td>'+k.avg_atm_day+'</td><td>'+k.pax_per_atm+'</td></tr>';});
+  h+='</table><button class="mini" onclick="dl(\'ddfs_forecast_'+(PACK?PACK.pack_id:'run')+'.tsv\',fcTsv())">Download forecast TSV (KPIs + hourly, departures negative)</button>';
+  var ap=PACK.airport,sc=PACK.scenario;
+  h+=box('ec1',chHorizon(ys,dd,ap+' design-day ATMs by spot year ('+sc+'; forecast; sample-mode base day)','design-day ATMs'),'engine_ddfs_'+ap,'Source: engine pack via /api/forecast; movements path derived, proxies stated in the pack flags.');
+  h+=box('ec2',chHorizon(ys,px,ap+' annual passengers by spot year ('+sc+'; forecast)','passengers (m, annual)'),'engine_pax_'+ap,'Source: Global Forecast engine '+sc+' series (read-only bundle).');
+  document.getElementById('eout').innerHTML=h;});}
+/* ---- stage 5: ZAG pack outputs + evidence ---- */
+function runZag(){var y=document.getElementById('zyr').value;
+ q('/api/zagreb_forecast?year='+y).then(function(r){
+  if(r.error){document.getElementById('err').textContent=r.error;return;}
+  lastZ=r;
+  document.getElementById('zout').innerHTML=tsvTable(r.tsv)+
+   '<button class="mini" onclick="dl(\'zagreb_ddfs_'+y+'.tsv\',lastZ.tsv)">Download TSV</button>';
+  document.getElementById('znote').textContent=r.note+' ('+r.rows+' measures, year '+y+').';
+ });}
+function zagPick(tsv,section,measure,row,split){var out=null;
+ tsv.split("\n").forEach(function(l,i){if(i===0)return;var c=l.split("\t");
+  if(c[0]==="Base"&&c[1]===section&&c[2]===measure&&c[3]===row&&c[4]===split)out=parseFloat(c[5]);});
+ return out;}
+function runZagChart(){var YS=["2025","2030","2035","2040","2045"];
+ Promise.all(YS.map(function(y){return q('/api/zagreb_forecast?year='+y);})).then(function(rs){
+  var bhr={ "Overall 2-way":[], "Arrivals":[], "Departures":[] };
+  var rwy={ "Peak runway movements":[] };
+  var stands={ "Commercial stands (Overall peak, Total)":[] };
+  rs.forEach(function(r){var t=r.tsv;
+   bhr["Overall 2-way"].push(zagPick(t,"30th BHRs - Overall","","2-way","Total"));
+   bhr["Arrivals"].push(zagPick(t,"30th BHRs - Overall","","Arrivals","Total"));
+   bhr["Departures"].push(zagPick(t,"30th BHRs - Overall","","Departures","Total"));
+   rwy["Peak runway movements"].push(zagPick(t,"Peak Runway Movements","","Overall peak",""));
+   stands["Commercial stands (Overall peak, Total)"].push(zagPick(t,"Stands - by Stand Code - Commercial","Overall peak","Total",""));});
+  var ch='';
+  ch+=box('zc1',chHorizon(YS,bhr,'ZAG 30th busy hour rates by spot year, 2025-2045 (forecast; Base case)','passengers / 30th busy clock hour'),'zag_bhr_horizon','Source: Zagreb oracle regeneration (pack-driven), conventions note 35 v2; fidelity reconciliation 23 July in Evidence.');
+  ch+=box('zc2',chHorizon(YS,rwy,'ZAG peak runway movements by spot year, 2025-2045 (forecast; Base case)','movements / 30th busy hour'),'zag_runway_horizon','Source: Zagreb oracle regeneration; within one movement of the sent deliverable in all five spot years.');
+  ch+=box('zc3',chHorizon(YS,stands,'ZAG commercial stand demand by spot year, 2025-2045 (forecast; Base case)','stands (Max AOG snapshot)'),'zag_stands_horizon','Source: Zagreb oracle regeneration; GA stand blocks are an input assumption and excluded.');
+  lastZC={years:YS,bhr:bhr,rwy:rwy,stands:stands};
+  ch+='<button class="mini" onclick="dlZagXlsx()">Download Excel workbook (editable horizon charts + data)</button>';
+  document.getElementById('zcharts').innerHTML=ch;});}
+function runHindcast(){document.getElementById('hcout').textContent='Working (engine -> pack -> DDFS -> diff vs 692 pinned rows)...';
+ q('/api/hindcast').then(function(r){if(r.error){document.getElementById('hcout').textContent=r.error;return;}
+  document.getElementById('hcout').innerHTML='<pre>'+r.scoreboard.replace(/</g,'&lt;')+'</pre>';});}
+/* ---- selftest (headless-capable) ---- */
+function selftestLive(){var n=0,fails=[];
+ function ck(name,got,want){n++;if(JSON.stringify(got)!==JSON.stringify(want))fails.push(name+": "+JSON.stringify(got)+" != "+JSON.stringify(want));}
+ var tsv="#\tA/D\tTime\tAirline\tFlight\tO/D\tSeats\tAircraft\tICAO code\n1\tA\t00:00\tX\t1\tAAA\t100\t320\tC\n2\tA\t00:30\tX\t2\tAAA\t100\t320\tC\n3\tD\t00:59\tX\t3\tAAA\t100\t320\tC\n4\tD\t01:00\tX\t4\tAAA\t100\t763\tD";
+ var ev=parseSched(tsv);
+ ck("parseSched rows",ev.length,4);
+ ck("parseSched minute",ev[3].minute,60);
+ var r=rolling60(ev);
+ ck("rolling60 max (pin: window 00:00-00:59 holds 3)",r.max,3);
+ var b=bins5(ev);
+ ck("bins5 arrivals bin 6 (00:30)",b.a[6],1);
+ ck("classCounts",classCounts(ev),{C:3,D:1});
+ var zt="sheet\tsection\tmeasure\trow\tsplit\tvalue\nBase\t30th BHRs - Overall\t\t2-way\tTotal\t1617";
+ ck("zagPick finds the Overall 2-way Total",zagPick(zt,"30th BHRs - Overall","","2-way","Total"),1617);
+ ck("chMirrorHourly emits svg",chMirrorHourly({"00":[1,1]},"t").indexOf("<svg")===0,true);
+ var mh=chMirrorHourly({"00":[7,3],"01":[2,1]},"t");
+ ck("chMirrorHourly labels the arrival peak",mh.indexOf("peak 7")>-1,true);
+ ck("chMirrorHourly labels the departure peak",mh.indexOf("peak 3")>-1,true);
+ ck("chMirrorHourly carries y-axis values",mh.indexOf('text-anchor="end" font-size="8.5"')>-1&&mh.indexOf(">7</text>")>-1,true);
+ var lg=chLedger({C:[1,2,9].concat(Array(21).fill(1))},"t");
+ ck("chLedger labels Max AOG with code and hour",lg.indexOf("Max AOG 9 (code C, 02:00)")>-1,true);
+ var cs=chSeats([100,50,900].concat(Array(21).fill(0)),"t");
+ ck("chSeats labels the peak",cs.indexOf("peak 900")>-1,true);
+ ck("chSeats names the unit",cs.indexOf("seats / hour")>-1,true);
+ ck("chRoll marks the max window",chRoll(r,"t").indexOf("max 3 at 00:00-00:59")>-1,true);
+ ck("chLedger draws a class line",chLedger({C:[1,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"t").indexOf("aircraft on ground")>-1,true);
+ ck("chHorizon labels the unit",chHorizon(["2025","2030"],{X:[1,2]},"t","stands").indexOf("stands")>-1,true);
+ /* excel builder */
+ var rMock={airport:"ZAG",design_day:"2015-05-11",
+  hourly:{"00":[1,1]},stand_hourly:{A:Array(24).fill(0),C:[1,2].concat(Array(22).fill(1))}};
+ var defs=excelDayDefs(rMock,ev,"test");
+ ck("excelDayDefs emits 4 day charts",defs.length,4);
+ ck("AOG def drops all-zero classes",defs[3].chart.series.length,1);
+ var xb=buildChartXlsx(defs,"test");
+ ck("xlsx zip magic",xb[0]===0x50&&xb[1]===0x4B,true);
+ ck("xlsx size plausible",xb.length>3000,true);
+ ck("coreXML carries Avia author",coreXML("t").indexOf("<dc:creator>Avia Solutions</dc:creator>")>-1,true);
+ ck("chartXML titles in en-GB",chartXML(defs[0].chart).indexOf('lang="en-GB"')>-1,true);
+ var hz=excelHorizonDefs({years:["2025","2030"],bhr:{X:[1,2]},rwy:{Y:[3,4]},stands:{Z:[5,6]}});
+ ck("excelHorizonDefs emits 3 charts",hz.length,3);
+ /* basis duality card */
+ var dm={diverge:true,note:"n",
+  atm:{basis:"atm (movements)",design_day:"2015-05-11",sbr30_value:10,sbr30_hour:"11:00",day_atms:98,day_seats:10884,max_hour_atms:11,max_hour_seats:1200},
+  pax:{basis:"pax (Sabre-weighted, indicative)",design_day:"2015-09-21",sbr30_value:1500,sbr30_hour:"13:00",day_atms:102,day_seats:11500,max_hour_atms:10,max_hour_seats:1400}};
+ var dc=dualCard(dm,"2015-05-11");
+ ck("dualCard states divergence",dc.indexOf("diverge")>-1,true);
+ ck("dualCard marks the built day",dc.indexOf("(built)")>-1,true);
+ ck("dualCard offers the other day",dc.indexOf("2015-09-21")>-1&&dc.indexOf("buildDate")>-1,true);
+ dm.diverge=false;dm.pax=dm.atm;
+ ck("dualCard coincident wording",dualCard(dm,"2015-05-11").indexOf("One design day on both bases")>-1,true);
+ ck("dualCard empty without dual block",dualCard(null,"x"),"");
+ /* occupancy card */
+ var om={convention:"conv",dwell_bin_labels:["<=45",">360"],dwell_bins:{C:[3,1]},
+  per_code:{C:{rotations:4,median_turn_min:65,turnarounds:3,long_park:1,night_stops:2,carried_in_deps:1}},
+  totals:{rotations:4,turnarounds:3,long_park_tow_candidates:1,night_stops:2,carried_in_deps:1},rotations_tsv:"h"};
+ var oc=occCard(om,4);
+ ck("occCard renders per-code row",oc.indexOf("<td>C</td><td>4</td><td>65</td>")>-1,true);
+ ck("occCard states the ledger-vs-pairing distinction",oc.indexOf("minimum consistent start")>-1,true);
+ ck("occCard totals row",oc.indexOf("<b>1</b></td><td><b>2</b></td>")>-1,true);
+ ck("chDwell emits svg with axis",chDwell(om,"t").indexOf("ground time (minutes)")>-1,true);
+ ck("occCard empty without block",occCard(null,0),"");
+ /* base & completeness card */
+ var rcm={date:"2025-05-26",towerlog_movements:230,oag_movements:198,movement_gap:32,beyond_schedule:28,
+  towerlog_by_class:{scheduled_pax:202,cargo:8,ga:12,military:5,positioning:3},
+  oag_vs_scheduled_pax:{towerlog_scheduled_pax:202,oag:198,diff:4,note:"residual = cancellations"},
+  peak_hour:{towerlog:24,oag:21}};
+ var rcc=reconCard(rcm);
+ ck("reconCard quantifies the gap",rcc.indexOf("gap +32")>-1,true);
+ ck("reconCard breaks the gap by category",rcc.indexOf("military 5")>-1&&rcc.indexOf("cargo 8")>-1,true);
+ ck("reconCard compares peak hours",rcc.indexOf("towerlog 24 vs OAG 21")>-1,true);
+ ck("reconCard honest when no towerlog",reconCard({error:"FLAG: no towerlog held"}).indexOf("OAG base stands")>-1,true);
+ /* pack panel + forecast tsv (cockpit functionality carried) */
+ document.getElementById("spots").value="2019, 2024,x,2044";ck("spotsList parses and drops junk",spotsList(),[2019,2024,2044]);
+ document.getElementById("spots").value="";
+ document.getElementById("upg").value="0.0035";document.getElementById("plf").value="";
+ ck("overrides picks set levers only",overrides(),{upgauge_pa:0.0035});
+ document.getElementById("upg").value="";
+ ck("packRow flags null values",packRow("x",{value:null,provenance:"FLAG: y"}).indexOf("flagged, not filled")>-1,true);
+ ck("packRow renders provenance",packRow("x",{value:1,provenance:"ENGINE"}).indexOf("ENGINE")>-1,true);
+ FC={base_day:{mode:"m"},years:{"2024":{growth_factor:1,day_atms:441,kpis:{pax_m:1,atm_k:2,avg_atm_day:3,pax_per_atm:4,design_day_atms:5},hourly:{"00":[1,2]}}}};PACK={pack_id:"t"};
+ var t=fcTsv();ck("fcTsv departures negative",t.indexOf("1\t-2")>-1,true);
+ ck("fcTsv states base-day mode",t.indexOf("base day: m")>-1,true);
+ FC=null;PACK=null;
+ /* five-stage shell */
+ setPage("forecast");
+ ck("setPage switches to the forecast stage",document.getElementById("page-forecast").classList.contains("on")&&!document.getElementById("page-base").classList.contains("on"),true);
+ ck("setPage moves the brass underline",document.getElementById("nav-forecast").classList.contains("on"),true);
+ setPage("day");setDayTab("stands");
+ ck("day subtab switches",document.getElementById("tab-stands").classList.contains("on"),true);
+ setDayTab("term");
+ ck("terminal subtab present and switches",document.getElementById("tab-term").classList.contains("on"),true);
+ var lsm={design_day:"2015-07-28",same_day_as_airside_build:false,hourly_seats:[100],hourly_seats_arr:[60],hourly_seats_dep:[40],day_seats:9064,peak_hour_seats:1274,peak_hour:"13:00",note:"n"};
+ var tc=termCard(lsm,"2015-05-11");
+ ck("termCard states the pax-day rule and the different day",tc.indexOf("DIFFERENT (2015-05-11)")>-1&&tc.indexOf("PAX-pick day")>-1,true);
+ ck("termCard indicative pax at stated working LF",tc.indexOf("1,019")>-1&&tc.indexOf("WORKING ASSUMPTION")>-1,true);
+ ck("termCard flags presentation profiles as next layer",tc.indexOf("presentation profiles")>-1,true);
+ var ms=chMirrorSeats([700,50].concat(Array(22).fill(0)),[100,900].concat(Array(22).fill(0)),"t");
+ ck("chMirrorSeats labels both peaks",ms.indexOf("peak 700")>-1&&ms.indexOf("peak 900")>-1,true);
+ ck("chMirrorSeats names the flight-time unit",ms.indexOf("seats / hour (at flight time)")>-1,true);
+ setDayTab("day");setPage("out");setOutTab("ev");
+ ck("evidence subtab switches",document.getElementById("tab-ev").classList.contains("on"),true);
+ setOutTab("res");setPage("base");
+ ck("five stages present",PAGES.length,5);
+ ck("day pick: auto tops the method dropdown",document.getElementById("pickm").options[0].text.indexOf("Auto")===0,true);
+ ck("day pick: eight methods plus specific date",document.getElementById("pickm").options.length,9);
+ document.getElementById("pickm").value="date";togglePick();
+ ck("specific date reveals the date field",document.getElementById("ddaywrap").style.display!=="none",true);
+ document.getElementById("pickm").value="sbr30";togglePick();
+ ck("auto hides the date field",document.getElementById("ddaywrap").style.display==="none",true);
+ var mt=methodsTable("Method\tSelected date\tValue\nStandard Busy Rate, 30th busiest hour (BAA; ZAG convention)\t2015-05-11\t10.0\nFAA PMAD peak hour (peak month average day)\t2015-07\t8.1");
+ ck("comparison rows carry build-this-day for dated methods",mt.indexOf("chooseMethod('sbr30')")>-1,true);
+ ck("PMAD row carries no build button (undated, stated)",mt.indexOf("PMAD")>-1&&mt.split("chooseMethod").length===2,true);
+ chooseMethod("p90_day");
+ ck("chooseMethod sets the pick and moves to the build stage",document.getElementById("pickm").value==="p90_day"&&document.getElementById("page-day").classList.contains("on"),true);
+ document.getElementById("pickm").value="sbr30";togglePick();setPage("base");
+ var iv=document.getElementById("interval");
+ ck("interval planned options visible and disabled",iv.options.length===4&&iv.options[1].disabled&&iv.options[2].disabled&&iv.options[3].disabled,true);
+ ck("client-supplied source visible and disabled",document.getElementById("fsrc-client").disabled,true);
+ ck("engine source default",document.getElementById("fsrc-engine").checked,true);
+ setFsrc();
+ ck("source toggle shows engine cards",document.getElementById("fsrc-engine-cards").style.display!=="none",true);
+ document.getElementById("fsrc-pack").checked=true;document.getElementById("fsrc-engine").checked=false;setFsrc();
+ ck("source toggle shows pack cards",document.getElementById("fsrc-pack-cards").style.display!=="none",true);
+ document.getElementById("fsrc-engine").checked=true;document.getElementById("fsrc-pack").checked=false;setFsrc();
+ if(typeof window!=="undefined")window.__lastXlsx=buildChartXlsx(defs.concat(hz),"probe");
+ var res={pass:fails.length===0,checks:n,fails:fails};
+ if(typeof console!=="undefined")console.log("DDFS unified-tool selftest: "+n+" checks, "+(res.pass?"all pass":fails.length+" FAILURES"),res.pass?"":fails);
+ return res;}
+var _st=selftestLive();
+if(typeof window!=="undefined"&&window.location&&window.location.protocol.indexOf("http")===0){loadAirports();loadYears();}
+else if(typeof window!=="undefined"&&window.document){
+ crumb("NOT CONNECTED - this page is being viewed as a file, with no DDFS service behind it");
+ document.getElementById("err").textContent="Open the tool through the service (localhost:8030 or ddfs.aviacortex.com) - Run Avia DDFS.bat starts it. A direct file preview has no data: airport lookup, year list and every build need the service.";}
+</script></body></html>

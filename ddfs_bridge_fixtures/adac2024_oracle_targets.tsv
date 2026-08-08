@@ -1,0 +1,703 @@
+# Fixture: adac2024_oracle_targets.tsv | extracted 19 July 2026 by DDFS bridge fixture pinning
+# Source: /Shared/Archive/2024/ADAC - 2024 Forecast Update/Data and Analysis/Design day/SENT/AUH_Design day forecast_10.06.2024_vSent.xlsx
+# Egnyte group_id 7461fc92-e4ce-492b-973c-256615c380d4, entry_id 479e01db-b3ca-4bf8-ae59-4e5201b916e6 (Project Falcon, Design Day Flight Schedules - 2024, cover date 10-Jun-24)
+# Sign convention: departures are NEGATIVE in the source hourly tables; signs kept as printed. Year labels read from column headers, never inferred.
+# Summary - ATMs case filter as rendered: Case >> Base. Hourly table columns: 2019A 2019D 2024A 2024D 2028A 2028D 2032A 2032D 2038A 2038D 2044A 2044D 2040A (Motts) 2040D (Motts).
+# Rolling-hour Max row: mapped to the rolling-hour table header beneath it (2019A..2044D plus 2032A/2032D (2023 DDFS)); mapping verified against the rolling table column maxima (e.g. 2023 DDFS A max 42, D max |-69|). Rolling Max departures are displayed POSITIVE in the source; recorded as printed.
+# NOT extracted (flagged, not filled): Summary - ATMs section 3 'All data - movements' (rolling total movements, headers 2019/2023/2024/2028/2032/2042/Motts (2040), no Total/Max summary rows); the right-hand duplicate chart-feed blocks of each table; per-row rolling-hour and 5-minute detail.
+# Summary - Pax contains NO hourly-interval table (only 'All data - rolling hour'); its Max and daily total rows are pinned below. Pax Motts columns hold placeholder value 1.
+# Overview - High sheet exists (High case KPI block) but was not extracted; Overview - Base pinned below.
+# Render coverage: first 2,000,000 characters of the workbook render fetched (covers Cover through AOG_High start); remainder of AOG_High data sheet not fetched - all Summary/Overview sheets fully covered.
+sheet	section	measure	row	split	year	value
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2024	23
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2024	-5
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2028	27
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2028	-5
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2032	30
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2032	-5
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2038	38
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2038	-7
+Summary - ATMs	Hourly ATMs	ATMs	00	A	2044	46
+Summary - ATMs	Hourly ATMs	ATMs	00	D	2044	-7
+Summary - ATMs	Hourly ATMs	ATMs	00	A (Motts)	2040	21
+Summary - ATMs	Hourly ATMs	ATMs	00	D (Motts)	2040	-1
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2024	12
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2024	-4
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2028	22
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2028	-4
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2032	23
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2032	-5
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2038	28
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2038	-10
+Summary - ATMs	Hourly ATMs	ATMs	01	A	2044	40
+Summary - ATMs	Hourly ATMs	ATMs	01	D	2044	-12
+Summary - ATMs	Hourly ATMs	ATMs	01	A (Motts)	2040	7
+Summary - ATMs	Hourly ATMs	ATMs	01	D (Motts)	2040	-6
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2024	3
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2024	-32
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2028	4
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2028	-38
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2032	9
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2032	-46
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2038	15
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2038	-59
+Summary - ATMs	Hourly ATMs	ATMs	02	A	2044	22
+Summary - ATMs	Hourly ATMs	ATMs	02	D	2044	-71
+Summary - ATMs	Hourly ATMs	ATMs	02	A (Motts)	2040	1
+Summary - ATMs	Hourly ATMs	ATMs	02	D (Motts)	2040	-39
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2024	5
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2024	-12
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2028	12
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2028	-21
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2032	15
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2032	-26
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2038	16
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2038	-35
+Summary - ATMs	Hourly ATMs	ATMs	03	A	2044	20
+Summary - ATMs	Hourly ATMs	ATMs	03	D	2044	-45
+Summary - ATMs	Hourly ATMs	ATMs	03	A (Motts)	2040	0
+Summary - ATMs	Hourly ATMs	ATMs	03	D (Motts)	2040	-5
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2024	5
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2024	-1
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2028	6
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2028	-7
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2032	9
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2032	-12
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2038	18
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2038	-16
+Summary - ATMs	Hourly ATMs	ATMs	04	A	2044	18
+Summary - ATMs	Hourly ATMs	ATMs	04	D	2044	-20
+Summary - ATMs	Hourly ATMs	ATMs	04	A (Motts)	2040	2
+Summary - ATMs	Hourly ATMs	ATMs	04	D (Motts)	2040	0
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2024	6
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2024	-3
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2028	15
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2028	-3
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2032	19
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2032	-5
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2038	21
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2038	-6
+Summary - ATMs	Hourly ATMs	ATMs	05	A	2044	22
+Summary - ATMs	Hourly ATMs	ATMs	05	D	2044	-6
+Summary - ATMs	Hourly ATMs	ATMs	05	A (Motts)	2040	11
+Summary - ATMs	Hourly ATMs	ATMs	05	D (Motts)	2040	0
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2024	20
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2024	-8
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2028	27
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2028	-16
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2032	33
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2032	-19
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2038	37
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2038	-20
+Summary - ATMs	Hourly ATMs	ATMs	06	A	2044	42
+Summary - ATMs	Hourly ATMs	ATMs	06	D	2044	-21
+Summary - ATMs	Hourly ATMs	ATMs	06	A (Motts)	2040	45
+Summary - ATMs	Hourly ATMs	ATMs	06	D (Motts)	2040	-3
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2024	12
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2024	-4
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2028	21
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2028	-15
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2032	23
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2032	-18
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2038	25
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2038	-22
+Summary - ATMs	Hourly ATMs	ATMs	07	A	2044	32
+Summary - ATMs	Hourly ATMs	ATMs	07	D	2044	-31
+Summary - ATMs	Hourly ATMs	ATMs	07	A (Motts)	2040	13
+Summary - ATMs	Hourly ATMs	ATMs	07	D (Motts)	2040	-5
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2024	5
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2024	-16
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2028	10
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2028	-22
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2032	10
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2032	-22
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2038	13
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2038	-23
+Summary - ATMs	Hourly ATMs	ATMs	08	A	2044	21
+Summary - ATMs	Hourly ATMs	ATMs	08	D	2044	-28
+Summary - ATMs	Hourly ATMs	ATMs	08	A (Motts)	2040	5
+Summary - ATMs	Hourly ATMs	ATMs	08	D (Motts)	2040	-26
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2024	2
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2024	-20
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2028	6
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2028	-34
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2032	6
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2032	-43
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2038	8
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2038	-58
+Summary - ATMs	Hourly ATMs	ATMs	09	A	2044	9
+Summary - ATMs	Hourly ATMs	ATMs	09	D	2044	-72
+Summary - ATMs	Hourly ATMs	ATMs	09	A (Motts)	2040	0
+Summary - ATMs	Hourly ATMs	ATMs	09	D (Motts)	2040	-29
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2024	2
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2024	-10
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2028	5
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2028	-15
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2032	6
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2032	-15
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2038	6
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2038	-16
+Summary - ATMs	Hourly ATMs	ATMs	10	A	2044	6
+Summary - ATMs	Hourly ATMs	ATMs	10	D	2044	-18
+Summary - ATMs	Hourly ATMs	ATMs	10	A (Motts)	2040	2
+Summary - ATMs	Hourly ATMs	ATMs	10	D (Motts)	2040	-24
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2024	4
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2024	-2
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2028	9
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2028	-8
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2032	13
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2032	-8
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2038	14
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2038	-9
+Summary - ATMs	Hourly ATMs	ATMs	11	A	2044	15
+Summary - ATMs	Hourly ATMs	ATMs	11	D	2044	-10
+Summary - ATMs	Hourly ATMs	ATMs	11	A (Motts)	2040	6
+Summary - ATMs	Hourly ATMs	ATMs	11	D (Motts)	2040	-4
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2024	22
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2024	-1
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2028	27
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2028	-5
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2032	31
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2032	-8
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2038	37
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2038	-9
+Summary - ATMs	Hourly ATMs	ATMs	12	A	2044	44
+Summary - ATMs	Hourly ATMs	ATMs	12	D	2044	-9
+Summary - ATMs	Hourly ATMs	ATMs	12	A (Motts)	2040	22
+Summary - ATMs	Hourly ATMs	ATMs	12	D (Motts)	2040	-1
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2024	9
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2024	-6
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2028	11
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2028	-12
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2032	15
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2032	-15
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2038	20
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2038	-15
+Summary - ATMs	Hourly ATMs	ATMs	13	A	2044	27
+Summary - ATMs	Hourly ATMs	ATMs	13	D	2044	-17
+Summary - ATMs	Hourly ATMs	ATMs	13	A (Motts)	2040	4
+Summary - ATMs	Hourly ATMs	ATMs	13	D (Motts)	2040	-8
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2024	1
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2024	-29
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2028	7
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2028	-37
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2032	11
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2032	-45
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2038	14
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2038	-56
+Summary - ATMs	Hourly ATMs	ATMs	14	A	2044	16
+Summary - ATMs	Hourly ATMs	ATMs	14	D	2044	-69
+Summary - ATMs	Hourly ATMs	ATMs	14	A (Motts)	2040	0
+Summary - ATMs	Hourly ATMs	ATMs	14	D (Motts)	2040	-19
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2024	4
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2024	-3
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2028	11
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2028	-8
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2032	15
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2032	-11
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2038	18
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2038	-13
+Summary - ATMs	Hourly ATMs	ATMs	15	A	2044	24
+Summary - ATMs	Hourly ATMs	ATMs	15	D	2044	-15
+Summary - ATMs	Hourly ATMs	ATMs	15	A (Motts)	2040	2
+Summary - ATMs	Hourly ATMs	ATMs	15	D (Motts)	2040	-4
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2024	7
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2024	-5
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2028	12
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2028	-7
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2032	14
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2032	-10
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2038	15
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2038	-11
+Summary - ATMs	Hourly ATMs	ATMs	16	A	2044	15
+Summary - ATMs	Hourly ATMs	ATMs	16	D	2044	-13
+Summary - ATMs	Hourly ATMs	ATMs	16	A (Motts)	2040	3
+Summary - ATMs	Hourly ATMs	ATMs	16	D (Motts)	2040	-3
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2024	4
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2024	-5
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2028	10
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2028	-9
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2032	14
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2032	-12
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2038	19
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2038	-13
+Summary - ATMs	Hourly ATMs	ATMs	17	A	2044	23
+Summary - ATMs	Hourly ATMs	ATMs	17	D	2044	-13
+Summary - ATMs	Hourly ATMs	ATMs	17	A (Motts)	2040	2
+Summary - ATMs	Hourly ATMs	ATMs	17	D (Motts)	2040	-2
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2024	9
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2024	-5
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2028	10
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2028	-6
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2032	13
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2032	-9
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2038	15
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2038	-12
+Summary - ATMs	Hourly ATMs	ATMs	18	A	2044	15
+Summary - ATMs	Hourly ATMs	ATMs	18	D	2044	-12
+Summary - ATMs	Hourly ATMs	ATMs	18	A (Motts)	2040	13
+Summary - ATMs	Hourly ATMs	ATMs	18	D (Motts)	2040	-4
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2024	27
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2024	-2
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2028	28
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2028	-4
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2032	35
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2032	-6
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2038	37
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2038	-9
+Summary - ATMs	Hourly ATMs	ATMs	19	A	2044	41
+Summary - ATMs	Hourly ATMs	ATMs	19	D	2044	-9
+Summary - ATMs	Hourly ATMs	ATMs	19	A (Motts)	2040	38
+Summary - ATMs	Hourly ATMs	ATMs	19	D (Motts)	2040	-3
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2024	5
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2024	-4
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2028	6
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2028	-4
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2032	11
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2032	-5
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2038	21
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2038	-5
+Summary - ATMs	Hourly ATMs	ATMs	20	A	2044	26
+Summary - ATMs	Hourly ATMs	ATMs	20	D	2044	-5
+Summary - ATMs	Hourly ATMs	ATMs	20	A (Motts)	2040	18
+Summary - ATMs	Hourly ATMs	ATMs	20	D (Motts)	2040	-4
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2024	9
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2024	-19
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2028	11
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2028	-21
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2032	16
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2032	-26
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2038	18
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2038	-30
+Summary - ATMs	Hourly ATMs	ATMs	21	A	2044	18
+Summary - ATMs	Hourly ATMs	ATMs	21	D	2044	-34
+Summary - ATMs	Hourly ATMs	ATMs	21	A (Motts)	2040	3
+Summary - ATMs	Hourly ATMs	ATMs	21	D (Motts)	2040	-23
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2024	13
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2024	-13
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2028	17
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2028	-15
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2032	18
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2032	-22
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2038	26
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2038	-29
+Summary - ATMs	Hourly ATMs	ATMs	22	A	2044	27
+Summary - ATMs	Hourly ATMs	ATMs	22	D	2044	-35
+Summary - ATMs	Hourly ATMs	ATMs	22	A (Motts)	2040	10
+Summary - ATMs	Hourly ATMs	ATMs	22	D (Motts)	2040	-19
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2024	16
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2024	-10
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2028	17
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2028	-11
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2032	19
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2032	-13
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2038	22
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2038	-16
+Summary - ATMs	Hourly ATMs	ATMs	23	A	2044	22
+Summary - ATMs	Hourly ATMs	ATMs	23	D	2044	-17
+Summary - ATMs	Hourly ATMs	ATMs	23	A (Motts)	2040	15
+Summary - ATMs	Hourly ATMs	ATMs	23	D (Motts)	2040	-8
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2024	225
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2024	-219
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2028	331
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2028	-327
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2032	408
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2032	-406
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2038	501
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2038	-499
+Summary - ATMs	Hourly ATMs	ATMs	Total	A	2044	591
+Summary - ATMs	Hourly ATMs	ATMs	Total	D	2044	-589
+Summary - ATMs	Hourly ATMs	ATMs	Total	A (Motts)	2040	243
+Summary - ATMs	Hourly ATMs	ATMs	Total	D (Motts)	2040	-240
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2024	444
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2028	658
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2032	814
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2038	1000
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D	2044	1180
+Summary - ATMs	Hourly ATMs	ATMs	Total ATM	A+D (Motts)	2040	483
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2019	0
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2024	27
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2024	-32
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2028	28
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2028	-38
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2032	35
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2032	-46
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2038	38
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2038	-59
+Summary - ATMs	Hourly ATMs	ATMs	Max	A	2044	46
+Summary - ATMs	Hourly ATMs	ATMs	Max	D	2044	-72
+Summary - ATMs	Hourly ATMs	ATMs	Max	A (Motts)	2040	45
+Summary - ATMs	Hourly ATMs	ATMs	Max	D (Motts)	2040	-39
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2019	0
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2019	0
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2024	31
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2024	34
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2028	33
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2028	46
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2032	38
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2032	51
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2038	43
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2038	62
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A	2044	49
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D	2044	74
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	A (2023 DDFS)	2032	42
+Summary - ATMs	Rolling-hour ATMs	ATMs	Max	D (2023 DDFS)	2032	69
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2019	0
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2019	0
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2022	0
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2022	0
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2024	6741
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2024	7563
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2028	7049
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2028	10187
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2032	8254
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2032	11536
+Summary - Pax	Rolling-hour Pax	Pax	Max	A	2042	8417
+Summary - Pax	Rolling-hour Pax	Pax	Max	D	2042	13370
+Summary - Pax	Rolling-hour Pax	Pax	Max	A (Motts)	2040	1
+Summary - Pax	Rolling-hour Pax	Pax	Max	D (Motts)	2040	1
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2019	0
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2022	0
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2024	81707
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2028	107373
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2032	131134
+Summary - Pax	Daily totals Pax	Pax	Total Pax	A+D	2042	161714
+Summary - Pax	Daily totals Pax	Pax	Total	A	2019	0
+Summary - Pax	Daily totals Pax	Pax	Total	D	2019	0
+Summary - Pax	Daily totals Pax	Pax	Total	A	2022	0
+Summary - Pax	Daily totals Pax	Pax	Total	D	2022	0
+Summary - Pax	Daily totals Pax	Pax	Total	A	2024	41386
+Summary - Pax	Daily totals Pax	Pax	Total	D	2024	-40321
+Summary - Pax	Daily totals Pax	Pax	Total	A	2028	53525
+Summary - Pax	Daily totals Pax	Pax	Total	D	2028	-53848
+Summary - Pax	Daily totals Pax	Pax	Total	A	2032	63213
+Summary - Pax	Daily totals Pax	Pax	Total	D	2032	-67921
+Summary - Pax	Daily totals Pax	Pax	Total	A	2042	76950
+Summary - Pax	Daily totals Pax	Pax	Total	D	2042	-84764
+Overview - Base	ATMs by Region	ATMs	Asia	All	2024	57
+Overview - Base	ATMs by Region	ATMs	Asia	All	2028	94
+Overview - Base	ATMs by Region	ATMs	Asia	All	2032	134
+Overview - Base	ATMs by Region	ATMs	Asia	All	2038	192
+Overview - Base	ATMs by Region	ATMs	Asia	All	2044	224
+Overview - Base	ATMs by Region	ATMs	Indian Sub Continent	All	2024	150
+Overview - Base	ATMs by Region	ATMs	Indian Sub Continent	All	2028	194
+Overview - Base	ATMs by Region	ATMs	Indian Sub Continent	All	2032	208
+Overview - Base	ATMs by Region	ATMs	Indian Sub Continent	All	2038	228
+Overview - Base	ATMs by Region	ATMs	Indian Sub Continent	All	2044	268
+Overview - Base	ATMs by Region	ATMs	Europe	All	2024	76
+Overview - Base	ATMs by Region	ATMs	Europe	All	2028	106
+Overview - Base	ATMs by Region	ATMs	Europe	All	2032	137
+Overview - Base	ATMs by Region	ATMs	Europe	All	2038	186
+Overview - Base	ATMs by Region	ATMs	Europe	All	2044	222
+Overview - Base	ATMs by Region	ATMs	Africa	All	2024	26
+Overview - Base	ATMs by Region	ATMs	Africa	All	2028	38
+Overview - Base	ATMs by Region	ATMs	Africa	All	2032	62
+Overview - Base	ATMs by Region	ATMs	Africa	All	2038	80
+Overview - Base	ATMs by Region	ATMs	Africa	All	2044	97
+Overview - Base	ATMs by Region	ATMs	Middle East	All	2024	122
+Overview - Base	ATMs by Region	ATMs	Middle East	All	2028	149
+Overview - Base	ATMs by Region	ATMs	Middle East	All	2032	172
+Overview - Base	ATMs by Region	ATMs	Middle East	All	2038	193
+Overview - Base	ATMs by Region	ATMs	Middle East	All	2044	219
+Overview - Base	ATMs by Region	ATMs	North America	All	2024	19
+Overview - Base	ATMs by Region	ATMs	North America	All	2028	19
+Overview - Base	ATMs by Region	ATMs	North America	All	2032	23
+Overview - Base	ATMs by Region	ATMs	North America	All	2038	29
+Overview - Base	ATMs by Region	ATMs	North America	All	2044	32
+Overview - Base	ATMs by Region	ATMs	Southwest Pacific	All	2024	4
+Overview - Base	ATMs by Region	ATMs	Southwest Pacific	All	2028	4
+Overview - Base	ATMs by Region	ATMs	Southwest Pacific	All	2032	12
+Overview - Base	ATMs by Region	ATMs	Southwest Pacific	All	2038	18
+Overview - Base	ATMs by Region	ATMs	Southwest Pacific	All	2044	22
+Overview - Base	ATMs by Region	ATMs	Total	All	2024	454
+Overview - Base	ATMs by Region	ATMs	Total	All	2028	604
+Overview - Base	ATMs by Region	ATMs	Total	All	2032	748
+Overview - Base	ATMs by Region	ATMs	Total	All	2038	926
+Overview - Base	ATMs by Region	ATMs	Total	All	2044	1084
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	EY	All	2024	85.6
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	EY	All	2028	117.7
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	EY	All	2032	153.5
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	EY	All	2038	204.5
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	EY	All	2044	249.4
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	3L	All	2024	18.0
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	3L	All	2028	25.6
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	3L	All	2032	32.2
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	3L	All	2038	37.0
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	3L	All	2044	41.0
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	5W	All	2024	20.0
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	5W	All	2028	22.6
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	5W	All	2032	25.7
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	5W	All	2038	27.1
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	5W	All	2044	27.9
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	OAL	All	2024	30.3
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	OAL	All	2028	41.3
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	OAL	All	2032	51.1
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	OAL	All	2038	58.8
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	OAL	All	2044	65.9
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	Total	All	2024	153.9
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	Total	All	2028	207.2
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	Total	All	2032	262.5
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	Total	All	2038	327.5
+Overview - Base	Commercial ATM fcst (k)	ATMs (k, annual)	Total	All	2044	384.2
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	EY	All	2024	17.7
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	EY	All	2028	25.8
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	EY	All	2032	32.2
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	EY	All	2038	40.0
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	EY	All	2044	46.5
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	3L	All	2024	2.5
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	3L	All	2028	3.8
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	3L	All	2032	5.0
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	3L	All	2038	6.1
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	3L	All	2044	7.0
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	5W	All	2024	3.7
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	5W	All	2028	4.7
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	5W	All	2032	5.3
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	5W	All	2038	5.7
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	5W	All	2044	5.9
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	OAL	All	2024	4.2
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	OAL	All	2028	6.0
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	OAL	All	2032	7.6
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	OAL	All	2038	9.1
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	OAL	All	2044	10.4
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	Total	All	2024	28.1
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	Total	All	2028	40.3
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	Total	All	2032	50.2
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	Total	All	2038	60.8
+Overview - Base	Commercial Pax fcst (m)	Pax (m, annual)	Total	All	2044	69.7
+Overview - Base	Pax / ATM	Pax per ATM	EY	All	2024	207
+Overview - Base	Pax / ATM	Pax per ATM	EY	All	2028	220
+Overview - Base	Pax / ATM	Pax per ATM	EY	All	2032	210
+Overview - Base	Pax / ATM	Pax per ATM	EY	All	2038	196
+Overview - Base	Pax / ATM	Pax per ATM	EY	All	2044	186
+Overview - Base	Pax / ATM	Pax per ATM	3L	All	2024	137
+Overview - Base	Pax / ATM	Pax per ATM	3L	All	2028	150
+Overview - Base	Pax / ATM	Pax per ATM	3L	All	2032	156
+Overview - Base	Pax / ATM	Pax per ATM	3L	All	2038	164
+Overview - Base	Pax / ATM	Pax per ATM	3L	All	2044	170
+Overview - Base	Pax / ATM	Pax per ATM	5W	All	2024	183
+Overview - Base	Pax / ATM	Pax per ATM	5W	All	2028	205
+Overview - Base	Pax / ATM	Pax per ATM	5W	All	2032	207
+Overview - Base	Pax / ATM	Pax per ATM	5W	All	2038	209
+Overview - Base	Pax / ATM	Pax per ATM	5W	All	2044	210
+Overview - Base	Pax / ATM	Pax per ATM	OAL	All	2024	139
+Overview - Base	Pax / ATM	Pax per ATM	OAL	All	2028	145
+Overview - Base	Pax / ATM	Pax per ATM	OAL	All	2032	149
+Overview - Base	Pax / ATM	Pax per ATM	OAL	All	2038	154
+Overview - Base	Pax / ATM	Pax per ATM	OAL	All	2044	158
+Overview - Base	Pax / ATM	Pax per ATM	Total	All	2024	182
+Overview - Base	Pax / ATM	Pax per ATM	Total	All	2028	195
+Overview - Base	Pax / ATM	Pax per ATM	Total	All	2032	191
+Overview - Base	Pax / ATM	Pax per ATM	Total	All	2038	186
+Overview - Base	Pax / ATM	Pax per ATM	Total	All	2044	181
+Overview - Base	Average ATM per day	ATMs	EY	All	2024	234
+Overview - Base	Average ATM per day	ATMs	EY	All	2028	322
+Overview - Base	Average ATM per day	ATMs	EY	All	2032	421
+Overview - Base	Average ATM per day	ATMs	EY	All	2038	560
+Overview - Base	Average ATM per day	ATMs	EY	All	2044	683
+Overview - Base	Average ATM per day	ATMs	3L	All	2024	49
+Overview - Base	Average ATM per day	ATMs	3L	All	2028	70
+Overview - Base	Average ATM per day	ATMs	3L	All	2032	88
+Overview - Base	Average ATM per day	ATMs	3L	All	2038	101
+Overview - Base	Average ATM per day	ATMs	3L	All	2044	112
+Overview - Base	Average ATM per day	ATMs	5W	All	2024	55
+Overview - Base	Average ATM per day	ATMs	5W	All	2028	62
+Overview - Base	Average ATM per day	ATMs	5W	All	2032	70
+Overview - Base	Average ATM per day	ATMs	5W	All	2038	74
+Overview - Base	Average ATM per day	ATMs	5W	All	2044	76
+Overview - Base	Average ATM per day	ATMs	OAL	All	2024	83
+Overview - Base	Average ATM per day	ATMs	OAL	All	2028	113
+Overview - Base	Average ATM per day	ATMs	OAL	All	2032	140
+Overview - Base	Average ATM per day	ATMs	OAL	All	2038	161
+Overview - Base	Average ATM per day	ATMs	OAL	All	2044	180
+Overview - Base	Average ATM per day	ATMs	Total	All	2024	422
+Overview - Base	Average ATM per day	ATMs	Total	All	2028	568
+Overview - Base	Average ATM per day	ATMs	Total	All	2032	719
+Overview - Base	Average ATM per day	ATMs	Total	All	2038	897
+Overview - Base	Average ATM per day	ATMs	Total	All	2044	1052
+Overview - Base	Design day	ATMs	EY	All	2024	254
+Overview - Base	Design day	ATMs	EY	All	2028	344
+Overview - Base	Design day	ATMs	EY	All	2032	440
+Overview - Base	Design day	ATMs	EY	All	2038	582
+Overview - Base	Design day	ATMs	EY	All	2044	708
+Overview - Base	Design day	ATMs	3L	All	2024	48
+Overview - Base	Design day	ATMs	3L	All	2028	74
+Overview - Base	Design day	ATMs	3L	All	2032	90
+Overview - Base	Design day	ATMs	3L	All	2038	102
+Overview - Base	Design day	ATMs	3L	All	2044	112
+Overview - Base	Design day	ATMs	5W	All	2024	53
+Overview - Base	Design day	ATMs	5W	All	2028	65
+Overview - Base	Design day	ATMs	5W	All	2032	71
+Overview - Base	Design day	ATMs	5W	All	2038	75
+Overview - Base	Design day	ATMs	5W	All	2044	77
+Overview - Base	Design day	ATMs	OAL	All	2024	99
+Overview - Base	Design day	ATMs	OAL	All	2028	121
+Overview - Base	Design day	ATMs	OAL	All	2032	147
+Overview - Base	Design day	ATMs	OAL	All	2038	167
+Overview - Base	Design day	ATMs	OAL	All	2044	187
+Overview - Base	Design day	ATMs	Total	All	2024	454
+Overview - Base	Design day	ATMs	Total	All	2028	604
+Overview - Base	Design day	ATMs	Total	All	2032	748
+Overview - Base	Design day	ATMs	Total	All	2038	926
+Overview - Base	Design day	ATMs	Total	All	2044	1084
+Overview - Base	Variance %	Variance %	EY	All	2024	108%
+Overview - Base	Variance %	Variance %	EY	All	2028	107%
+Overview - Base	Variance %	Variance %	EY	All	2032	105%
+Overview - Base	Variance %	Variance %	EY	All	2038	104%
+Overview - Base	Variance %	Variance %	EY	All	2044	104%
+Overview - Base	Variance %	Variance %	3L	All	2024	98%
+Overview - Base	Variance %	Variance %	3L	All	2028	106%
+Overview - Base	Variance %	Variance %	3L	All	2032	102%
+Overview - Base	Variance %	Variance %	3L	All	2038	101%
+Overview - Base	Variance %	Variance %	3L	All	2044	100%
+Overview - Base	Variance %	Variance %	5W	All	2024	97%
+Overview - Base	Variance %	Variance %	5W	All	2028	105%
+Overview - Base	Variance %	Variance %	5W	All	2032	101%
+Overview - Base	Variance %	Variance %	5W	All	2038	101%
+Overview - Base	Variance %	Variance %	5W	All	2044	101%
+Overview - Base	Variance %	Variance %	OAL	All	2024	119%
+Overview - Base	Variance %	Variance %	OAL	All	2028	107%
+Overview - Base	Variance %	Variance %	OAL	All	2032	105%
+Overview - Base	Variance %	Variance %	OAL	All	2038	104%
+Overview - Base	Variance %	Variance %	OAL	All	2044	104%
+Overview - Base	Variance %	Variance %	Total	All	2024	108%
+Overview - Base	Variance %	Variance %	Total	All	2028	106%
+Overview - Base	Variance %	Variance %	Total	All	2032	104%
+Overview - Base	Variance %	Variance %	Total	All	2038	103%
+Overview - Base	Variance %	Variance %	Total	All	2044	103%
+Overview - Base	CAGR - ATM fcst	CAGR %	EY	All	2028	8%
+Overview - Base	CAGR - ATM fcst	CAGR %	EY	All	2032	7%
+Overview - Base	CAGR - ATM fcst	CAGR %	EY	All	2038	5%
+Overview - Base	CAGR - ATM fcst	CAGR %	EY	All	2044	3%
+Overview - Base	CAGR - ATM fcst	CAGR %	3L	All	2028	9%
+Overview - Base	CAGR - ATM fcst	CAGR %	3L	All	2032	6%
+Overview - Base	CAGR - ATM fcst	CAGR %	3L	All	2038	2%
+Overview - Base	CAGR - ATM fcst	CAGR %	3L	All	2044	2%
+Overview - Base	CAGR - ATM fcst	CAGR %	5W	All	2028	3%
+Overview - Base	CAGR - ATM fcst	CAGR %	5W	All	2032	3%
+Overview - Base	CAGR - ATM fcst	CAGR %	5W	All	2038	1%
+Overview - Base	CAGR - ATM fcst	CAGR %	5W	All	2044	0%
+Overview - Base	CAGR - ATM fcst	CAGR %	OAL	All	2028	8%
+Overview - Base	CAGR - ATM fcst	CAGR %	OAL	All	2032	5%
+Overview - Base	CAGR - ATM fcst	CAGR %	OAL	All	2038	2%
+Overview - Base	CAGR - ATM fcst	CAGR %	OAL	All	2044	2%
+Overview - Base	CAGR - ATM fcst	CAGR %	Total	All	2028	8%
+Overview - Base	CAGR - ATM fcst	CAGR %	Total	All	2032	6%
+Overview - Base	CAGR - ATM fcst	CAGR %	Total	All	2038	4%
+Overview - Base	CAGR - ATM fcst	CAGR %	Total	All	2044	3%
+Overview - Base	CAGR - DDFS	CAGR %	EY	All	2028	8%
+Overview - Base	CAGR - DDFS	CAGR %	EY	All	2032	6%
+Overview - Base	CAGR - DDFS	CAGR %	EY	All	2038	5%
+Overview - Base	CAGR - DDFS	CAGR %	EY	All	2044	3%
+Overview - Base	CAGR - DDFS	CAGR %	3L	All	2028	11%
+Overview - Base	CAGR - DDFS	CAGR %	3L	All	2032	5%
+Overview - Base	CAGR - DDFS	CAGR %	3L	All	2038	2%
+Overview - Base	CAGR - DDFS	CAGR %	3L	All	2044	2%
+Overview - Base	CAGR - DDFS	CAGR %	5W	All	2028	5%
+Overview - Base	CAGR - DDFS	CAGR %	5W	All	2032	2%
+Overview - Base	CAGR - DDFS	CAGR %	5W	All	2038	1%
+Overview - Base	CAGR - DDFS	CAGR %	5W	All	2044	0%
+Overview - Base	CAGR - DDFS	CAGR %	OAL	All	2028	5%
+Overview - Base	CAGR - DDFS	CAGR %	OAL	All	2032	5%
+Overview - Base	CAGR - DDFS	CAGR %	OAL	All	2038	2%
+Overview - Base	CAGR - DDFS	CAGR %	OAL	All	2044	2%
+Overview - Base	CAGR - DDFS	CAGR %	Total	All	2028	7%
+Overview - Base	CAGR - DDFS	CAGR %	Total	All	2032	5%
+Overview - Base	CAGR - DDFS	CAGR %	Total	All	2038	4%
+Overview - Base	CAGR - DDFS	CAGR %	Total	All	2044	3%
+Overview - Base	CAGR - Variance	CAGR %	EY	All	2028	-0.4%
+Overview - Base	CAGR - Variance	CAGR %	EY	All	2032	-0.5%
+Overview - Base	CAGR - Variance	CAGR %	EY	All	2038	-0.1%
+Overview - Base	CAGR - Variance	CAGR %	EY	All	2044	-0.0%
+Overview - Base	CAGR - Variance	CAGR %	3L	All	2028	2.2%
+Overview - Base	CAGR - Variance	CAGR %	3L	All	2032	-0.9%
+Overview - Base	CAGR - Variance	CAGR %	3L	All	2038	-0.2%
+Overview - Base	CAGR - Variance	CAGR %	3L	All	2044	-0.1%
+Overview - Base	CAGR - Variance	CAGR %	5W	All	2028	2.1%
+Overview - Base	CAGR - Variance	CAGR %	5W	All	2032	-1.0%
+Overview - Base	CAGR - Variance	CAGR %	5W	All	2038	0.0%
+Overview - Base	CAGR - Variance	CAGR %	5W	All	2044	-0.0%
+Overview - Base	CAGR - Variance	CAGR %	OAL	All	2028	-2.9%
+Overview - Base	CAGR - Variance	CAGR %	OAL	All	2032	-0.4%
+Overview - Base	CAGR - Variance	CAGR %	OAL	All	2038	-0.2%
+Overview - Base	CAGR - Variance	CAGR %	OAL	All	2044	-0.0%
+Overview - Base	CAGR - Variance	CAGR %	Total	All	2028	-0.3%
+Overview - Base	CAGR - Variance	CAGR %	Total	All	2032	-0.6%
+Overview - Base	CAGR - Variance	CAGR %	Total	All	2038	-0.1%
+Overview - Base	CAGR - Variance	CAGR %	Total	All	2044	-0.0%
+Overview - Base	Avg ground time (min)	Minutes	EY	All	2024	215
+Overview - Base	Avg ground time (min)	Minutes	EY	All	2028	199
+Overview - Base	Avg ground time (min)	Minutes	EY	All	2032	193
+Overview - Base	Avg ground time (min)	Minutes	EY	All	2038	187
+Overview - Base	Avg ground time (min)	Minutes	EY	All	2044	177
+Overview - Base	Avg ground time (min)	Minutes	3L	All	2024	135
+Overview - Base	Avg ground time (min)	Minutes	3L	All	2028	123
+Overview - Base	Avg ground time (min)	Minutes	3L	All	2032	119
+Overview - Base	Avg ground time (min)	Minutes	3L	All	2038	112
+Overview - Base	Avg ground time (min)	Minutes	3L	All	2044	118
+Overview - Base	Avg ground time (min)	Minutes	5W	All	2024	196
+Overview - Base	Avg ground time (min)	Minutes	5W	All	2028	194
+Overview - Base	Avg ground time (min)	Minutes	5W	All	2032	193
+Overview - Base	Avg ground time (min)	Minutes	5W	All	2038	185
+Overview - Base	Avg ground time (min)	Minutes	5W	All	2044	182
+Overview - Base	Avg ground time (min)	Minutes	OAL	All	2024	75
+Overview - Base	Avg ground time (min)	Minutes	OAL	All	2028	72
+Overview - Base	Avg ground time (min)	Minutes	OAL	All	2032	70
+Overview - Base	Avg ground time (min)	Minutes	OAL	All	2038	68
+Overview - Base	Avg ground time (min)	Minutes	OAL	All	2044	68
+Overview - Base	Avg ground time (min)	Minutes	Total	All	2024	174
+Overview - Base	Avg ground time (min)	Minutes	Total	All	2028	164
+Overview - Base	Avg ground time (min)	Minutes	Total	All	2032	160
+Overview - Base	Avg ground time (min)	Minutes	Total	All	2038	157
+Overview - Base	Avg ground time (min)	Minutes	Total	All	2044	152

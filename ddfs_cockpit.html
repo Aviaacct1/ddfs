@@ -1,0 +1,198 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>The Observatory - DDFS Cockpit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F3;--card:#F6F3EC;--ink:#0F1B28;--mut:#6f6a5f;--meta:#8a8577;--teal:#3D6A88;--gold:#D4A249;--bad:#CE3B2A;--ok:#5F8D7A;--line:#E2DCCC;--hair-ink:#24313F;
+--serif:'Newsreader',Georgia,serif;--ui:'Inter',-apple-system,'Segoe UI',Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--ui);background:var(--bg);color:var(--ink);font-size:14px}
+header{background:var(--ink);color:#C4CDD6;padding:12px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--hair-ink)}
+.seal{width:30px;height:30px;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .inst{font-family:var(--ui);font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;display:block;line-height:1}
+.brand .prod{font-family:var(--serif);font-weight:400;font-size:19px;color:#F6F3EC;display:block;line-height:1.15;margin-top:3px}
+.brand .tag-beta{font-family:var(--ui);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,162,73,.5);padding:1px 5px;margin-left:2px;vertical-align:middle}
+.brand .provsub{font-family:var(--ui);font-size:9.5px;color:var(--meta);display:block;margin-top:3px}
+nav.lenses{background:var(--bg);border-bottom:1px solid var(--line);padding:0 24px;display:flex;gap:2px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+nav.lenses a{border-bottom:2px solid transparent;padding:11px 14px;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);text-decoration:none}
+nav.lenses a:hover{color:var(--ink);border-bottom-color:var(--gold)}
+nav.lenses a.ext{margin-left:auto;color:var(--teal)}nav.lenses a.ext2{margin-left:0;color:var(--teal)}
+.wrap{display:grid;grid-template-columns:400px 1fr;gap:16px;padding:16px 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:0;padding:14px 16px;margin-bottom:14px;scroll-margin-top:52px}
+.card h2{font-size:10.5px;margin:0 0 10px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.row{display:grid;grid-template-columns:1fr 84px 90px;gap:6px;align-items:center;margin:5px 0;font-size:13px}
+.row .eng{color:var(--mut);font-size:12px;text-align:right}
+.row input,select,input[type=text]{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:0;padding:4px 6px;font-size:13px;font-family:var(--ui)}
+.row input{width:78px}
+button{background:var(--ink);border:0;color:#F6F3EC;font-weight:600;padding:8px 14px;border-radius:0;cursor:pointer;font-size:10.5px;font-family:var(--ui);letter-spacing:.08em;text-transform:uppercase}
+button:hover{background:var(--gold);color:var(--ink)}
+button.gold{background:var(--gold);color:var(--ink)}button:disabled{opacity:.45;cursor:default}
+table{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+th,td{padding:5px 8px;text-align:right}
+th{color:var(--meta);font-weight:600;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1.5px solid var(--ink)}
+td{border-bottom:1px solid var(--line);font-family:var(--serif)}
+td:first-child,th:first-child{text-align:left}
+.prov{font-size:11px;color:var(--mut)}
+.flag{color:#9C8A4E}
+.src{font-size:11px;color:var(--meta);margin-top:6px;line-height:1.5}
+pre{background:#fff;border:1px solid var(--line);padding:10px;font-size:11.5px;overflow:auto;color:var(--ink)}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:1px 8px;font-size:11px;color:var(--mut);margin:1px 2px}
+.ok{color:var(--ok)}
+a{color:var(--teal)}
+</style></head><body>
+<header>
+ <div class="brand">
+  <svg class="seal" viewBox="0 0 32 32" fill="none" stroke="#C4CDD6" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+   <circle cx="16" cy="16" r="12.5"/><ellipse cx="16" cy="16" rx="5" ry="12.5"/><ellipse cx="16" cy="16" rx="12.5" ry="5"/><line x1="16" y1="3.5" x2="16" y2="28.5"/>
+   <path d="M5.9 9.2 A12.5 12.5 0 0 1 26.1 9.2" stroke="#D4A249" stroke-width="1.6"/></svg>
+  <div><span class="inst">The Observatory</span><span class="prod">DDFS Cockpit <span class="tag-beta">Beta</span></span><span class="provsub">engine forecast &rarr; levers &rarr; pack &rarr; DDFS; the protected Cockpit is untouched; sample weeks upgrade automatically at store day</span></div>
+ </div>
+</header>
+<nav class="lenses">
+ <a href="#sec1">1 &middot; Airport &amp; scenario</a>
+ <a href="#sec2">2 &middot; Levers</a>
+ <a href="#sec3">3 &middot; Emit pack</a>
+ <a href="#secE">Engine forecast</a>
+ <a href="#sec4">4 &middot; DDFS</a>
+ <a href="#sec5">5 &middot; Hindcast</a>
+ <a class="ext" href="/">DDFS live tool &rarr;</a><a class="ext2" href="/demo">Studio &rarr;</a>
+</nav>
+<div class="wrap">
+<div><!-- left column: pick, levers, pack -->
+ <div class="card" id="sec1"><h2>1 &middot; Airport and scenario</h2>
+  <div class="row"><span>Airport (IATA or name)</span><input id="apq" list="apl" value="AUH" style="width:78px"><span></span></div>
+  <datalist id="apl"></datalist>
+  <div class="row"><span>Scenario</span><select id="scen"><option>Baseline</option><option>High</option><option>Low</option></select><span class="prov">ENGINE</span></div>
+  <div class="row"><span>Base year</span><input id="basey" value="2024"><span class="prov">anchor (hindcast: 2024)</span></div>
+  <div class="row"><span>Spot years</span><input id="spots" value="2019,2024,2028,2032,2038,2040,2044" style="width:170px"><span></span></div>
+  <button onclick="loadEngine()">Load engine forecast</button>
+  <div class="src" id="apinfo"></div>
+ </div>
+ <div class="card" id="sec2"><h2>2 &middot; Levers <span style="text-transform:none">(engine default | override | provenance)</span></h2>
+  <div class="row"><span>Upgauge %/yr</span><input id="upg" value="" placeholder="0.0"><span class="eng">engine 0.0 | none</span></div>
+  <div class="row"><span>Pax load factor</span><input id="plf" value="" placeholder="0.80"><span class="eng">assumption 0.80</span></div>
+  <div class="src">Overrides are request-scoped: recorded in the pack, never written back to the engine bundle.</div>
+ </div>
+ <div class="card" id="sec3"><h2>3 &middot; Emit pack</h2>
+  <button class="gold" onclick="emitPack()">Emit pack</button>
+  <button onclick="emitPack(true)" style="margin-left:6px">Emit + save to ddfs_packs</button>
+  <button onclick="dlPack()" id="dlp" disabled style="margin-left:6px">Download JSON</button>
+  <div id="packpanel" class="src">No pack emitted yet.</div>
+ </div>
+</div>
+<div><!-- right column: engine chart, ddfs, hindcast -->
+ <div class="card" id="secE"><h2>Engine forecast</h2>
+  <div id="chart" class="src">Load an airport to draw the engine series.</div>
+  <div class="src">Source: Avia Global Forecast engine bundle (read-only). Units: annual passengers (m). Actuals to base year, forecast beyond (marker).</div>
+ </div>
+ <div class="card" id="sec4"><h2>4 &middot; DDFS from the pack</h2>
+  <button class="gold" onclick="buildDDFS()" id="bb" disabled>Build DDFS</button>
+  <button onclick="dlFc()" id="dlf" disabled style="margin-left:6px">Download forecast TSV</button>
+  <div id="ddfsout" class="src" style="margin-top:8px">Emit a pack first.</div>
+ </div>
+ <div class="card" id="sec5"><h2>5 &middot; ADAC 2024 hindcast (acceptance)</h2>
+  <button onclick="runHindcast()">Run vs the 692 pinned rows</button>
+  <div id="hcout" class="src" style="margin-top:8px">Engine anchored at 2024 for AUH, through the pack, on the AUH schedule base; the diff is a scoreboard, not a judgement.</div>
+ </div>
+</div>
+</div>
+<footer style="padding:14px 24px;color:var(--meta);font-size:10.5px;border-top:1px solid var(--line);text-align:center;line-height:1.7;font-family:var(--ui)">
+The Observatory - DDFS Cockpit. An Avia Solutions product; internal, access controlled.<br>v1.1 (20 July 2026) &middot; served by ddfs_service.py :8030 &middot; conventions per notes 23 v3, 35 v2, 37 v2 &middot; flag rather than fill throughout</footer>
+<script>
+"use strict";
+var PACK=null,FC=null,APS=[];
+function $(id){return document.getElementById(id);}
+function j(u,opt){return fetch(u,opt).then(function(r){return r.json();});}
+function spotsList(){return $("spots").value.split(",").map(function(s){return parseInt(s.trim(),10);}).filter(function(x){return !isNaN(x);});}
+function overrides(){var o={};if($("upg").value!=="")o.upgauge_pa=parseFloat($("upg").value);if($("plf").value!=="")o.pax_load_factor=parseFloat($("plf").value);return o;}
+function apCode(){var v=$("apq").value.trim();var hit=APS.filter(function(a){return a.c===v.toUpperCase()||a.n.toLowerCase()===v.toLowerCase();});return hit.length?hit[0].c:v.toUpperCase().slice(0,3);}
+function loadAirports(){j("/api/airports").then(function(r){APS=r.airports;var dl=$("apl");dl.innerHTML=APS.map(function(a){return '<option value="'+a.c+'">'+a.n+", "+a.cty+'</option>';}).join("");});}
+function loadEngine(){j("/api/engine?airport="+apCode()).then(function(r){
+ if(r.error){$("apinfo").textContent=r.error;return;}
+ $("apinfo").innerHTML="<b>"+r.name+"</b>, "+r.country+" &middot; base "+r.base_mppa.toFixed(1)+"m pax ("+r.base_year+") &middot; dom "+(r.dom_share*100).toFixed(0)+"% &middot; connecting "+(r.connecting_share*100).toFixed(0)+"% &middot; GDP elasticity est "+(r.regress.bG_est==null?"n/a":r.regress.bG_est)+(r.regress.reliable?"":" (regression flagged unreliable; engine default applies)");
+ drawChart(r);});}
+function drawChart(r){var ys=r.years,base=parseInt($("basey").value,10)||r.base_year;
+ var w=760,h=230,x0=44,y0=200;var all=[];["Baseline","High","Low"].forEach(function(s){(r.series[s]||[]).forEach(function(v){if(v!=null)all.push(v);});});
+ var mx=Math.max.apply(null,all)*1.08;
+ function X(y){return x0+(y-ys[0])/(ys[ys.length-1]-ys[0])*(w-x0-10);}
+ function Y(v){return y0-v/mx*(y0-18);}
+ function path(s,col,dash){var d="",f=true;ys.forEach(function(y,i){var v=(r.series[s]||[])[i];if(v!=null){d+=(f?"M":"L")+X(y).toFixed(1)+" "+Y(v).toFixed(1)+" ";f=false;}});return '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="2" '+(dash?'stroke-dasharray="5 4"':'')+'/>';}
+ var g='<svg viewBox="0 0 '+w+' '+h+'" style="width:100%;background:#fff;border:1px solid var(--line)">';
+ for(var t=0;t<=4;t++){var v=mx*t/4;g+='<line x1="'+x0+'" y1="'+Y(v)+'" x2="'+(w-10)+'" y2="'+Y(v)+'" stroke="#E2DCCC"/><text x="4" y="'+(Y(v)+4)+'" fill="#8a8577" font-size="10">'+v.toFixed(0)+'m</text>';}
+ g+='<line x1="'+X(base)+'" y1="18" x2="'+X(base)+'" y2="'+y0+'" stroke="#D4A249" stroke-dasharray="3 3"/><text x="'+(X(base)+3)+'" y="30" fill="#A9553F" font-size="10">base '+base+' | forecast &rarr;</text>';
+ g+=path("High","#5F8D7A",true)+path("Low","#CE3B2A",true)+path("Baseline","#3D6A88",false);
+ [ys[0],2030,2040,2050,ys[ys.length-1]].forEach(function(y){if(y>=ys[0]&&y<=ys[ys.length-1])g+='<text x="'+X(y)+'" y="'+(y0+12)+'" fill="#8a8577" font-size="10" text-anchor="middle">'+y+'</text>';});
+ g+='<text x="'+(w-12)+'" y="14" fill="#8a8577" font-size="10" text-anchor="end">annual passengers (m), '+ys[0]+'-'+ys[ys.length-1]+' &middot; Baseline solid, High/Low dashed</text></svg>';
+ $("chart").innerHTML=g;}
+function packRow(k,v){var val=(v&&typeof v==="object")?("values" in v?v.values:v.value):v;var prov=(v&&v.provenance)||"";
+ var flag=String(prov).indexOf("FLAG")===0;var shown;
+ if(val==null)shown='<span class="flag">flagged, not filled</span>';
+ else if(typeof val==="object")shown='<span class="pill">'+Object.keys(val).length+' values</span>';
+ else shown=String(val);
+ return "<tr><td>"+k+"</td><td>"+shown+'</td><td class="prov'+(flag?' flag':'')+'">'+prov+"</td></tr>";}
+function renderPack(p){var h="<table><tr><th>field</th><th>value</th><th>provenance</th></tr>";
+ h+=packRow("pax_total (per spot year)",p.series.pax_total);
+ h+=packRow("scheduled_movements",p.series.scheduled_movements);
+ Object.keys(p.dd_block).forEach(function(k){h+=packRow(k,p.dd_block[k]);});
+ h+="</table><div class='src'>pack_id "+p.pack_id+" &middot; flags: "+(p.flags.length?p.flags.join("; "):"none")+" &middot; overrides: "+JSON.stringify(p.overrides_applied)+"</div>";
+ return h;}
+function emitPack(save){var body={airport:apCode(),scenario:$("scen").value,base_year:parseInt($("basey").value,10),spot_years:spotsList(),overrides:overrides()};
+ j("/api/emit_pack"+(save===true?"?save=1":""),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){
+  if(r.error){$("packpanel").textContent=r.error;return;}
+  PACK=r.pack;$("packpanel").innerHTML=renderPack(r.pack)+(r.saved?"<div class='src ok'>saved: ddfs_packs/"+r.saved+"</div>":"");
+  $("dlp").disabled=false;$("bb").disabled=false;});}
+function dlPack(){if(!PACK)return;var b=new Blob([JSON.stringify(PACK,null,1)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=PACK.pack_id+".json";a.click();}
+function fcTsv(){if(!FC)return "";var L=["year\tgrowth_factor\tday_atms\tpax_m\tatm_k\tavg_atm_day\tpax_per_atm\tdesign_day_atms"];
+ Object.keys(FC.years).forEach(function(y){var v=FC.years[y],k=v.kpis;L.push([y,v.growth_factor,v.day_atms,k.pax_m,k.atm_k,k.avg_atm_day,k.pax_per_atm,k.design_day_atms].join("\t"));});
+ L.push("");L.push("hour\t"+Object.keys(FC.years).map(function(y){return y+"_A\t"+y+"_D";}).join("\t"));
+ for(var h=0;h<24;h++){var hh=(h<10?"0":"")+h;L.push(hh+"\t"+Object.keys(FC.years).map(function(y){var v=FC.years[y].hourly[hh]||[0,0];return v[0]+"\t"+(-v[1]);}).join("\t"));}
+ L.push("");L.push("# departures negative (ADAC convention); base day: "+FC.base_day.mode+"; source: ddfs_service /api/forecast, pack "+(PACK?PACK.pack_id:""));
+ return L.join("\n");}
+function buildDDFS(){if(!PACK)return;$("ddfsout").textContent="Working...";
+ j("/api/forecast",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pack:PACK})}).then(function(r){
+  if(r.error){$("ddfsout").textContent=r.error;return;}
+  FC=r;$("dlf").disabled=false;
+  var h="<div class='src'>base day: "+r.base_day.mode+" &middot; "+r.base_day_atms+" ATMs &middot; "+(r.flags.length?("pack flags: "+r.flags.join("; ")):"")+"</div>";
+  h+="<table><tr><th>spot year</th><th>growth factor</th><th>design-day ATMs</th><th>pax (m, annual)</th><th>ATMs (k, annual)</th><th>avg ATM/day</th><th>pax/ATM</th></tr>";
+  Object.keys(r.years).forEach(function(y){var v=r.years[y],k=v.kpis;
+   h+="<tr><td>"+y+"</td><td>"+v.growth_factor.toFixed(3)+"</td><td>"+k.design_day_atms+"</td><td>"+k.pax_m+"</td><td>"+k.atm_k+"</td><td>"+k.avg_atm_day+"</td><td>"+k.pax_per_atm+"</td></tr>";});
+  h+="</table>";
+  var years=Object.keys(r.years);var last=years[years.length-1];
+  h+=hourChart(r.years[years.indexOf("2024")>=0?"2024":years[0]],years.indexOf("2024")>=0?"2024":years[0])+hourChart(r.years[last],last);
+  h+="<div class='src'>Design day scaled by the pack movements path; per-carrier reshaping needs carrier paths (flagged). Source: OAG store + engine pack.</div>";
+  $("ddfsout").innerHTML=h;});}
+function hourChart(yv,label){var w=760,h=150,x0=30,mid=78;var mx=0;
+ for(var i=0;i<24;i++){var hh=(i<10?"0":"")+i,v=yv.hourly[hh]||[0,0];mx=Math.max(mx,v[0],v[1]);}
+ if(!mx)return "";
+ var g='<svg viewBox="0 0 '+w+' '+h+'" style="width:100%;background:#fff;border:1px solid var(--line);margin-top:6px">';
+ g+='<text x="'+(w-8)+'" y="12" fill="#8a8577" font-size="10" text-anchor="end">design-day ATMs by clock hour, '+label+' (forecast'+(label==="2024"?" base":"")+') &middot; arrivals up, departures down</text>';
+ g+='<line x1="'+x0+'" y1="'+mid+'" x2="'+(w-8)+'" y2="'+mid+'" stroke="#E2DCCC"/>';
+ for(var i2=0;i2<24;i2++){var hh2=(i2<10?"0":"")+i2,v2=yv.hourly[hh2]||[0,0];var bw=(w-x0-12)/24,x=x0+i2*bw;
+  g+='<rect x="'+(x+1)+'" y="'+(mid-v2[0]/mx*60)+'" width="'+(bw-2)+'" height="'+(v2[0]/mx*60)+'" fill="#3D6A88"/>';
+  g+='<rect x="'+(x+1)+'" y="'+mid+'" width="'+(bw-2)+'" height="'+(v2[1]/mx*60)+'" fill="#D4A249"/>';
+  if(i2%4===0)g+='<text x="'+(x+bw/2)+'" y="'+(h-6)+'" fill="#8a8577" font-size="9" text-anchor="middle">'+hh2+'</text>';}
+ return g+"</svg>";}
+function dlFc(){var b=new Blob([fcTsv()],{type:"text/tab-separated-values"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="ddfs_forecast_"+(PACK?PACK.pack_id:"run")+".tsv";a.click();}
+function runHindcast(){$("hcout").textContent="Working (engine -> pack -> DDFS -> diff)...";
+ j("/api/hindcast").then(function(r){if(r.error){$("hcout").textContent=r.error;return;}
+  $("hcout").innerHTML="<pre>"+r.scoreboard.replace(/</g,"&lt;")+"</pre>";});}
+/* ---- selftest (headless-capable, pure helpers only) ---- */
+function selftestCockpit(){var n=0,fails=[];
+ function ck(name,got,want){n++;if(JSON.stringify(got)!==JSON.stringify(want))fails.push(name+": "+JSON.stringify(got)+" != "+JSON.stringify(want));}
+ $("spots").value="2019, 2024,x,2044";ck("spotsList parses and drops junk",spotsList(),[2019,2024,2044]);
+ $("spots").value="2019,2024,2028,2032,2038,2040,2044";
+ $("upg").value="0.0035";$("plf").value="";ck("overrides picks set levers only",overrides(),{upgauge_pa:0.0035});
+ $("upg").value="";
+ ck("packRow flags null values",packRow("x",{value:null,provenance:"FLAG: y"}).indexOf("flagged, not filled")>-1,true);
+ ck("packRow renders provenance",packRow("x",{value:1,provenance:"ENGINE"}).indexOf("ENGINE")>-1,true);
+ FC={base_day:{mode:"m"},years:{"2024":{growth_factor:1,day_atms:441,kpis:{pax_m:1,atm_k:2,avg_atm_day:3,pax_per_atm:4,design_day_atms:5},hourly:{"00":[1,2]}}}};PACK={pack_id:"t"};
+ var t=fcTsv();ck("fcTsv departures negative",t.indexOf("1\t-2")>-1,true);
+ ck("fcTsv states base-day mode",t.indexOf("base day: m")>-1,true);
+ FC=null;PACK=null;
+ var res={pass:fails.length===0,checks:n,fails:fails};
+ if(typeof console!=="undefined")console.log("DDFS cockpit selftest: "+n+" checks, "+(res.pass?"all pass":fails.length+" FAILURES"),res.pass?"":fails);
+ return res;}
+var _st=selftestCockpit();
+if(typeof window!=="undefined"&&window.location&&window.location.protocol.indexOf("http")===0){loadAirports();loadEngine();}
+</script></body></html>

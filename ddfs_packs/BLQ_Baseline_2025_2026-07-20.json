@@ -1,0 +1,99 @@
+{
+ "pack_id": "BLQ_Baseline_2025_2026-07-20",
+ "airport": "BLQ",
+ "airport_name": "Bologna",
+ "base_year": 2025,
+ "vintage": "engine bundle cockpit.json (read-only)",
+ "emitted": "2026-07-20T11:53:54",
+ "scenario": "Baseline",
+ "spot_years": [
+  2028,
+  2032,
+  2038,
+  2040,
+  2044
+ ],
+ "series": {
+  "pax_total": {
+   "provenance": "ENGINE Baseline series",
+   "values": {
+    "2028": 11353000,
+    "2032": 12117000,
+    "2038": 13161000,
+    "2040": 13526000,
+    "2044": 14342000
+   }
+  },
+  "scheduled_movements": {
+   "provenance": "DERIVED: OAG 2025 base (sample-week annualisation (6 wc weeks; stated proxy, upgrades at store day)), grown with the pax path over (1+upgauge)^n",
+   "values": {
+    "2028": 82939,
+    "2032": 88521,
+    "2038": 96147,
+    "2040": 98814,
+    "2044": 104775
+   }
+  }
+ },
+ "dd_block": {
+  "gauge_mix_base": {
+   "values": {
+    "C": 0.9907,
+    "E": 0.0093
+   },
+   "provenance": "OAG-BRIDGE BLQ 2025 (engine cannot supply; note 23 item 3)"
+  },
+  "seats_per_atm_base": {
+   "value": 175.0,
+   "provenance": "OAG-BRIDGE BLQ 2025"
+  },
+  "upgauge_pa": {
+   "value": 0.0,
+   "provenance": "ENGINE-DEFAULT: none"
+  },
+  "pax_load_factor": {
+   "value": 0.8,
+   "provenance": "WORKING ASSUMPTION 0.80 (ZAG precedent, note 35 v2; engagement value to confirm)"
+  },
+  "dom_share": {
+   "value": 0.332,
+   "provenance": "ENGINE"
+  },
+  "connecting_share": {
+   "value": 0.014,
+   "provenance": "ENGINE"
+  },
+  "month_share": {
+   "value": null,
+   "provenance": "FLAG: cannot supply from sample weeks; full-year store or ACI monthly panel fills this (note 23 item 1)"
+  },
+  "design_day_convention": {
+   "value": "busiest day of held sample week (PROXY; sent ADAC convention is PMAD - upgrades at store day)",
+   "provenance": "SAMPLE-MODE PROXY, stated per ladder rung 2"
+  },
+  "ga_movements": {
+   "value": null,
+   "provenance": "FLAG: engagement input, not engine-derivable"
+  },
+  "terminal_allocation": {
+   "value": null,
+   "provenance": "FLAG: engagement input (ZAG precedent: candidate rule to confirm)"
+  },
+  "transfer_rule": {
+   "value": null,
+   "provenance": "FLAG: engagement input (ZAG precedent: fixed base-year share of hub carrier)"
+  },
+  "lcc_net_path": {
+   "value": null,
+   "provenance": "ENGINE-DEFAULT: none (analyst input where the engagement holds one)"
+  }
+ },
+ "flags": [
+  "ga_movements",
+  "month_share",
+  "terminal_allocation",
+  "transfer_rule"
+ ],
+ "overrides_applied": {},
+ "note": "Emitted by ddfs_pack_emit.py; the engine bundle is never written back. Flag rather than fill throughout."
+}

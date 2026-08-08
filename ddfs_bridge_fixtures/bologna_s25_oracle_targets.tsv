@@ -1,0 +1,330 @@
+# Fixture: bologna_s25_oracle_targets.tsv | extracted 19 July 2026
+# Source: /Shared/Archive/2025/Bologna - Traffic Forecast Update 2025/Forecast/DDFS/DesignDay_S25.xlsx
+# Egnyte group_id cd5eaf23-5814-4a28-b4e0-e9e53c9e7256, entry_id 2d6fb095-a93c-4781-be9b-41bead8a8771 (v13, last modified 24 Nov 2025 09:47)
+# Version choice: the DDFS/SENT to client folder contains transmittal .msg emails only (no standalone workbook); the final transmittal 'Latest DDFS and Summaries.msg' is dated 24 Nov 2025, same day as this file's last modification, and this is the only/most recent DesignDay_S25.xlsx in the engagement DDFS folder - so it is taken as the sent version.
+# ANOMALY FLAG: the Cover sheet reads 'Design Day W31 - DRAFT' (24-Nov-25) although the file is DesignDay_S25; chart titles inside read 'Design Day SS 25' and DayBeforeArr covers services arriving 20 Jul 2025 / taking off 21 Jul 2025, confirming S25 content. Cover title appears to be a stale label.
+# Year column: single design-day workbook (Summer 2025 design day, 21 Jul 2025); year = 2025 throughout, read from 'Design Day SS 25' chart labels and the 20/21 Jul 2025 schedule dates.
+# StandDemand: three blocks (pax, cargo, pax & cargo) x ICAO classes A-F plus A+B+C+D+E+F. Pinned: Max Acft on ground, carried-in ATMs (arriving evening before and departing on DDFS day), Grand Total Arr/Dep ATMs per class, and hourly AOG (end of clock hour) for the A+B+C+D+E+F column of each block.
+# DATA ODDITY FLAG: cargo class D 'Acft on ground' is -1 at hour 23 (recorded as printed). An unlabelled residual row follows the Grand Total row on StandDemand (pax C=2; cargo D=-1; pax&cargo C=3, D=-1, total 5); not extracted as it carries no label.
+# DayBeforeArr: NO summary count table on the sheet - it is a flight-level ledger of 10 carried-in services; the count is pinned via the StandDemand carried-in row (pax C=10, total=10), which matches the ledger row count.
+# Busy-hour: Clock_* sheets are clock-hour summaries. Pinned: Max per bound (Dep/Arr/Dep+Arr) for all six Clock_* sheets; full hourly values for Clock_Total_ATMs and Clock_Total_Seats. Hourly detail of Clock_Sch_*/Clock_ExtraSch_* present in source but not extracted (Max only).
+# Thousands separators (e.g. 1,452) stripped; values otherwise as printed. Rolling 60-min chart-feed sheets (C1-C18) and Roll60Mins working sheet not extracted.
+sheet	section	measure	row	split	year	value
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A	2025	0
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	B	2025	0
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	C	2025	10
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	D	2025	0
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	E	2025	0
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	F	2025	0
+StandDemand	pax	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A+B+C+D+E+F	2025	10
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	B	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	C	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	D	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	E	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	F	2025	0
+StandDemand	cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A+B+C+D+E+F	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	B	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	C	2025	10
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	D	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	E	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	F	2025	0
+StandDemand	pax & cargo	Carried-in ATMs (arr evening before, dep DDFS day)	Carried-in	A+B+C+D+E+F	2025	10
+StandDemand	pax	Max AOG	Max	A	2025	0
+StandDemand	pax	Max AOG	Max	B	2025	0
+StandDemand	pax	Max AOG	Max	C	2025	18
+StandDemand	pax	Max AOG	Max	D	2025	0
+StandDemand	pax	Max AOG	Max	E	2025	1
+StandDemand	pax	Max AOG	Max	F	2025	0
+StandDemand	pax	Max AOG	Max	A+B+C+D+E+F	2025	18
+StandDemand	cargo	Max AOG	Max	A	2025	0
+StandDemand	cargo	Max AOG	Max	B	2025	1
+StandDemand	cargo	Max AOG	Max	C	2025	3
+StandDemand	cargo	Max AOG	Max	D	2025	2
+StandDemand	cargo	Max AOG	Max	E	2025	0
+StandDemand	cargo	Max AOG	Max	F	2025	0
+StandDemand	cargo	Max AOG	Max	A+B+C+D+E+F	2025	5
+StandDemand	pax & cargo	Max AOG	Max	A	2025	0
+StandDemand	pax & cargo	Max AOG	Max	B	2025	1
+StandDemand	pax & cargo	Max AOG	Max	C	2025	18
+StandDemand	pax & cargo	Max AOG	Max	D	2025	2
+StandDemand	pax & cargo	Max AOG	Max	E	2025	1
+StandDemand	pax & cargo	Max AOG	Max	F	2025	0
+StandDemand	pax & cargo	Max AOG	Max	A+B+C+D+E+F	2025	19
+StandDemand	pax	AOG (end of clock hour)	0	A+B+C+D+E+F	2025	15
+StandDemand	cargo	AOG (end of clock hour)	0	A+B+C+D+E+F	2025	0
+StandDemand	pax & cargo	AOG (end of clock hour)	0	A+B+C+D+E+F	2025	15
+StandDemand	pax	AOG (end of clock hour)	1	A+B+C+D+E+F	2025	18
+StandDemand	cargo	AOG (end of clock hour)	1	A+B+C+D+E+F	2025	0
+StandDemand	pax & cargo	AOG (end of clock hour)	1	A+B+C+D+E+F	2025	18
+StandDemand	pax	AOG (end of clock hour)	2	A+B+C+D+E+F	2025	18
+StandDemand	cargo	AOG (end of clock hour)	2	A+B+C+D+E+F	2025	0
+StandDemand	pax & cargo	AOG (end of clock hour)	2	A+B+C+D+E+F	2025	18
+StandDemand	pax	AOG (end of clock hour)	3	A+B+C+D+E+F	2025	18
+StandDemand	cargo	AOG (end of clock hour)	3	A+B+C+D+E+F	2025	1
+StandDemand	pax & cargo	AOG (end of clock hour)	3	A+B+C+D+E+F	2025	19
+StandDemand	pax	AOG (end of clock hour)	4	A+B+C+D+E+F	2025	18
+StandDemand	cargo	AOG (end of clock hour)	4	A+B+C+D+E+F	2025	1
+StandDemand	pax & cargo	AOG (end of clock hour)	4	A+B+C+D+E+F	2025	19
+StandDemand	pax	AOG (end of clock hour)	5	A+B+C+D+E+F	2025	15
+StandDemand	cargo	AOG (end of clock hour)	5	A+B+C+D+E+F	2025	2
+StandDemand	pax & cargo	AOG (end of clock hour)	5	A+B+C+D+E+F	2025	17
+StandDemand	pax	AOG (end of clock hour)	6	A+B+C+D+E+F	2025	7
+StandDemand	cargo	AOG (end of clock hour)	6	A+B+C+D+E+F	2025	2
+StandDemand	pax & cargo	AOG (end of clock hour)	6	A+B+C+D+E+F	2025	9
+StandDemand	pax	AOG (end of clock hour)	7	A+B+C+D+E+F	2025	3
+StandDemand	cargo	AOG (end of clock hour)	7	A+B+C+D+E+F	2025	2
+StandDemand	pax & cargo	AOG (end of clock hour)	7	A+B+C+D+E+F	2025	5
+StandDemand	pax	AOG (end of clock hour)	8	A+B+C+D+E+F	2025	6
+StandDemand	cargo	AOG (end of clock hour)	8	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	8	A+B+C+D+E+F	2025	9
+StandDemand	pax	AOG (end of clock hour)	9	A+B+C+D+E+F	2025	9
+StandDemand	cargo	AOG (end of clock hour)	9	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	9	A+B+C+D+E+F	2025	12
+StandDemand	pax	AOG (end of clock hour)	10	A+B+C+D+E+F	2025	4
+StandDemand	cargo	AOG (end of clock hour)	10	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	10	A+B+C+D+E+F	2025	7
+StandDemand	pax	AOG (end of clock hour)	11	A+B+C+D+E+F	2025	5
+StandDemand	cargo	AOG (end of clock hour)	11	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	11	A+B+C+D+E+F	2025	8
+StandDemand	pax	AOG (end of clock hour)	12	A+B+C+D+E+F	2025	2
+StandDemand	cargo	AOG (end of clock hour)	12	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	12	A+B+C+D+E+F	2025	5
+StandDemand	pax	AOG (end of clock hour)	13	A+B+C+D+E+F	2025	3
+StandDemand	cargo	AOG (end of clock hour)	13	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	13	A+B+C+D+E+F	2025	6
+StandDemand	pax	AOG (end of clock hour)	14	A+B+C+D+E+F	2025	7
+StandDemand	cargo	AOG (end of clock hour)	14	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	14	A+B+C+D+E+F	2025	10
+StandDemand	pax	AOG (end of clock hour)	15	A+B+C+D+E+F	2025	7
+StandDemand	cargo	AOG (end of clock hour)	15	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	15	A+B+C+D+E+F	2025	10
+StandDemand	pax	AOG (end of clock hour)	16	A+B+C+D+E+F	2025	5
+StandDemand	cargo	AOG (end of clock hour)	16	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	16	A+B+C+D+E+F	2025	8
+StandDemand	pax	AOG (end of clock hour)	17	A+B+C+D+E+F	2025	4
+StandDemand	cargo	AOG (end of clock hour)	17	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	17	A+B+C+D+E+F	2025	7
+StandDemand	pax	AOG (end of clock hour)	18	A+B+C+D+E+F	2025	7
+StandDemand	cargo	AOG (end of clock hour)	18	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	18	A+B+C+D+E+F	2025	10
+StandDemand	pax	AOG (end of clock hour)	19	A+B+C+D+E+F	2025	5
+StandDemand	cargo	AOG (end of clock hour)	19	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	19	A+B+C+D+E+F	2025	8
+StandDemand	pax	AOG (end of clock hour)	20	A+B+C+D+E+F	2025	4
+StandDemand	cargo	AOG (end of clock hour)	20	A+B+C+D+E+F	2025	4
+StandDemand	pax & cargo	AOG (end of clock hour)	20	A+B+C+D+E+F	2025	8
+StandDemand	pax	AOG (end of clock hour)	21	A+B+C+D+E+F	2025	2
+StandDemand	cargo	AOG (end of clock hour)	21	A+B+C+D+E+F	2025	5
+StandDemand	pax & cargo	AOG (end of clock hour)	21	A+B+C+D+E+F	2025	7
+StandDemand	pax	AOG (end of clock hour)	22	A+B+C+D+E+F	2025	6
+StandDemand	cargo	AOG (end of clock hour)	22	A+B+C+D+E+F	2025	3
+StandDemand	pax & cargo	AOG (end of clock hour)	22	A+B+C+D+E+F	2025	9
+StandDemand	pax	AOG (end of clock hour)	23	A+B+C+D+E+F	2025	9
+StandDemand	cargo	AOG (end of clock hour)	23	A+B+C+D+E+F	2025	0
+StandDemand	pax & cargo	AOG (end of clock hour)	23	A+B+C+D+E+F	2025	9
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	A	2025	0
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	A	2025	0
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	B	2025	0
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	B	2025	0
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	C	2025	116
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	C	2025	117
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	D	2025	0
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	D	2025	0
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	E	2025	1
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	E	2025	1
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	F	2025	0
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	F	2025	0
+StandDemand	pax	Grand Total Arr ATMs	Grand Total	A+B+C+D+E+F	2025	117
+StandDemand	pax	Grand Total Dep ATMs	Grand Total	A+B+C+D+E+F	2025	118
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	A	2025	0
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	A	2025	0
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	B	2025	1
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	B	2025	0
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	C	2025	3
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	C	2025	3
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	D	2025	3
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	D	2025	4
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	E	2025	0
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	E	2025	0
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	F	2025	0
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	F	2025	0
+StandDemand	cargo	Grand Total Arr ATMs	Grand Total	A+B+C+D+E+F	2025	7
+StandDemand	cargo	Grand Total Dep ATMs	Grand Total	A+B+C+D+E+F	2025	7
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	A	2025	0
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	A	2025	0
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	B	2025	1
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	B	2025	0
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	C	2025	119
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	C	2025	120
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	D	2025	3
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	D	2025	4
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	E	2025	1
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	E	2025	1
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	F	2025	0
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	F	2025	0
+StandDemand	pax & cargo	Grand Total Arr ATMs	Grand Total	A+B+C+D+E+F	2025	124
+StandDemand	pax & cargo	Grand Total Dep ATMs	Grand Total	A+B+C+D+E+F	2025	125
+Clock_Sch_Seats	Dep	Seats	Max	-	2025	1176
+Clock_Sch_Seats	Arr	Seats	Max	-	2025	1373
+Clock_Sch_Seats	Dep+Arr	Seats	Max	-	2025	2274
+Clock_Sch_ATMs	Dep	ATMs	Max	-	2025	7
+Clock_Sch_ATMs	Arr	ATMs	Max	-	2025	7
+Clock_Sch_ATMs	Dep+Arr	ATMs	Max	-	2025	13
+Clock_ExtraSch_Seats	Dep	Seats	Max	-	2025	551
+Clock_ExtraSch_Seats	Arr	Seats	Max	-	2025	877
+Clock_ExtraSch_Seats	Dep+Arr	Seats	Max	-	2025	1273
+Clock_ExtraSch_ATMs	Dep	ATMs	Max	-	2025	3
+Clock_ExtraSch_ATMs	Arr	ATMs	Max	-	2025	4
+Clock_ExtraSch_ATMs	Dep+Arr	ATMs	Max	-	2025	7
+Clock_Total_Seats	Dep	Seats	Max	-	2025	1452
+Clock_Total_Seats	Arr	Seats	Max	-	2025	1600
+Clock_Total_Seats	Dep+Arr	Seats	Max	-	2025	2825
+Clock_Total_Seats	Dep	Seats	0	-	2025	0
+Clock_Total_Seats	Dep	Seats	1	-	2025	174
+Clock_Total_Seats	Dep	Seats	2	-	2025	0
+Clock_Total_Seats	Dep	Seats	3	-	2025	0
+Clock_Total_Seats	Dep	Seats	4	-	2025	0
+Clock_Total_Seats	Dep	Seats	5	-	2025	772
+Clock_Total_Seats	Dep	Seats	6	-	2025	1309
+Clock_Total_Seats	Dep	Seats	7	-	2025	1293
+Clock_Total_Seats	Dep	Seats	8	-	2025	1077
+Clock_Total_Seats	Dep	Seats	9	-	2025	943
+Clock_Total_Seats	Dep	Seats	10	-	2025	1360
+Clock_Total_Seats	Dep	Seats	11	-	2025	1054
+Clock_Total_Seats	Dep	Seats	12	-	2025	1134
+Clock_Total_Seats	Dep	Seats	13	-	2025	866
+Clock_Total_Seats	Dep	Seats	14	-	2025	836
+Clock_Total_Seats	Dep	Seats	15	-	2025	1452
+Clock_Total_Seats	Dep	Seats	16	-	2025	1365
+Clock_Total_Seats	Dep	Seats	17	-	2025	1193
+Clock_Total_Seats	Dep	Seats	18	-	2025	712
+Clock_Total_Seats	Dep	Seats	19	-	2025	1428
+Clock_Total_Seats	Dep	Seats	20	-	2025	1304
+Clock_Total_Seats	Dep	Seats	21	-	2025	1314
+Clock_Total_Seats	Dep	Seats	22	-	2025	797
+Clock_Total_Seats	Dep	Seats	23	-	2025	360
+Clock_Total_Seats	Arr	Seats	0	-	2025	938
+Clock_Total_Seats	Arr	Seats	1	-	2025	756
+Clock_Total_Seats	Arr	Seats	2	-	2025	0
+Clock_Total_Seats	Arr	Seats	3	-	2025	0
+Clock_Total_Seats	Arr	Seats	4	-	2025	0
+Clock_Total_Seats	Arr	Seats	5	-	2025	186
+Clock_Total_Seats	Arr	Seats	6	-	2025	186
+Clock_Total_Seats	Arr	Seats	7	-	2025	608
+Clock_Total_Seats	Arr	Seats	8	-	2025	1461
+Clock_Total_Seats	Arr	Seats	9	-	2025	1483
+Clock_Total_Seats	Arr	Seats	10	-	2025	536
+Clock_Total_Seats	Arr	Seats	11	-	2025	1118
+Clock_Total_Seats	Arr	Seats	12	-	2025	777
+Clock_Total_Seats	Arr	Seats	13	-	2025	1255
+Clock_Total_Seats	Arr	Seats	14	-	2025	1600
+Clock_Total_Seats	Arr	Seats	15	-	2025	1373
+Clock_Total_Seats	Arr	Seats	16	-	2025	799
+Clock_Total_Seats	Arr	Seats	17	-	2025	1006
+Clock_Total_Seats	Arr	Seats	18	-	2025	1057
+Clock_Total_Seats	Arr	Seats	19	-	2025	1297
+Clock_Total_Seats	Arr	Seats	20	-	2025	1134
+Clock_Total_Seats	Arr	Seats	21	-	2025	944
+Clock_Total_Seats	Arr	Seats	22	-	2025	1322
+Clock_Total_Seats	Arr	Seats	23	-	2025	685
+Clock_Total_Seats	Dep+Arr	Seats	0	-	2025	938
+Clock_Total_Seats	Dep+Arr	Seats	1	-	2025	930
+Clock_Total_Seats	Dep+Arr	Seats	2	-	2025	0
+Clock_Total_Seats	Dep+Arr	Seats	3	-	2025	0
+Clock_Total_Seats	Dep+Arr	Seats	4	-	2025	0
+Clock_Total_Seats	Dep+Arr	Seats	5	-	2025	958
+Clock_Total_Seats	Dep+Arr	Seats	6	-	2025	1495
+Clock_Total_Seats	Dep+Arr	Seats	7	-	2025	1901
+Clock_Total_Seats	Dep+Arr	Seats	8	-	2025	2538
+Clock_Total_Seats	Dep+Arr	Seats	9	-	2025	2426
+Clock_Total_Seats	Dep+Arr	Seats	10	-	2025	1896
+Clock_Total_Seats	Dep+Arr	Seats	11	-	2025	2172
+Clock_Total_Seats	Dep+Arr	Seats	12	-	2025	1911
+Clock_Total_Seats	Dep+Arr	Seats	13	-	2025	2121
+Clock_Total_Seats	Dep+Arr	Seats	14	-	2025	2436
+Clock_Total_Seats	Dep+Arr	Seats	15	-	2025	2825
+Clock_Total_Seats	Dep+Arr	Seats	16	-	2025	2164
+Clock_Total_Seats	Dep+Arr	Seats	17	-	2025	2199
+Clock_Total_Seats	Dep+Arr	Seats	18	-	2025	1769
+Clock_Total_Seats	Dep+Arr	Seats	19	-	2025	2725
+Clock_Total_Seats	Dep+Arr	Seats	20	-	2025	2438
+Clock_Total_Seats	Dep+Arr	Seats	21	-	2025	2258
+Clock_Total_Seats	Dep+Arr	Seats	22	-	2025	2119
+Clock_Total_Seats	Dep+Arr	Seats	23	-	2025	1045
+Clock_Total_ATMs	Dep	ATMs	Max	-	2025	9
+Clock_Total_ATMs	Arr	ATMs	Max	-	2025	9
+Clock_Total_ATMs	Dep+Arr	ATMs	Max	-	2025	16
+Clock_Total_ATMs	Dep	ATMs	0	-	2025	0
+Clock_Total_ATMs	Dep	ATMs	1	-	2025	1
+Clock_Total_ATMs	Dep	ATMs	2	-	2025	0
+Clock_Total_ATMs	Dep	ATMs	3	-	2025	0
+Clock_Total_ATMs	Dep	ATMs	4	-	2025	0
+Clock_Total_ATMs	Dep	ATMs	5	-	2025	4
+Clock_Total_ATMs	Dep	ATMs	6	-	2025	9
+Clock_Total_ATMs	Dep	ATMs	7	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	8	-	2025	5
+Clock_Total_ATMs	Dep	ATMs	9	-	2025	6
+Clock_Total_ATMs	Dep	ATMs	10	-	2025	8
+Clock_Total_ATMs	Dep	ATMs	11	-	2025	6
+Clock_Total_ATMs	Dep	ATMs	12	-	2025	8
+Clock_Total_ATMs	Dep	ATMs	13	-	2025	5
+Clock_Total_ATMs	Dep	ATMs	14	-	2025	5
+Clock_Total_ATMs	Dep	ATMs	15	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	16	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	17	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	18	-	2025	4
+Clock_Total_ATMs	Dep	ATMs	19	-	2025	9
+Clock_Total_ATMs	Dep	ATMs	20	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	21	-	2025	8
+Clock_Total_ATMs	Dep	ATMs	22	-	2025	7
+Clock_Total_ATMs	Dep	ATMs	23	-	2025	5
+Clock_Total_ATMs	Arr	ATMs	0	-	2025	5
+Clock_Total_ATMs	Arr	ATMs	1	-	2025	4
+Clock_Total_ATMs	Arr	ATMs	2	-	2025	0
+Clock_Total_ATMs	Arr	ATMs	3	-	2025	1
+Clock_Total_ATMs	Arr	ATMs	4	-	2025	0
+Clock_Total_ATMs	Arr	ATMs	5	-	2025	2
+Clock_Total_ATMs	Arr	ATMs	6	-	2025	1
+Clock_Total_ATMs	Arr	ATMs	7	-	2025	3
+Clock_Total_ATMs	Arr	ATMs	8	-	2025	9
+Clock_Total_ATMs	Arr	ATMs	9	-	2025	9
+Clock_Total_ATMs	Arr	ATMs	10	-	2025	3
+Clock_Total_ATMs	Arr	ATMs	11	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	12	-	2025	5
+Clock_Total_ATMs	Arr	ATMs	13	-	2025	6
+Clock_Total_ATMs	Arr	ATMs	14	-	2025	9
+Clock_Total_ATMs	Arr	ATMs	15	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	16	-	2025	5
+Clock_Total_ATMs	Arr	ATMs	17	-	2025	6
+Clock_Total_ATMs	Arr	ATMs	18	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	19	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	20	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	21	-	2025	7
+Clock_Total_ATMs	Arr	ATMs	22	-	2025	9
+Clock_Total_ATMs	Arr	ATMs	23	-	2025	5
+Clock_Total_ATMs	Dep+Arr	ATMs	0	-	2025	5
+Clock_Total_ATMs	Dep+Arr	ATMs	1	-	2025	5
+Clock_Total_ATMs	Dep+Arr	ATMs	2	-	2025	0
+Clock_Total_ATMs	Dep+Arr	ATMs	3	-	2025	1
+Clock_Total_ATMs	Dep+Arr	ATMs	4	-	2025	0
+Clock_Total_ATMs	Dep+Arr	ATMs	5	-	2025	6
+Clock_Total_ATMs	Dep+Arr	ATMs	6	-	2025	10
+Clock_Total_ATMs	Dep+Arr	ATMs	7	-	2025	10
+Clock_Total_ATMs	Dep+Arr	ATMs	8	-	2025	14
+Clock_Total_ATMs	Dep+Arr	ATMs	9	-	2025	15
+Clock_Total_ATMs	Dep+Arr	ATMs	10	-	2025	11
+Clock_Total_ATMs	Dep+Arr	ATMs	11	-	2025	13
+Clock_Total_ATMs	Dep+Arr	ATMs	12	-	2025	13
+Clock_Total_ATMs	Dep+Arr	ATMs	13	-	2025	11
+Clock_Total_ATMs	Dep+Arr	ATMs	14	-	2025	14
+Clock_Total_ATMs	Dep+Arr	ATMs	15	-	2025	14
+Clock_Total_ATMs	Dep+Arr	ATMs	16	-	2025	12
+Clock_Total_ATMs	Dep+Arr	ATMs	17	-	2025	13
+Clock_Total_ATMs	Dep+Arr	ATMs	18	-	2025	11
+Clock_Total_ATMs	Dep+Arr	ATMs	19	-	2025	16
+Clock_Total_ATMs	Dep+Arr	ATMs	20	-	2025	14
+Clock_Total_ATMs	Dep+Arr	ATMs	21	-	2025	15
+Clock_Total_ATMs	Dep+Arr	ATMs	22	-	2025	16
+Clock_Total_ATMs	Dep+Arr	ATMs	23	-	2025	10

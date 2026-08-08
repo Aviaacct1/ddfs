@@ -1,0 +1,16 @@
+Method	Selected date	Hour / window	Value (pax)	Notes
+Peak hour (reference only; ADRM: do not plan to it)	2015-04-02	13:00	1017.4	
+20th busiest hour (Amsterdam convention)	2015-07-07	13:00	915.6	
+Standard Busy Rate, 30th busiest hour (BAA; ZAG convention)	2015-07-28	13:00	896.5	
+40th busiest hour (Paris convention)	2015-06-07	13:00	875.8	
+Busy Hour Rate, 5% busy hour (ADRM/Heathrow)	2015-07-20	13:00	753.4	104 hours above; threshold 5%
+IATA Busy Day (2nd busiest day, average week, peak month)	2015-07-16	13:00 (rolling60 13:00 = 811.1)	811.1	
+FAA PMAD peak hour (peak month average day)	2015-07	13:00	699.8	average of 31 days in 2015-07
+FAA PMAWD peak hour (weekdays only)	2015-07	13:00	698.8	average of 23 days in 2015-07
+Peak day (reference only)	2015-09-21		7146.9	
+90th-percentile day	2015-05-21		5998.4	rank 37 of 365 days
+Season S peak day (OAG season)	2015-09-21		7146.9	
+Season S 30th busy hour	2015-07-28	13:00	896.5	
+Season W peak day (OAG season)	2015-10-26		6300.5	
+Season W 30th busy hour	2015-01-13	13:00	616.2	
+Source	events_ZAG_2015_pax.tsv			basis pax; annual total 1775568.9 over 365 days

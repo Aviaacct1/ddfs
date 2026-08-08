@@ -1,0 +1,16 @@
+Method	Selected date	Hour / window	Value (atm)	Notes
+Peak hour (reference only; ADRM: do not plan to it)	2016-08-01	17:00	13.0	
+20th busiest hour (Amsterdam convention)	2016-04-04	17:00	11.0	
+Standard Busy Rate, 30th busiest hour (BAA; ZAG convention)	2016-06-06	17:00	11.0	
+40th busiest hour (Paris convention)	2016-07-17	13:00	11.0	
+Busy Hour Rate, 5% busy hour (ADRM/Heathrow)	2016-01-24	14:00	9.0	131 hours above; threshold 5%
+IATA Busy Day (2nd busiest day, average week, peak month)	2016-08-23	13:00 (rolling60 21:30 = 11.0)	10.0	
+FAA PMAD peak hour (peak month average day)	2016-08	13:00	8.8	average of 31 days in 2016-08
+FAA PMAWD peak hour (weekdays only)	2016-08	17:00	9.7	average of 23 days in 2016-08
+Peak day (reference only)	2016-08-08		114.0	
+90th-percentile day	2016-02-22		93.0	rank 37 of 366 days
+Season S peak day (OAG season)	2016-08-08		114.0	
+Season S 30th busy hour	2016-06-06	17:00	11.0	
+Season W peak day (OAG season)	2016-01-11		95.0	
+Season W 30th busy hour	2016-03-06	14:00	9.0	
+Source	events_ZAG_2016_pax.tsv			basis atm; annual total 27776.0 over 366 days
