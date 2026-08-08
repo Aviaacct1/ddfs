@@ -20,6 +20,7 @@ import json, os, glob, datetime as dt
 from collections import defaultdict
 
 import config
+import ddfs_pack_contract as contract
 from ddfs_oag_expand import _store_path
 
 _BUNDLE_CACHE = {}
@@ -35,10 +36,16 @@ def _bundle_path():
 
 
 def load_bundle():
+    """The Atlas bundle, checked against the contract on first load.
+
+    Atlas owns this file and DDFS never writes it. The check is what lets the
+    two tools move on separate schedules: if Atlas changes the bundle's shape,
+    DDFS stops here and says what changed, instead of emitting a pack built on
+    a field that has quietly moved."""
     p = _bundle_path()
     if p not in _BUNDLE_CACHE:
         with open(p) as f:
-            _BUNDLE_CACHE[p] = json.load(f)
+            _BUNDLE_CACHE[p] = contract.require_bundle(json.load(f), p)
     return _BUNDLE_CACHE[p]
 
 
@@ -206,7 +213,8 @@ def emit_pack(airport, scenario="Baseline", base_year=None, spot_years=None,
         "overrides_applied": overrides or {},
         "note": "Emitted by ddfs_pack_emit.py; the engine bundle is never written back. Flag rather than fill throughout.",
     }
-    return pack
+    contract.stamp(pack)
+    return contract.require_pack(pack, "emitted pack")
 
 
 def save_pack(pack, folder=None):
@@ -216,6 +224,26 @@ def save_pack(pack, folder=None):
     with open(p, "w") as f:
         json.dump(pack, f, indent=1)
     return p
+
+
+def emit_from_fixture(airport="ZAG", scenario="Baseline", **kw):
+    """Emit a pack from the committed four-airport bundle fixture rather than
+    the full Atlas bundle. The fixture is what makes the emitter testable on a
+    host that has no Atlas data root, and what catches an Atlas shape change in
+    a check rather than in a wrong pack."""
+    fx = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      "ddfs_bridge_fixtures", "cockpit_fixture.json")
+    saved = os.environ.get("AVIA_ENGINE_BUNDLE")
+    os.environ["AVIA_ENGINE_BUNDLE"] = fx
+    _BUNDLE_CACHE.pop(fx, None)
+    try:
+        return emit_pack(airport, scenario, **kw)
+    finally:
+        _BUNDLE_CACHE.pop(fx, None)
+        if saved is None:
+            os.environ.pop("AVIA_ENGINE_BUNDLE", None)
+        else:
+            os.environ["AVIA_ENGINE_BUNDLE"] = saved
 
 
 def selftest():
@@ -235,6 +263,31 @@ def selftest():
     ov = emit_pack("ZAG", "Baseline", overrides={"upgauge_pa": 0.0035})
     checks.append(("override request-scoped, recorded", ov["overrides_applied"].get("upgauge_pa"), 0.0035))
     checks.append(("override not in plain emit", z["overrides_applied"], {}))
+    # The bundle fixture: the emitter must work with no Atlas data root, and
+    # must produce the same pack the full bundle produces. If these two ever
+    # disagree, Atlas has changed shape and the contract has not been updated.
+    fpk = emit_from_fixture("ZAG", "Baseline", base_year=2025, spot_years=[2030, 2035])
+    checks.append(("fixture emits without the Atlas bundle",
+                   fpk["series"]["pax_total"]["values"]["2030"], 4836000))
+    checks.append(("emitted pack carries the schema", fpk.get("schema"),
+                   contract.PACK_SCHEMA))
+    try:
+        bpk = emit_pack("ZAG", "Baseline", base_year=2025, spot_years=[2030, 2035])
+        checks.append(("fixture pack matches full bundle pack",
+                       fpk["series"]["pax_total"]["values"],
+                       bpk["series"]["pax_total"]["values"]))
+    except Exception as ex:
+        print(f"  note: full Atlas bundle not readable here ({type(ex).__name__}), "
+              f"fixture check stands alone")
+    bad = {"pack_id": "x", "airport": "ZAG", "base_year": 2025, "spot_years": [],
+           "dd_block": {}, "series": {"scheduled_movements": {"values": {}}}}
+    refused = False
+    try:
+        contract.require_pack(bad)
+    except contract.ContractError:
+        refused = True
+    checks.append(("a pack missing pax_total is refused, not defaulted", refused, True))
+
     fails = [c for c in checks if c[1] != c[2]]
     for c in checks:
         print(("ok  " if c[1] == c[2] else "FAIL"), c[0], c[1], "expected", c[2])

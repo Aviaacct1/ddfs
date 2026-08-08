@@ -23,6 +23,7 @@ import os, csv, sys, datetime as dt
 from collections import defaultdict
 
 import ddfs_pack_emit as pe
+import ddfs_pack_contract as contract
 
 FIX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ddfs_bridge_fixtures")
 
@@ -71,6 +72,7 @@ def base_day(pack):
 
 
 def forecast_from_pack(pack):
+    contract.require_pack(pack, "forecast pack")
     mov = pack["series"]["scheduled_movements"]["values"]
     pax = pack["series"]["pax_total"]["values"]
     if not mov:

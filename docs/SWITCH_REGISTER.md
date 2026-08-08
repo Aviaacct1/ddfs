@@ -105,6 +105,39 @@ or make the endpoint call the oracle at store day. One line, or a build slot.
 
 ---
 
+## 3a. The two pack producers do not share a grain
+
+**State.** Note 41 records that all growth sources emit the same pack grain, so downstream is
+identical. That is the design and it is not true today. Checked on 8 August 2026 against the two packs
+held in `ddfs_packs/`:
+
+| | Emitted pack (`BLQ_Baseline_2025`) | Engagement pack (`ZAG_secondary_2025`) |
+|---|---|---|
+| `series` | `pax_total`, `scheduled_movements` | `dep_pax_schengen`, `dep_pax_nonschengen`, `dep_pax_transfer`, `lcc_pax_2way`, `ga_movements`, `scheduled_movements` |
+| top-level | plus `scenario`, `flags`, `overrides_applied`, `airport_name`, `emitted` | plus `schedule_base`, `extracted` |
+| `dd_block` | 8 keys, 3 shared | 8 keys, 3 shared |
+
+`forecast_from_pack` reads `series.pax_total`, so it worked on emitted packs and raised
+`KeyError('pax_total')` on the engagement pack. Nobody had met this because the tool serves the
+Zagreb forecast years from a pinned file rather than through the pack path, so the one engagement
+pack in the estate never reached the forecast.
+
+**Done, 8 August 2026.** `ddfs_pack_contract.py` states the contract, and `forecast_from_pack` now
+refuses an out-of-contract pack naming exactly what is missing and what was held instead, rather than
+raising from inside the forecast. Refusing is the correct behaviour and the reason it is recorded
+here rather than closed.
+
+**The decision this needs.** Either the engagement pack gains a `pax_total` series, being the sum of
+the Schengen, non-Schengen and transfer legs on the stated convention, or the contract admits a
+second pax family and the forecast learns to read it. The first keeps one grain and is my
+recommendation; the second admits that a Schengen split is a different thing from a total and should
+not be flattened. It is a design call about what a pack is, so it is yours.
+
+**Test that would close it.** `forecast_from_pack` on `ZAG_secondary_2025.json` returns a forecast
+whose base-year movements match the oracle's own base-year figure.
+
+**Owner.** JC.
+
 ## 4. Fixture questions open
 
 Three fixture pairs are byte-identical across different forecast years: `cast_ahb_2040` equals
