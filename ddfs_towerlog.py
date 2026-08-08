@@ -27,6 +27,7 @@ Run:  python3 ddfs_towerlog.py --selftest
 Author: Avia Solutions.
 """
 import os, csv, sys, glob, datetime as dt
+import config
 from collections import defaultdict
 
 FIX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ddfs_bridge_fixtures")
@@ -255,13 +256,14 @@ def selftest():
     return not fails
 
 
+TOWERLOG_NAME = "2025 Towerlog.xlsx"
+
+
 def _local_xlsx():
-    for pat in ("/sessions/*/mnt/C:--Avia/2025 Towerlog.xlsx",):
-        hits = [h for h in glob.glob(pat) if os.access(h, os.R_OK)]
-        if hits:
-            return hits[0]
-    p = "C:\\Avia\\2025 Towerlog.xlsx"
-    return p if os.path.exists(p) else None
+    """The MZLZ AODB export, through the one resolver. Returns None when it is
+    not on this host: the towerlog reconciliation is optional, so callers skip
+    it rather than fail, but they must say they skipped it."""
+    return config.find(TOWERLOG_NAME)
 
 
 if __name__ == "__main__":

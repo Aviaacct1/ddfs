@@ -19,23 +19,19 @@ Author: Avia Solutions.
 import json, os, glob, datetime as dt
 from collections import defaultdict
 
+import config
 from ddfs_oag_expand import _store_path
 
 _BUNDLE_CACHE = {}
 
 
+BUNDLE_NAME = "avia_forecast_build/webapp/data/cockpit.json"
+
+
 def _bundle_path():
-    """The engine data bundle, resolved like the stores: env, session mount
-    (readable only), then C:\\Avia for host-side runs."""
-    env = os.environ.get("AVIA_ENGINE_BUNDLE")
-    if env:
-        return env
-    rel = "avia_forecast_build/webapp/data/cockpit.json"
-    hits = [h for h in glob.glob("/sessions/*/mnt/C:--Avia/" + rel)
-            if os.access(h, os.R_OK)]
-    if hits:
-        return hits[0]
-    return "C:\\Avia\\" + rel.replace("/", "\\")
+    """The Atlas engine bundle, through the one resolver. AVIA_ENGINE_BUNDLE
+    overrides it where Atlas lives outside the data root."""
+    return config.store_path(BUNDLE_NAME)
 
 
 def load_bundle():

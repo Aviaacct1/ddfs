@@ -34,21 +34,21 @@ Then: python3 ddfs_method_module.py --tsv events.tsv [--basis pax]
 Or import: events = expand(...); res = ddfs_method_module.method_table(...)
 """
 import csv, re, sys, datetime as dt
+
+import config
 from collections import defaultdict
 
 def _store_path(name):
-    """Resolve a C:\\Avia store across sessions: env var first, then the
-    current sandbox mount (session name varies per session), then C:\\Avia
-    directly for host-side runs. Flags rather than guesses if none resolve."""
-    import glob, os
-    env = os.environ.get("AVIA_" + name.split(".")[0].upper() + "_DB")
-    if env:
-        return env
-    hits = [h for h in glob.glob("/sessions/*/mnt/C:--Avia/" + name)
-            if os.access(h, os.R_OK)]
-    if hits:
-        return hits[0]
-    return "C:\\Avia\\" + name
+    """Resolve a store through the one resolver. Kept as a name because other
+    modules import it; the resolution itself lives in config.py, so
+    provisioning a host sets AVIA_LOCAL_CACHE and changes no code."""
+    return config.store_path(name)
+
+
+def _require_store(name, what=None):
+    """Resolve or stop, listing every path tried. Use at the point of opening
+    a store so a missing store cannot become a neutral default downstream."""
+    return config.require(name, what)
 
 
 OAG_DEFAULT = _store_path("oag.duckdb")
